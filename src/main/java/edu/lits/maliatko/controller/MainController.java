@@ -1,4 +1,4 @@
-package edu.litd.demo;
+package edu.lits.maliatko.controller;
 
 
 

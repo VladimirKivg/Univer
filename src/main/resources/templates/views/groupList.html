@@ -1,20 +1,29 @@
 <div th:fragment="groupList" xmlns:th="http://www.w3.org/1999/xhtml">
-    <table>
-        <thead>
-        <tr>
-            <th>Назва</th>
-            <th>Кількість дітей</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Яслі 1 - Дзвіночки</td>
-            <td>25</td>
-        </tr>
-        <tr>
-            <td>Яслі 2 - Метелики</td>
-            <td>25</td>
-        </tr>
-        </tbody>
-    </table>
+    <div th:switch="${groups}">
+        <h2 th:case="null">No any group.</h2>
+        <div th:case="*">
+            <table>
+                <thead>
+                <tr>
+                    <th>Назва</th>
+                    <th>Кількість дітей</th>
+                    <th>видалення группи</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tbody>
+                <tr th:each="group : ${groups}">
+                    <td th:text="${group.name}"></td>
+                    <td th:text="${group.number}"></td>
+                    <td><a th:href="@{/group/delete/{id}(id=${group.id})}">Видалити Групу</a></td>
+                </tr>
+                </tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <p>
+        <a href="/group/add-group"> Add a new group
+        </a>
+    </p>
 </div>

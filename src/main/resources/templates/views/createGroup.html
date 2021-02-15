@@ -1,0 +1,12 @@
+<div th:fragment="createGroup" xmlns:th="http://www.w3.org/1999/xhtml">
+    <form action="#"
+          th:action="@{/group/add}"
+          th:object="${group}"
+          method="post">
+        <label for="name">Назва групи</label>
+        <input type="text" th:field="*{name}" id="name" placeholder="Назва групи">
+        <label for="number">Кількість дітей</label>
+        <input type="text" th:field="*{number}" id="number" placeholder="Кількість дітей">
+        <input type="submit" value="Створити групу">
+    </form>
+</div>
