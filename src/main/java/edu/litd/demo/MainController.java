@@ -29,7 +29,7 @@ public class MainController {
     @GetMapping("/greeting")
     public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
 
-        String value=name+name+123;
+        String value=name+"haha";
 
         model.addAttribute("name", value);
         return "greeting";
