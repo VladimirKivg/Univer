@@ -17,6 +17,7 @@ public class MainController {
    @RequestMapping("/test")
    public String root(Locale locale, ModelMap model) {
        model.addAttribute("content", "helloWorldView");
+
        return "index";
    }
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
