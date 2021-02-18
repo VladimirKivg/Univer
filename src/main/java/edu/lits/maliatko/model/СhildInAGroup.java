@@ -2,10 +2,10 @@ package edu.lits.maliatko.model;
 
 public class СhildInAGroup {
 
-    String name;
-    String surname;
-    String dateOfBirdth;
-    int id;
+   private String name;
+   private String surname;
+   private String dateOfBirdth;
+   private int id;
 
     public СhildInAGroup() {
     }
