@@ -1,7 +1,10 @@
 package edu.lits.maliatko.model;
 
+import javax.validation.constraints.NotBlank;
+
 public class Group {
    private Integer id;
+   @NotBlank(message = "огогог тут помилка") // @NotBlank(message = "огогог тут помилка") - це робить перевырку
    private String name;
    private Integer number;
 
