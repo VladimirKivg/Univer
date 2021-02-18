@@ -1,0 +1,105 @@
+.dws-menu *{
+ margin: 0;
+ padding: 0;
+}
+header{
+ margin: 100px;
+ font-family: Arial, Helvetica, sans-serif;
+}
+.dws-menu ul,
+.dws-menu ol{
+ list-style: none;
+}
+.dws-menu > ul{
+ display: flex;
+ justify-content: center;
+}
+.dws-menu > ul li a{
+ display: block;
+ background: #ceefe4;
+ padding: 15px 30px 15px 40px;
+ font-size: 14px;
+ color: black;
+ text-decoration: none;
+ text-transform:uppercase;
+ transition: all 0.3s ease;
+}
+.dws-menu > ul li{
+ position: relative;
+ border-right: 1px solid #c7c8ca;
+}
+
+.dws-menu > ul li:first-child{
+ border-left: 1px solid #b2b3b5;
+}
+.dws-menu > ul li:last-child{
+ border-right: 1px solid #babbbd;
+}
+.dws-menu li a:hover{
+ background: #9dd3a8;
+ color: #ffffff;
+ box-shadow: 1px 5px 10px -5px black;
+ transition: all 0.3s ease;
+}
+/*sub menu*/
+.dws-menu li ul{
+ position: absolute;
+ min-width: 110px;
+ display: none;
+}
+.dws-menu li > ul li{
+ border: 1px solid #c7c8ca;
+}
+.dws-menu li > ul li a{
+ padding: 5px;
+ text-align: center;
+ text-transform: none;
+ background: #f4f0e6;
+}
+.dws-menu li:hover > ul{
+ display: block;
+}
+TABLE {
+    border-collapse: collapse;
+    border: 1px solid #000;
+    background:white; /* Цвет фона таблицы */
+    color: black; /* Цвет текста */
+    font-family: Arial, Helvetica, sans-serif;
+     margin: auto;
+   }
+   TD {
+   text-align: center;
+   border: 1px solid black;
+    padding:10px 15px;
+
+
+   }
+
+   .floating-button {
+     text-decoration: none;
+     display: inline-block;
+     width: 140px;
+     height: 45px;
+     line-height: 45px;
+     margin: 10px 20px;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 12px;
+     text-transform: uppercase;
+     text-align: center;
+      letter-spacing: 1px;
+     font-weight: 600;
+     color: black;
+     background: #ceefe4;
+     box-shadow: 1px 5px 10px -5px black;
+     transition: .3s;
+     position: relative;
+     left: 65%;
+   }
+   .floating-button:hover {
+     background: #9dd3a8;
+     box-shadow: 1px 5px 10px -5px black;
+     color: white;
+     transform: translateY(-7px);
+   }
+
+
