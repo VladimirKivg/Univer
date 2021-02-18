@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,7 +52,12 @@ public class GroupController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String add(Group group) {
+    public String add(@Valid Group group , BindingResult result, ModelMap model) {
+        if (result.hasErrors()) {
+            model.addAttribute("content", "createGroup");
+            return "index";
+        }
+
         groupList.add(group);
         return "redirect:/group/list";
     }
