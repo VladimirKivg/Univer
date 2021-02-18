@@ -2,6 +2,7 @@ package edu.lits.maliatko.controller;
 
 import edu.lits.maliatko.model.Group;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -54,5 +55,22 @@ public class GroupController {
         groupList.add(group);
         return "redirect:/group/list";
     }
+
+    @RequestMapping("/edit/{id}")
+    public String showUpdateForm(@PathVariable("id") long id, Model model) {
+        Group group = groupList.get(0); // this logic is not correct, group has to be                        //                                    selected by it’s id.
+        model.addAttribute("group", group);
+        model.addAttribute("content", "updateGroup");
+        return "index";
+    }
+    @RequestMapping("/update/{id}")
+    public String updateGroup(@PathVariable("id") int id, Group group,
+                              BindingResult result, Model model) {
+
+        groupList.get(id).setName(group.getName());
+        groupList.get(id).setNumber(group.getNumber());
+        return "redirect:/group/list";
+    }
+
 
 }

@@ -1,0 +1,12 @@
+<div th:fragment="updateGroup" xmlns:th="http://www.w3.org/1999/xhtml">
+    <form action="#"
+          th:action="@{/group/update/{id}(id=${group.id})}"
+          th:object="${group}"
+          method="post">
+        <label for="name">Name</label>
+        <input type="text" th:field="*{name}" id="name" placeholder="Name">
+        <label for="number">Number</label>
+        <input type="text" th:field="*{number}" id="number" placeholder="number">
+        <input type="submit" value="Update Group">
+    </form>
+</div>
