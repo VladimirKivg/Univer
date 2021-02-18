@@ -1,0 +1,21 @@
+<div th:fragment="childInAGroupList" xmlns:th="http://www.w3.org/1999/xhtml">
+    <table>
+        <thead>
+        <tr>
+
+            <th>Імя</th>
+            <th>Прізвище </th>
+            <th>Дата народження</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr th:each="child : ${childInAGroupList}">
+            <td th:text="${child.name}"></td>
+            <td th:text="${child.surname}"></td>
+            <td th:text="${child.dateOfBirdth}"></td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
