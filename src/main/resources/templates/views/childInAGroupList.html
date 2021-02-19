@@ -1,4 +1,8 @@
 <div th:fragment="childInAGroupList" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div th:switch="${childInAGroupList}">
+        <h2 th:case="null">No any group.</h2>
+        <div th:case="*">
+
     <table>
         <thead>
         <tr>
@@ -14,8 +18,12 @@
             <td th:text="${child.name}"></td>
             <td th:text="${child.surname}"></td>
             <td th:text="${child.dateOfBirdth}"></td>
+            <td><a th:href="@{/delete/{id}(id=${child.id})}">Видалити Дитину</a></td>
         </tr>
 
         </tbody>
     </table>
+        </div>
+    </div>
+
 </div>
