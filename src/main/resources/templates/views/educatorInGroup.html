@@ -1,0 +1,21 @@
+<div th:fragment="educatorInGroup" xmlns:th="http://www.w3.org/1999/xhtml">
+    <table>
+        <thead>
+        <tr>
+            <th>Ім'я</th>
+            <th>Прізвище</th>
+            <th>Категорія</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr th:each="educatorInGroup : ${educatorInGroupList}">
+                <td th:text="${educatorInGroup.name}"></td>
+                <td th:text="${educatorInGroup.surname}"></td>
+                <td th:text="${educatorInGroup.category}"></td>
+                <td><a th:href="@{/educator-in-group/delete/{id}(id=${educatorInGroup.id})}">Видалити</a></td>
+                <td><a th:href="@{/educator-in-group/edit/{id}(id=${educatorInGroup.id})}">Змінити</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <p><a th:href="@{/educator-in-group/add-educator-in-group}">Додати викладача до групи</a></p>
+</div>
