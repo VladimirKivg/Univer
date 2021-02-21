@@ -3,8 +3,10 @@ package edu.lits.maliatko.controller;
 import edu.lits.maliatko.model.СhildInAGroup;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,9 +36,14 @@ public class СhildInAGroupController {
         return "index";
     }
 
-    @RequestMapping("/delete/{id}")
-    public String delete(@PathVariable("id") Integer id, ModelMap model) {
-        getСhildInAGroup.remove(id-1);
+    @RequestMapping("/add-сhildInAGroup")
+    public String addСhildInAGroup(СhildInAGroup сhild, ModelMap model, BindingResult result) {
+        model.addAttribute("content", "createChildInAGroup");
+        return "index";
+    }
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public String add(СhildInAGroup сhild) {
+        getСhildInAGroup.add(сhild);
         return "redirect:/childInAGroup/list";
     }
 
