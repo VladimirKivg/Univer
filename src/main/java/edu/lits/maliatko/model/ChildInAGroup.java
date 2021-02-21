@@ -1,13 +1,13 @@
 package edu.lits.maliatko.model;
 
-public class СhildInAGroup {
+public class ChildInAGroup {
 
    private String name;
    private String surname;
    private String dateOfBirdth;
    private int id;
 
-    public СhildInAGroup() {
+    public ChildInAGroup() {
     }
 
     public String getName() {
@@ -57,7 +57,7 @@ public class СhildInAGroup {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        СhildInAGroup that = (СhildInAGroup) o;
+        ChildInAGroup that = (ChildInAGroup) o;
 
         if (id != that.id) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
