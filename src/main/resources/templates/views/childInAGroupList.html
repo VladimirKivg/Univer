@@ -18,12 +18,15 @@
             <td th:text="${child.name}"></td>
             <td th:text="${child.surname}"></td>
             <td th:text="${child.dateOfBirdth}"></td>
-            <td><a th:href="@{/delete/{id}(id=${child.id})}">Видалити Дитину</a></td>
+            <td><a th:href="@{/childInAGroup/delete/{id}(id=${child.id})}">Видалити Дитину</a></td>
         </tr>
 
         </tbody>
     </table>
         </div>
     </div>
-
+    <p>
+        <a href="/childInAGroup/add-childInAGroup"> Add a new child
+        </a>
+    </p>
 </div>
