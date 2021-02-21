@@ -1,6 +1,6 @@
 package edu.lits.maliatko.controller;
 //зупин презент 7
-import edu.lits.maliatko.model.СhildInAGroup;
+import edu.lits.maliatko.model.ChildInAGroup;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -13,37 +13,44 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/childInAGroup")
-public class СhildInAGroupController {
+public class ChildInAGroupController {
 
-    private static List<СhildInAGroup> getСhildInAGroup = new ArrayList<>();
+    private static List<ChildInAGroup> getChildInAGroup = new ArrayList<>();
     static {
-        СhildInAGroup child = new СhildInAGroup();
+        ChildInAGroup child = new ChildInAGroup();
         child.setName("Маленький");
         child.setSurname("Малюк");
         child.setDateOfBirdth("24.13.2022");
         child.setId(1);
-        getСhildInAGroup.add(child);
+        getChildInAGroup.add(child);
         // add other groups
     }
 
     @RequestMapping("/list")
     public String list(ModelMap model) {
 
-        List<СhildInAGroup> childInAGroup = getСhildInAGroup;
+        List<ChildInAGroup> childInAGroup = getChildInAGroup;
         model.addAttribute("childInAGroupList", childInAGroup);
 
         model.addAttribute("content", "childInAGroupList");
         return "index";
     }
 
-    @RequestMapping("/add-сhildInAGroup")
-    public String addСhildInAGroup(СhildInAGroup сhild, ModelMap model, BindingResult result) {
+    @RequestMapping("/add-childInAGroup")
+    public String addChildInAGroup(ChildInAGroup child, ModelMap model, BindingResult result) {
         model.addAttribute("content", "createChildInAGroup");
         return "index";
     }
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String add(СhildInAGroup сhild) {
-        getСhildInAGroup.add(сhild);
+    public String add(ChildInAGroup child) {
+        child.setId((getChildInAGroup.size())+1);
+        getChildInAGroup.add(child);
+
+        return "redirect:/childInAGroup/list";
+    }
+    @RequestMapping("/delete/{id}")
+    public String delete(@PathVariable("id") Integer id, ModelMap model) {
+        getChildInAGroup.remove(id-1);// this logic is not correct, id doesn’t depend on index
         return "redirect:/childInAGroup/list";
     }
 
