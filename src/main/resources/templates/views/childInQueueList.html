@@ -1,0 +1,33 @@
+<div th:fragment="childInQueueList" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div th:switch="${childInQueueList}">
+        <h2 th:case="null">No any child</h2>
+        <div th:case="*">
+    <table>
+        <thead>
+        <tr>
+            <th>Прізвище</th>
+            <th>Ім"я</th>
+            <th>Дата народження</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="child : ${childInQueueList}">
+            <td th:text="${child.surname}"></td>
+            <td th:text="${child.name}"></td>
+            <td th:text="${child.dateOfBirth}"></td>
+            <td><a th:href="@{/childInQueue/delete/{id}(id=${child.id})}">Видалити дитину</a></td>
+            <td>
+                <a th:href="@{/child/edit/{id}(id=${child.id})}">
+                    Редагувати
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+        </div>
+    </div>
+<p>
+    <a href="/childInQueue/add-childInQueue"> Додати дитину в чергу
+    </a>
+</p>
+</div>

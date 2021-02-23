@@ -1,0 +1,14 @@
+<div th:fragment="updateChildInQueue" xmlns:th="http://www.w3.org/1999/xhtml">
+    <form action="#"
+          th:action="@{/child/update/{id}(id=${child.id})}"
+          th:object="${child}"
+          method="post">
+        <label for="surname">Прізвище</label>
+        <input type="text" th:field="*{surname}" id="surname" placeholder="surname">
+        <label for="name">Ім'я</label>
+        <input type="text" th:field="*{name}" id="name" placeholder="name">
+        <label for="dateOfBirth">Дата народження</label>
+        <input type="text" th:field="*{dateOfBirth}" id="dateOfBirth" placeholder="dateOfBirth">
+        <input type="submit" value="Змінити">
+    </form>
+</div>
