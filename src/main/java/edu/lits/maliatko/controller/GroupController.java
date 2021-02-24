@@ -57,7 +57,6 @@ public class GroupController {
             model.addAttribute("content", "createGroup");
             return "index";
         }
-
         groupList.add(group);
         return "redirect:/group/list";
     }
