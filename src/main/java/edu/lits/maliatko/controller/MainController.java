@@ -1,7 +1,6 @@
 package edu.lits.maliatko.controller;
 
 
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -14,22 +13,23 @@ import java.util.Locale;
 
 @Controller
 public class MainController {
-   @RequestMapping("/test")
-   public String root(Locale locale, ModelMap model) {
-       model.addAttribute("content", "helloWorldView");
+    @RequestMapping("/test")
+    public String root(Locale locale, ModelMap model) {
+        model.addAttribute("content", "helloWorldView");
 
-       return "index";
-   }
+        return "index";
+    }
+
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello(@RequestParam(value = "name", defaultValue = "World") String name,
-                        @RequestParam(value = "surname", defaultValue = "World") String surname)
-    {
+                        @RequestParam(value = "surname", defaultValue = "World") String surname) {
         return String.format("Hello %s!", name);
     }
-    @GetMapping("/greeting")
-    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
 
-        String value=name+"haha";
+    @GetMapping("/greeting")
+    public String greeting(@RequestParam(name = "name", required = false, defaultValue = "World") String name, Model model) {
+
+        String value = name + "haha";
 
         model.addAttribute("name", value);
         return "greeting";
