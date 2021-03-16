@@ -1,11 +1,22 @@
 package edu.lits.maliatko.pojo;
 
-import java.util.Date;
+import org.hibernate.annotations.GenericGenerator;
 
+import javax.persistence.*;
+import java.util.Date;
+@Entity(name = "kid_list")
 public class KidList {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO,generator = "native")
+    @GenericGenerator(name = "native",strategy ="native" )
 private Integer id;    // id
-private Integer kidId;   // kid_id
-private Integer kindergartenId;   // kindergarten_id
-private Date applyDate;  // apply_date
+
+//    @ManyToOne
+private Kid kidId;   // kid_id
+    //    @ManyToOne
+private Kindergarten kindergartenId;   // kindergarten_id
+
+    @Column(name = "apply_date")
+    private Date applyDate;  // apply_date
 
 }
