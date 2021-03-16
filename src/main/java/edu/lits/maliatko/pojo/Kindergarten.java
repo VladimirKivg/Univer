@@ -1,6 +1,6 @@
 package edu.lits.maliatko.pojo;
 
-public class KinderGarten {
+public class Kindergarten {
     private Integer id;        // id
     private Integer number;  // number
     private String name;     // name
