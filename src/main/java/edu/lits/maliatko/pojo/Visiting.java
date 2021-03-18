@@ -4,21 +4,87 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Date;
+
 @Entity(name = "visiting")
 public class Visiting {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO,generator = "native")
-    @GenericGenerator(name = "native",strategy ="native" )
-    private Integer id; // `id`
 
-//    @ManyToOne()
-    private Kid kidId; // `kid_id`
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
+    private Integer id;
+
+    @ManyToOne()
+    @JoinColumn(name = "kid_id")
+    private Kid kidId;
 
     @Column(name = "visiting_date")
-    private Date visitingDate; // `visiting_date`
-    @Column(name = "presence")
-    private Integer presence; // `presence`
+    private Date visitingDate;
 
-//    @ManyToOne()
-    private User userLoggerId; // `user_logger_id`
+    @Column(name = "presence")
+    private Integer presence;
+
+    @ManyToOne()
+    @JoinColumn(name = "user_logger_id")
+    private User userLoggerId;
+
+    public Visiting() {
+    }
+
+    public Visiting(Kid kidId, Date visitingDate, Integer presence, User userLoggerId) {
+        this.kidId = kidId;
+        this.visitingDate = visitingDate;
+        this.presence = presence;
+        this.userLoggerId = userLoggerId;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Kid getKidId() {
+        return kidId;
+    }
+
+    public void setKidId(Kid kidId) {
+        this.kidId = kidId;
+    }
+
+    public Date getVisitingDate() {
+        return visitingDate;
+    }
+
+    public void setVisitingDate(Date visitingDate) {
+        this.visitingDate = visitingDate;
+    }
+
+    public Integer getPresence() {
+        return presence;
+    }
+
+    public void setPresence(Integer presence) {
+        this.presence = presence;
+    }
+
+    public User getUserLoggerId() {
+        return userLoggerId;
+    }
+
+    public void setUserLoggerId(User userLoggerId) {
+        this.userLoggerId = userLoggerId;
+    }
+
+    @Override
+    public String toString() {
+        return "Visiting{" +
+                "id=" + id +
+                ", kidId=" + kidId +
+                ", visitingDate=" + visitingDate +
+                ", presence=" + presence +
+                ", userLoggerId=" + userLoggerId +
+                '}';
+    }
 }
