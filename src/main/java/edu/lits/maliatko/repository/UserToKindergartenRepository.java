@@ -1,7 +1,8 @@
 package edu.lits.maliatko.repository;
 
-import edu.lits.maliatko.pojo.User;
+
+import edu.lits.maliatko.pojo.UserToKindergarten;
 import org.springframework.data.repository.CrudRepository;
 
-public interface userToKindergartenRepository extends CrudRepository<User,Integer> {
+public interface UserToKindergartenRepository extends CrudRepository<UserToKindergarten,Integer> {
 }
