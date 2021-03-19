@@ -1,0 +1,32 @@
+<div th:fragment="paymentList" xmlns:th="http://www.w3.org/1999/xhtml">
+
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>Дата платежа</th>
+                <th>Опис</th>
+                <th>Видалити</th>
+
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="payment : ${payments}">
+                <td th:text="${payment.date}"></td>
+                <td th:text="${payment.description}"></td>
+                <td > <a th:href="@{/payment/edit/{id}(id=${payment.id})}"> Видалити Платіж </a> </td >
+
+
+            </tr>
+            </tbody>
+
+        </table>
+
+        <p>
+            <a href="/group/add-group"> Add a new group
+            </a>
+        </p>
+    </div>
+
+</div>
