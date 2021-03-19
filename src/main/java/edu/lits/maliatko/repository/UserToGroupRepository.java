@@ -1,7 +1,8 @@
 package edu.lits.maliatko.repository;
 
-import edu.lits.maliatko.pojo.User;
+
+import edu.lits.maliatko.pojo.UserToGroup;
 import org.springframework.data.repository.CrudRepository;
 
-public interface UserToGroupRepository extends CrudRepository<User,Integer> {
+public interface UserToGroupRepository extends CrudRepository<UserToGroup,Integer> {
 }
