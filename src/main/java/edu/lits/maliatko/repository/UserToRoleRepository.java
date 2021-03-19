@@ -1,7 +1,8 @@
 package edu.lits.maliatko.repository;
 
-import edu.lits.maliatko.pojo.User;
+
+import edu.lits.maliatko.pojo.UserToRole;
 import org.springframework.data.repository.CrudRepository;
 
-public interface userToRoleRepository extends CrudRepository<User,Integer> {
+public interface UserToRoleRepository extends CrudRepository<UserToRole,Integer> {
 }
