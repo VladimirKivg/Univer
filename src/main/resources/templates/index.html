@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head lang="en" th:replace="fragments/header :: header"> </head>
+<head th:replace="fragments/header :: header"> </head>
 
 <body>
-<div lang="en" th:replace="fragments/menu :: menu"> </div>
-<div class="container">
-    <div th:replace="@{'views/' + ${content}} :: ${content}"></div>
-</div>
-<div lang="en" th:replace="fragments/footer :: footer"> </div>
+<div th:replace="fragments/menu :: menu"> </div>
+
+<div th:replace="@{'views/' + ${content}} :: ${content}"></div>
+
+<div th:replace="fragments/footer :: footer"> </div>
 </body>
 
 </html>
