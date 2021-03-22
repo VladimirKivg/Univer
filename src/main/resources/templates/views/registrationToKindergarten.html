@@ -1,6 +1,6 @@
-<div th:fragment="registrationToKindergarten">
+<div th:fragment="registrationToKindergarten" xmlns:th="http://www.w3.org/1999/xhtml">
     <div>
-        <form action="">
+        <form action="/addKidToList" method="post" th:object="${kid}">
             <div>
                 <label for="surname">Прізвище:</label>
                 <input type="text" id="surname" name="surname">
