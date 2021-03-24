@@ -21,9 +21,6 @@ public class Payment {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "paymentcol")
-    private String paymentCol;
-
     @Column(name = "pay_amount")
     private Double payAmount;
 
@@ -33,11 +30,10 @@ public class Payment {
     public Payment() {
     }
 
-    public Payment(Date date, String bankPaymentNumber, String description, String paymentCol, Double payAmount, Date registerDate) {
+    public Payment(Date date, String bankPaymentNumber, String description, Double payAmount, Date registerDate) {
         this.date = date;
         this.bankPaymentNumber = bankPaymentNumber;
         this.description = description;
-        this.paymentCol = paymentCol;
         this.payAmount = payAmount;
         this.registerDate = registerDate;
     }
@@ -74,14 +70,6 @@ public class Payment {
         this.description = description;
     }
 
-    public String getPaymentCol() {
-        return paymentCol;
-    }
-
-    public void setPaymentCol(String paymentCol) {
-        this.paymentCol = paymentCol;
-    }
-
     public Double getPayAmount() {
         return payAmount;
     }
@@ -105,7 +93,6 @@ public class Payment {
                 ", date=" + date +
                 ", bankPaymentNumber='" + bankPaymentNumber + '\'' +
                 ", description='" + description + '\'' +
-                ", paymentCol='" + paymentCol + '\'' +
                 ", payAmount=" + payAmount +
                 ", registerDate=" + registerDate +
                 '}';

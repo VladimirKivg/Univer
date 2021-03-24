@@ -22,15 +22,15 @@ public class Address {
     private String street;
 
     @Column(name = "building_number")
-    private Integer buildingNumber;
+    private String buildingNumber;
 
     @Column(name = "apartment")
-    private Integer apartment;
+    private String apartment;
 
     public Address() {
     }
 
-    public Address(String region, String city, String street, Integer buildingNumber, Integer apartment) {
+    public Address(String region, String city, String street, String buildingNumber, String apartment) {
         this.region = region;
         this.city = city;
         this.street = street;
@@ -70,19 +70,19 @@ public class Address {
         this.street = street;
     }
 
-    public Integer getBuildingNumber() {
+    public String getBuildingNumber() {
         return buildingNumber;
     }
 
-    public void setBuildingNumber(Integer buildingNumber) {
+    public void setBuildingNumber(String buildingNumber) {
         this.buildingNumber = buildingNumber;
     }
 
-    public Integer getApartment() {
+    public String getApartment() {
         return apartment;
     }
 
-    public void setApartment(Integer apartment) {
+    public void setApartment(String apartment) {
         this.apartment = apartment;
     }
 

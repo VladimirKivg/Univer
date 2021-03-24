@@ -1,101 +1,101 @@
 <div th:fragment="registrationToKindergarten" xmlns:th="http://www.w3.org/1999/xhtml">
     <div>
-        <form action="/addKidToList" method="post" th:object="${kid}">
+        <form action="/addKidToList" method="post" th:object="${kidReg}">
             <div>
                 <label for="surname">Прізвище:</label>
-                <input type="text" id="surname" name="surname">
+                <input type="text" id="surname" name="kidSurname">
             </div>
             <div>
                 <label for="name">Ім'я:</label>
-                <input type="text" id="name" name="name">
+                <input type="text" id="name" name="kidName">
             </div>
             <div>
                 <label for="father_name">По-батькові:</label>
-                <input type="text" id="father_name" name="father_name">
+                <input type="text" id="father_name" name="kidFatherName">
             </div>
             <div>
                 <label for="birth_date">Дата народження:</label>
-                <input type="text" id="birth_date" name="birth_date">
+                <input type="text" id="birth_date" name="kidBirthDate">
             </div>
             <div>
                 <label for="gender">Стать:</label>
-                <input type="text" id="gender" name="gender">
+                <input type="text" id="gender" name="kidGender">
             </div>
             <div>
                 <label for="birth_document">Свідотство про народження:</label>
-                <input type="text" id="birth_document" name="birth_document">
+                <input type="text" id="birth_document" name="kidBirthDocument">
             </div>
             <div>
                 <label for="region">Адреса (область):</label>
-                <input type="text" id="region" name="region">
+                <input type="text" id="region" name="kidRegion">
             </div>
             <div>
                 <label for="city">Адреса (місто, село, селище):</label>
-                <input type="text" id="city" name="city">
+                <input type="text" id="city" name="kidCity">
             </div>
             <div>
                 <label for="street">Адреса (вулиця):</label>
-                <input type="text" id="street" name="street">
+                <input type="text" id="street" name="kidStreet">
             </div>
             <div>
                 <label for="building_number">Адреса (будинок):</label>
-                <input type="text" id="building_number" name="building_number">
+                <input type="text" id="building_number" name="kidBuildingNumber">
             </div>
             <div>
                 <label for="apartment">Адреса (квартира):</label>
-                <input type="text" id="apartment" name="apartment">
+                <input type="text" id="apartment" name="kidApartment">
             </div>
             <div>
                 <label for="parent_surname">Батько (прізвище):</label>
-                <input type="text" id="parent_surname" name="parent_surname">
+                <input type="text" id="parent_surname" name="parentSurname">
             </div>
             <div>
                 <label for="parent_name">Батько (ім'я):</label>
-                <input type="text" id="parent_name" name="parent_name">
+                <input type="text" id="parent_name" name="parentName">
             </div>
             <div>
                 <label for="parent_father_name">Батько (по-батькові):</label>
-                <input type="text" id="parent_father_name" name="parent_father_name">
+                <input type="text" id="parent_father_name" name="parentFatherName">
             </div>
             <div>
                 <label for="parent_birth_date">Батько (дата народження):</label>
-                <input type="text" id="parent_birth_date" name="parent_birth_date">
+                <input type="text" id="parent_birth_date" name="parentBirthDate">
             </div>
             <div>
                 <label for="parent_phone">Батько (телефон):</label>
-                <input type="text" id="parent_phone" name="parent_phone">
+                <input type="text" id="parent_phone" name="parentPhone">
             </div>
             <div>
                 <label for="parent_mail">Батько (електронна пошта):</label>
-                <input type="text" id="parent_mail" name="parent_mail">
+                <input type="text" id="parent_mail" name="parentMail">
             </div>
             <div>
                 <label for="parent_region">Батько адреса (область):</label>
-                <input type="text" id="parent_region" name="parent_region">
+                <input type="text" id="parent_region" name="parentRegion">
             </div>
             <div>
                 <label for="parent_city">Батько адреса (місто, село, селище):</label>
-                <input type="text" id="parent_city" name="parent_city">
+                <input type="text" id="parent_city" name="parentCity">
             </div>
             <div>
                 <label for="parent_street">Батько адреса (вулиця):</label>
-                <input type="text" id="parent_street" name="parent_street">
+                <input type="text" id="parent_street" name="parentStreet">
             </div>
             <div>
                 <label for="parent_building_number">Батько адреса (будинок):</label>
-                <input type="text" id="parent_building_number" name="parent_building_number">
+                <input type="text" id="parent_building_number" name="parentBuildingNumber">
             </div>
             <div>
                 <label for="parent_apartment">Батько адреса (квартира):</label>
-                <input type="text" id="parent_apartment" name="parent_apartment">
+                <input type="text" id="parent_apartment" name="parentApartment">
             </div>
             <div>
                 <label for="benefits">Наявність пільги:</label>
-                <input type="text" id="benefits" name="benefits">
+                <input type="text" id="benefits" name="kidBenefits">
             </div>
             <div>
                 <label for="kindergarten">ДНЗ:</label>
-                <input type="text" id="kindergarten" name="kindergarten">
+                <input type="text" id="kindergarten" name="kindergartenName">
             </div>
             <div>
                 <input type="submit" value="Submit">
