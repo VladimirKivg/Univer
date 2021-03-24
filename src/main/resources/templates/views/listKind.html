@@ -1,0 +1,25 @@
+
+<div th:fragment="listKind" xmlns:th="http://www.w3.org/1999/xhtml">
+<!-- цей файл писав Вова-->
+            <table>
+
+                <tr>
+                    <th>Імя</th>
+                    <th>Прізвище</th>
+                    <th>По-батькові</th>
+
+                </tr>
+
+
+                <tr th:each="kid : ${attributeKidList}">
+                    <td th:text="${kid.name}"></td>
+                    <td th:text="${kid.surname}"></td>
+                    <td th:text="${kid.fatherName}"></td>
+
+                </tr>
+
+            </table>
+
+
+
+    </div>
