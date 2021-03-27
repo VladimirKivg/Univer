@@ -5,8 +5,8 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity(name = "child_turn")
-public class ChildTurn {
+@Entity(name = "queue")
+public class Queue {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
@@ -24,10 +24,10 @@ public class ChildTurn {
     @Column(name = "apply_date")
     private Date applyDate;
 
-    public ChildTurn() {
+    public Queue() {
     }
 
-    public ChildTurn(Child kidId, Kindergarten kindergartenId, Date applyDate) {
+    public Queue(Child kidId, Kindergarten kindergartenId, Date applyDate) {
         this.kidId = kidId;
         this.kindergartenId = kindergartenId;
         this.applyDate = applyDate;
