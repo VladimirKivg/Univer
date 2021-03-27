@@ -15,7 +15,7 @@ public class Receipt {
 
     @ManyToOne
     @JoinColumn(name = "kid_id")
-    private Kid kidId;
+    private Child kidId;
 
     @Column(name = "visited_days")
     private Integer visitedDays;
@@ -39,7 +39,7 @@ public class Receipt {
     public Receipt() {
     }
 
-    public Receipt(Kid kidId, Integer visitedDays, Double costPerDay, Double debtOverpay, Double sumToPay, Date payPeriod, Payment paymentId) {
+    public Receipt(Child kidId, Integer visitedDays, Double costPerDay, Double debtOverpay, Double sumToPay, Date payPeriod, Payment paymentId) {
         this.kidId = kidId;
         this.visitedDays = visitedDays;
         this.costPerDay = costPerDay;
@@ -57,11 +57,11 @@ public class Receipt {
         this.id = id;
     }
 
-    public Kid getKidId() {
+    public Child getKidId() {
         return kidId;
     }
 
-    public void setKidId(Kid kidId) {
+    public void setKidId(Child kidId) {
         this.kidId = kidId;
     }
 
