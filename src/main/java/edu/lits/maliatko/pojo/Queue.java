@@ -5,8 +5,8 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity(name = "kid_list")
-public class KidList {
+@Entity(name = "child_turn")
+public class ChildTurn {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
@@ -15,7 +15,7 @@ public class KidList {
 
     @ManyToOne
     @JoinColumn(name = "kid_id")
-    private Kid kidId;
+    private Child kidId;
 
     @ManyToOne
     @JoinColumn(name = "kindergarten_id")
@@ -24,10 +24,10 @@ public class KidList {
     @Column(name = "apply_date")
     private Date applyDate;
 
-    public KidList() {
+    public ChildTurn() {
     }
 
-    public KidList(Kid kidId, Kindergarten kindergartenId, Date applyDate) {
+    public ChildTurn(Child kidId, Kindergarten kindergartenId, Date applyDate) {
         this.kidId = kidId;
         this.kindergartenId = kindergartenId;
         this.applyDate = applyDate;
@@ -41,11 +41,11 @@ public class KidList {
         this.id = id;
     }
 
-    public Kid getKidId() {
+    public Child getKidId() {
         return kidId;
     }
 
-    public void setKidId(Kid kidId) {
+    public void setKidId(Child kidId) {
         this.kidId = kidId;
     }
 

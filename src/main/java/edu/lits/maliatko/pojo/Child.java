@@ -5,7 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity(name = "kid")
+@Entity(name = "child")
 public class Kid {
 
     @Id

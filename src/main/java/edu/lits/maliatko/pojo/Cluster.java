@@ -4,8 +4,8 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
-@Entity(name = "group")
-public class GroupA {
+@Entity(name = "class")
+public class Class {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO,generator = "native")
@@ -19,10 +19,10 @@ public class GroupA {
     @JoinColumn(name = "kindergarten_id")
     private Kindergarten kindergartenId;
 
-    public GroupA() {
+    public Class() {
     }
 
-    public GroupA(String name, Kindergarten kindergartenId) {
+    public Class(String name, Kindergarten kindergartenId) {
         this.name = name;
         this.kindergartenId = kindergartenId;
     }
