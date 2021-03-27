@@ -17,14 +17,14 @@ public class UserToGroup {
     private User userId;
     @ManyToOne
     @JoinColumn(name = "group_id")
-    private GroupA groupId;
+    private Cluster classId;
 
     public UserToGroup() {
     }
 
-    public UserToGroup(User userId, GroupA groupId) {
+    public UserToGroup(User userId, Cluster classId) {
         this.userId = userId;
-        this.groupId = groupId;
+        this.classId = classId;
     }
 
     public Integer getId() {
@@ -43,12 +43,12 @@ public class UserToGroup {
         this.userId = userId;
     }
 
-    public GroupA getGroupId() {
-        return groupId;
+    public Cluster getGroupId() {
+        return classId;
     }
 
-    public void setGroupId(GroupA groupId) {
-        this.groupId = groupId;
+    public void setGroupId(Cluster classId) {
+        this.classId = classId;
     }
 
     @Override
@@ -56,7 +56,7 @@ public class UserToGroup {
         return "UserToGroup{" +
                 "id=" + id +
                 ", userId=" + userId +
-                ", groupId=" + groupId +
+                ", groupId=" + classId +
                 '}';
     }
 }
