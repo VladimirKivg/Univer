@@ -1,7 +1,7 @@
 package edu.lits.maliatko.repository;
 
-import edu.lits.maliatko.pojo.ChildTurn;
+import edu.lits.maliatko.pojo.Queue;
 import org.springframework.data.repository.CrudRepository;
 
-public interface ChildTurnRepository extends CrudRepository<ChildTurn, Integer> {
+public interface QueueRepository extends CrudRepository<Queue, Integer> {
 }
