@@ -15,7 +15,7 @@ public class Visiting {
 
     @ManyToOne()
     @JoinColumn(name = "kid_id")
-    private Kid kidId;
+    private Child kidId;
 
     @Column(name = "visiting_date")
     private Date visitingDate;
@@ -30,7 +30,7 @@ public class Visiting {
     public Visiting() {
     }
 
-    public Visiting(Kid kidId, Date visitingDate, Integer presence, User userLoggerId) {
+    public Visiting(Child kidId, Date visitingDate, Integer presence, User userLoggerId) {
         this.kidId = kidId;
         this.visitingDate = visitingDate;
         this.presence = presence;
@@ -45,11 +45,11 @@ public class Visiting {
         this.id = id;
     }
 
-    public Kid getKidId() {
+    public Child getKidId() {
         return kidId;
     }
 
-    public void setKidId(Kid kidId) {
+    public void setKidId(Child kidId) {
         this.kidId = kidId;
     }
 
