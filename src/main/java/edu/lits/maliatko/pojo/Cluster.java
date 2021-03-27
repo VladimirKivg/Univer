@@ -5,7 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 
 @Entity(name = "class")
-public class Class {
+public class Cluster {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO,generator = "native")
@@ -19,10 +19,10 @@ public class Class {
     @JoinColumn(name = "kindergarten_id")
     private Kindergarten kindergartenId;
 
-    public Class() {
+    public Cluster() {
     }
 
-    public Class(String name, Kindergarten kindergartenId) {
+    public Cluster(String name, Kindergarten kindergartenId) {
         this.name = name;
         this.kindergartenId = kindergartenId;
     }
@@ -53,7 +53,7 @@ public class Class {
 
     @Override
     public String toString() {
-        return "GroupA{" +
+        return "Cluster{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", kindergartenId=" + kindergartenId +
