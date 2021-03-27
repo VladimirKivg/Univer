@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity(name = "child")
-public class Kid {
+public class Child {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
@@ -56,13 +56,13 @@ public class Kid {
     private Date registerToGardenDate;
 
     @ManyToOne()
-    @JoinColumn(name = "group_id")
-    private GroupA groupId;
+    @JoinColumn(name = "cluster_id")
+    private Cluster cluster;
 
-    public Kid() {
+    public Child() {
     }
 
-    public Kid(String surname, String name, String fatherName, Date birthDate, String gender, String birthDocument, Address addressId, User parentOneId, String benefits, String status, User parentTwoId, Integer medicalDataId, Date registerToGardenDate, GroupA groupId) {
+    public Child(String surname, String name, String fatherName, Date birthDate, String gender, String birthDocument, Address addressId, User parentOneId, String benefits, String status, User parentTwoId, Integer medicalDataId, Date registerToGardenDate, Cluster classId) {
         this.surname = surname;
         this.name = name;
         this.fatherName = fatherName;
@@ -76,7 +76,7 @@ public class Kid {
         this.parentTwoId = parentTwoId;
         this.medicalDataId = medicalDataId;
         this.registerToGardenDate = registerToGardenDate;
-        this.groupId = groupId;
+//        this.groupId = groupId;
     }
 
     public Integer getId() {
@@ -191,12 +191,12 @@ public class Kid {
         this.registerToGardenDate = registerToGardenDate;
     }
 
-    public GroupA getGroupId() {
-        return groupId;
+    public Cluster getCluster() {
+        return cluster;
     }
 
-    public void setGroupId(GroupA groupId) {
-        this.groupId = groupId;
+    public void setCluster(Cluster classId) {
+        this.cluster = classId;
     }
 
     @Override
@@ -216,7 +216,7 @@ public class Kid {
                 ", parentTwoId=" + parentTwoId +
                 ", medicalDataId=" + medicalDataId +
                 ", registerToGardenDate=" + registerToGardenDate +
-                ", groupId=" + groupId +
+                ", group=" + cluster +
                 '}';
     }
 }
