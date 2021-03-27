@@ -1,4 +1,4 @@
-package edu.lits.maliatko.controller.controllerJSON;
+package edu.lits.maliatko.controller.rest;
 
 import edu.lits.maliatko.pojo.User;
 import edu.lits.maliatko.repository.UserRepository;
@@ -16,7 +16,8 @@ public class UserTestControllerJSON {
 
     @RequestMapping("/userTest")
     public User userTest(Model model) {
-        User user=userRepository.findById(1);
+        User user=new User();
+//        User user=userRepository.findById(1);
         String adres=user.getAddressId().getApartment();
         String name = user.getName();
 //         model.addAttribute("name",name);
