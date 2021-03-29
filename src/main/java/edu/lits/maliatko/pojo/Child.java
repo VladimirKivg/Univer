@@ -37,7 +37,7 @@ public class Child {
 
     @ManyToOne()
     @JoinColumn(name = "parent_one_id")
-    private User parentOneId;
+    private User parentOneId;// TODO переіменувати на userParentOne
 
     @Column(name = "benefits")
     private String benefits;
