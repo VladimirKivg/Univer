@@ -2,6 +2,7 @@ package edu.lits.maliatko.controller;
 
 import edu.lits.maliatko.model.KidReg;
 import edu.lits.maliatko.pojo.Address;
+import edu.lits.maliatko.pojo.Child;
 import edu.lits.maliatko.repository.AddressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,10 +30,11 @@ public class RegistrationToKindergartenController {
         Address kidAddress = new Address(kidReg.getKidRegion(), kidReg.getKidCity(), kidReg.getKidStreet(),
                 kidReg.getKidBuildingNumber(), kidReg.getKidApartment());
 
-
         addressRepository.save(kidAddress);
+
+        Child child = new Child();
 // вичитати юзера за id =LOGGED_IN_PARENT_ID
-        // помінятти адресу LOGGED_IN_PARENT_ID на ту яка прийшла сюди
+        // помінятти адресу LOGGED_IN_PARENT_ID тобто того юзера якого ми маємо за цією ціфрою - на ту яка прийшла сюди
 
 
         // створити обєкт поджо чаілд з данними з кід KidReg
