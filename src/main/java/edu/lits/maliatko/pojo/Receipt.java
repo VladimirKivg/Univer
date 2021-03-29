@@ -15,7 +15,7 @@ public class Receipt {
 
     @ManyToOne
     @JoinColumn(name = "kid_id")
-    private Child kidId;
+    private Child child;
 
     @Column(name = "visited_days")
     private Integer visitedDays;
@@ -34,19 +34,19 @@ public class Receipt {
 
     @ManyToOne
     @JoinColumn(name = "payment_id")
-    private Payment paymentId;
+    private Payment payment;
 
     public Receipt() {
     }
 
-    public Receipt(Child kidId, Integer visitedDays, Double costPerDay, Double debtOverpay, Double sumToPay, Date payPeriod, Payment paymentId) {
-        this.kidId = kidId;
+    public Receipt(Child child, Integer visitedDays, Double costPerDay, Double debtOverpay, Double sumToPay, Date payPeriod, Payment payment) {
+        this.child = child;
         this.visitedDays = visitedDays;
         this.costPerDay = costPerDay;
         this.debtOverpay = debtOverpay;
         this.sumToPay = sumToPay;
         this.payPeriod = payPeriod;
-        this.paymentId = paymentId;
+        this.payment = payment;
     }
 
     public Integer getId() {
@@ -57,12 +57,12 @@ public class Receipt {
         this.id = id;
     }
 
-    public Child getKidId() {
-        return kidId;
+    public Child getChild() {
+        return child;
     }
 
-    public void setKidId(Child kidId) {
-        this.kidId = kidId;
+    public void setChild(Child child) {
+        this.child = child;
     }
 
     public Integer getVisitedDays() {
@@ -105,25 +105,25 @@ public class Receipt {
         this.payPeriod = payPeriod;
     }
 
-    public Payment getPaymentId() {
-        return paymentId;
+    public Payment getPayment() {
+        return payment;
     }
 
-    public void setPaymentId(Payment paymentId) {
-        this.paymentId = paymentId;
+    public void setPayment(Payment payment) {
+        this.payment = payment;
     }
 
     @Override
     public String toString() {
         return "Receipt{" +
                 "id=" + id +
-                ", kidId=" + kidId +
+                ", kidId=" + child +
                 ", visitedDays=" + visitedDays +
                 ", costPerDay=" + costPerDay +
                 ", debtOverpay=" + debtOverpay +
                 ", sumToPay=" + sumToPay +
                 ", payPeriod=" + payPeriod +
-                ", paymentId=" + paymentId +
+                ", paymentId=" + payment +
                 '}';
     }
 }
