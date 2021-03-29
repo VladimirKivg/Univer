@@ -17,14 +17,14 @@ public class Cluster {
 
     @ManyToOne
     @JoinColumn(name = "kindergarten_id")
-    private Kindergarten kindergartenId;
+    private Kindergarten kindergarten;
 
     public Cluster() {
     }
 
-    public Cluster(String name, Kindergarten kindergartenId) {
+    public Cluster(String name, Kindergarten kindergarten) {
         this.name = name;
-        this.kindergartenId = kindergartenId;
+        this.kindergarten = kindergarten;
     }
 
     public Integer getId() {
@@ -43,12 +43,12 @@ public class Cluster {
         this.name = name;
     }
 
-    public Kindergarten getKindergartenId() {
-        return kindergartenId;
+    public Kindergarten getKindergarten() {
+        return kindergarten;
     }
 
-    public void setKindergartenId(Kindergarten kindergartenId) {
-        this.kindergartenId = kindergartenId;
+    public void setKindergarten(Kindergarten kindergarten) {
+        this.kindergarten = kindergarten;
     }
 
     @Override
@@ -56,7 +56,7 @@ public class Cluster {
         return "Cluster{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", kindergartenId=" + kindergartenId +
+                ", kindergartenId=" + kindergarten +
                 '}';
     }
 }
