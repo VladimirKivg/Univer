@@ -20,15 +20,15 @@ public class Kindergarten {
 
     @ManyToOne
     @JoinColumn(name = "address_id")
-    private Address addressId;
+    private Address address;
 
     public Kindergarten() {
     }
 
-    public Kindergarten(Integer number, String name, Address addressId) {
+    public Kindergarten(Integer number, String name, Address address) {
         this.number = number;
         this.name = name;
-        this.addressId = addressId;
+        this.address = address;
     }
 
     public Integer getId() {
@@ -55,12 +55,12 @@ public class Kindergarten {
         this.name = name;
     }
 
-    public Address getAddressId() {
-        return addressId;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAddressId(Address addressId) {
-        this.addressId = addressId;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     @Override
@@ -69,7 +69,7 @@ public class Kindergarten {
                 "id=" + id +
                 ", number=" + number +
                 ", name='" + name + '\'' +
-                ", addressId=" + addressId +
+                ", addressId=" + address +
                 '}';
     }
 }
