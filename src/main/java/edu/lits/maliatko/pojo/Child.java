@@ -33,11 +33,11 @@ public class Child {
 
     @ManyToOne()
     @JoinColumn(name = "address_id")
-    private Address addressId;
+    private Address address;
 
     @ManyToOne()
     @JoinColumn(name = "parent_one_id")
-    private User parentOneId;// TODO переіменувати на userParentOne
+    private User userParentOne;//
 
     @Column(name = "benefits")
     private String benefits;
@@ -47,7 +47,7 @@ public class Child {
 
     @ManyToOne()
     @JoinColumn(name = "parent_two_id")
-    private User parentTwoId;
+    private User userParentTwo;
 
     @Column(name = "medical_data_id")
     private Integer medicalDataId;
@@ -62,18 +62,18 @@ public class Child {
     public Child() {
     }
 
-    public Child(String surname, String name, String fatherName, Date birthDate, String gender, String birthDocument, Address addressId, User parentOneId, String benefits, String status, User parentTwoId, Integer medicalDataId, Date registerToGardenDate, Cluster classId) {
+    public Child(String surname, String name, String fatherName, Date birthDate, String gender, String birthDocument, Address addressId, User userParentOne, String benefits, String status, User userParentTwo, Integer medicalDataId, Date registerToGardenDate, Cluster classId) {
         this.surname = surname;
         this.name = name;
         this.fatherName = fatherName;
         this.birthDate = birthDate;
         this.gender = gender;
         this.birthDocument = birthDocument;
-        this.addressId = addressId;
-        this.parentOneId = parentOneId;
+        this.address = addressId;
+        this.userParentOne = userParentOne;
         this.benefits = benefits;
         this.status = status;
-        this.parentTwoId = parentTwoId;
+        this.userParentTwo = userParentTwo;
         this.medicalDataId = medicalDataId;
         this.registerToGardenDate = registerToGardenDate;
 //        this.groupId = groupId;
@@ -135,20 +135,20 @@ public class Child {
         this.birthDocument = birthDocument;
     }
 
-    public Address getAddressId() {
-        return addressId;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAddressId(Address addressId) {
-        this.addressId = addressId;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
-    public User getParentOneId() {
-        return parentOneId;
+    public User getUserParentOne() {
+        return userParentOne;
     }
 
-    public void setParentOneId(User parentOneId) {
-        this.parentOneId = parentOneId;
+    public void setUserParentOne(User userParentOne) {
+        this.userParentOne = userParentOne;
     }
 
     public String getBenefits() {
@@ -167,12 +167,12 @@ public class Child {
         this.status = status;
     }
 
-    public User getParentTwoId() {
-        return parentTwoId;
+    public User getUserParentTwo() {
+        return userParentTwo;
     }
 
-    public void setParentTwoId(User parentTwoId) {
-        this.parentTwoId = parentTwoId;
+    public void setUserParentTwo(User userParentTwo) {
+        this.userParentTwo = userParentTwo;
     }
 
     public Integer getMedicalDataId() {
@@ -209,11 +209,11 @@ public class Child {
                 ", birthDate=" + birthDate +
                 ", gender='" + gender + '\'' +
                 ", birthDocument='" + birthDocument + '\'' +
-                ", addressId=" + addressId +
-                ", parentOneId=" + parentOneId +
+                ", addressId=" + address +
+                ", parentOneId=" + userParentOne +
                 ", benefits='" + benefits + '\'' +
                 ", status='" + status + '\'' +
-                ", parentTwoId=" + parentTwoId +
+                ", parentTwoId=" + userParentTwo +
                 ", medicalDataId=" + medicalDataId +
                 ", registerToGardenDate=" + registerToGardenDate +
                 ", group=" + cluster +
