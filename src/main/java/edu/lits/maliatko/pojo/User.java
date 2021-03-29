@@ -1,11 +1,6 @@
 package edu.lits.maliatko.pojo;
-
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.query.criteria.internal.expression.function.CurrentDateFunction;
-import org.springframework.dao.DataAccessResourceFailureException;
-
 import javax.persistence.*;
-import javax.xml.crypto.Data;
 import java.util.Date;
 
 @Entity(name = "user")
