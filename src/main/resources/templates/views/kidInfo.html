@@ -1,24 +1,58 @@
 
 <div th:fragment="kidInfo" xmlns:th="http://www.w3.org/1999/xhtml">
     <!-- цей файл писав Вова-->
-    <table>
+<!--    <table>-->
 
-        <tr>
-            <th>Імя</th>
-            <th>Прізвище</th>
-            <th>По-батькові</th>
+<!--        <tr>-->
+<!--            <th>Імя</th>-->
+<!--            <th>Прізвище</th>-->
+<!--            <th>По-батькові</th>-->
 
-        </tr>
+<!--        </tr>-->
 
-
+Данні про дитину <br><br>
 <!--        <tr th:each="kid : ${attributeKidList}">-->
-            <td th:text="${name}"></td>
-            <td th:text="${surname}"></td>
-            <td th:text="${fatherName}"></td>
+    Прізвище :          <td th:text="${child.surname}"></td> <br>
+    Імя :               <td th:text="${child.name}"></td> <br>
+    По батькові :       <td th:text="${child.fatherName}"></td> <br>
+    Дата народження :   <td th:text="${child.birthDate}"></td> <br>
+        Домашня адреса :    <td th:text="${child.addressId.city}"></td>
+                            <td th:text="${child.addressId.street}"></td>
+                            <td th:text="${child.addressId.buildingNumber}"></td>
+                            <td th:text="${child.addressId.apartment}"></td><br>
+    Група :             <td th:text="${child.cluster.name}"></td> <br>
+    Наявність Пільг :   <td th:text="${child.benefits}"></td> <br>
 
-        </tr>
+    <br><br>
+    Інформація про батьків<br>
+    ______________________<br><br>
+    Перший з батьків <br><br>
+    Прізвище :          <td th:text="${child.parentOneId.surname}"></td> <br>
+    Імя :               <td th:text="${child.parentOneId.name}"></td> <br>
+    По батькові :       <td th:text="${child.parentOneId.fatherName}"></td> <br>
+    Дата народження :   <td th:text="${child.parentOneId.birthDate}"></td><br>
+    Домашня адреса :    <td th:text="${child.parentOneId.addressId.city}"></td>
+    <td th:text="${child.parentOneId.addressId.street}"></td>
+    <td th:text="${child.parentOneId.addressId.buildingNumber}"></td>
+    <td th:text="${child.parentOneId.addressId.apartment}"></td> <br>
+    Номер телефонну :   <td th:text="${child.parentOneId.phone}"></td> <br>
+    <br>
+    Другий з батьків <br><br>
+    Прізвище :          <td th:text="${child.parentTwoId.surname}"></td> <br>
+    Імя :               <td th:text="${child.parentTwoId.name}"></td> <br>
+    По батькові :       <td th:text="${child.parentTwoId.fatherName}"></td> <br>
+    Дата народження :   <td th:text="${child.parentTwoId.birthDate}"></td> <br>
+    Домашня адреса :    <td th:text="${child.parentTwoId.addressId.city}"></td>
+    <td th:text="${child.parentTwoId.addressId.street}"></td>
+    <td th:text="${child.parentTwoId.addressId.buildingNumber}"></td>
+    <td th:text="${child.parentTwoId.addressId.apartment}"></td><br>
+    Номер телефонну :   <td th:text="${child.parentTwoId.phone}"></td> <br>
+<!--            <td th:text="${surname}"></td>-->
+<!--            <td th:text="${fatherName}"></td>-->
 
-    </table>
+<!--        </tr>-->
+
+<!--    </table>-->
 
 
 
