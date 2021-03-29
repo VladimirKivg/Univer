@@ -15,7 +15,7 @@ public class Visiting {
 
     @ManyToOne()
     @JoinColumn(name = "kid_id")
-    private Child kidId;
+    private Child child;
 
     @Column(name = "visiting_date")
     private Date visitingDate;
@@ -25,16 +25,16 @@ public class Visiting {
 
     @ManyToOne()
     @JoinColumn(name = "user_logger_id")
-    private User userLoggerId;
+    private User userLogger;
 
     public Visiting() {
     }
 
-    public Visiting(Child kidId, Date visitingDate, Integer presence, User userLoggerId) {
-        this.kidId = kidId;
+    public Visiting(Child child, Date visitingDate, Integer presence, User userLogger) {
+        this.child = child;
         this.visitingDate = visitingDate;
         this.presence = presence;
-        this.userLoggerId = userLoggerId;
+        this.userLogger = userLogger;
     }
 
     public Integer getId() {
@@ -45,12 +45,12 @@ public class Visiting {
         this.id = id;
     }
 
-    public Child getKidId() {
-        return kidId;
+    public Child getChild() {
+        return child;
     }
 
-    public void setKidId(Child kidId) {
-        this.kidId = kidId;
+    public void setChild(Child child) {
+        this.child = child;
     }
 
     public Date getVisitingDate() {
@@ -69,22 +69,22 @@ public class Visiting {
         this.presence = presence;
     }
 
-    public User getUserLoggerId() {
-        return userLoggerId;
+    public User getUserLogger() {
+        return userLogger;
     }
 
-    public void setUserLoggerId(User userLoggerId) {
-        this.userLoggerId = userLoggerId;
+    public void setUserLogger(User userLogger) {
+        this.userLogger = userLogger;
     }
 
     @Override
     public String toString() {
         return "Visiting{" +
                 "id=" + id +
-                ", kidId=" + kidId +
+                ", kidId=" + child +
                 ", visitingDate=" + visitingDate +
                 ", presence=" + presence +
-                ", userLoggerId=" + userLoggerId +
+                ", userLoggerId=" + userLogger +
                 '}';
     }
 }
