@@ -14,18 +14,18 @@ public class UserToRole {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
-    private User userId;
+    private User user;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "role_id")
-    private Role roleId;
+    private Role role;
 
     public UserToRole() {
     }
 
-    public UserToRole(User userId, Role roleId) {
-        this.userId = userId;
-        this.roleId = roleId;
+    public UserToRole(User user, Role role) {
+        this.user = user;
+        this.role = role;
     }
 
     public Integer getId() {
@@ -36,28 +36,28 @@ public class UserToRole {
         this.id = id;
     }
 
-    public User getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(User userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public Role getRoleId() {
-        return roleId;
+    public Role getRole() {
+        return role;
     }
 
-    public void setRoleId(Role roleId) {
-        this.roleId = roleId;
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     @Override
     public String toString() {
         return "UserToRole{" +
                 "id=" + id +
-                ", userId=" + userId +
-                ", roleId=" + roleId +
+                ", userId=" + user +
+                ", roleId=" + role +
                 '}';
     }
 }
