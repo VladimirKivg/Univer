@@ -15,11 +15,11 @@ public class Queue {
 
     @ManyToOne
     @JoinColumn(name = "kid_id")
-    private Child kidId;
+    private Child child;
 
     @ManyToOne
     @JoinColumn(name = "kindergarten_id")
-    private Kindergarten kindergartenId;//TODO REMOVE ID
+    private Kindergarten kindergarten;//TODO REMOVE ID
 
     @Column(name = "apply_date")
     private Date applyDate;
@@ -27,9 +27,9 @@ public class Queue {
     public Queue() {
     }
 
-    public Queue(Child kidId, Kindergarten kindergartenId, Date applyDate) {
-        this.kidId = kidId;
-        this.kindergartenId = kindergartenId;
+    public Queue(Child child, Kindergarten kindergarten, Date applyDate) {
+        this.child = child;
+        this.kindergarten = kindergarten;
         this.applyDate = applyDate;
     }
 
@@ -41,20 +41,20 @@ public class Queue {
         this.id = id;
     }
 
-    public Child getKidId() {
-        return kidId;
+    public Child getChild() {
+        return child;
     }
 
-    public void setKidId(Child kidId) {
-        this.kidId = kidId;
+    public void setChild(Child child) {
+        this.child = child;
     }
 
-    public Kindergarten getKindergartenId() {
-        return kindergartenId;
+    public Kindergarten getKindergarten() {
+        return kindergarten;
     }
 
-    public void setKindergartenId(Kindergarten kindergartenId) {
-        this.kindergartenId = kindergartenId;
+    public void setKindergarten(Kindergarten kindergarten) {
+        this.kindergarten = kindergarten;
     }
 
     public Date getApplyDate() {
@@ -69,8 +69,8 @@ public class Queue {
     public String toString() {
         return "KidList{" +
                 "id=" + id +
-                ", kidId=" + kidId +
-                ", kindergartenId=" + kindergartenId +
+                ", kidId=" + child +
+                ", kindergartenId=" + kindergarten +
                 ", applyDate=" + applyDate +
                 '}';
     }
