@@ -2,9 +2,7 @@ package edu.lits.maliatko.controller;
 
 // цей клас писав Вова
 import edu.lits.maliatko.pojo.Child;
-import edu.lits.maliatko.pojo.Cluster;
 import edu.lits.maliatko.pojo.Queue;
-import edu.lits.maliatko.repository.ChildRepository;
 import edu.lits.maliatko.repository.QueueRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,7 +25,7 @@ public class QueueController {
         Iterable<Queue> all1 = queueRepository.findAll();
         List<Child>childList=new ArrayList<>();
         for (Queue queue:all1){
-            childList.add(queue.getKidId());
+            childList.add(queue.getChild());
         }
 //        for (Child child:childList){
 //            clusterList.add(child.getCluster());
