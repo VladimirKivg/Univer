@@ -19,7 +19,7 @@ public class Queue {
 
     @ManyToOne
     @JoinColumn(name = "kindergarten_id")
-    private Kindergarten kindergartenId;
+    private Kindergarten kindergartenId;//TODO REMOVE ID
 
     @Column(name = "apply_date")
     private Date applyDate;
