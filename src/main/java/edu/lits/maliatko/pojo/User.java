@@ -34,7 +34,7 @@ public class User {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
-    private Address addressId;
+    private Address address;
 
     @Column(name = "login")
     private String login;
@@ -45,7 +45,7 @@ public class User {
     public User() {
     }
 
-    public User(String surname, String name, String fatherName, Date birthDate, String phone, String mail, Integer passportId, Address addressId, String login, String password) {
+    public User(String surname, String name, String fatherName, Date birthDate, String phone, String mail, Integer passportId, Address address, String login, String password) {
         this.surname = surname;
         this.name = name;
         this.fatherName = fatherName;
@@ -53,7 +53,7 @@ public class User {
         this.phone = phone;
         this.mail = mail;
         this.passportId = passportId;
-        this.addressId = addressId;
+        this.address = address;
         this.login = login;
         this.password = password;
     }
@@ -122,12 +122,12 @@ public class User {
         this.passportId = passportId;
     }
 
-    public Address getAddressId() {
-        return addressId;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAddressId(Address addressId) {
-        this.addressId = addressId;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public String getLogin() {
@@ -157,7 +157,7 @@ public class User {
                 ", phone='" + phone + '\'' +
                 ", mail='" + mail + '\'' +
                 ", passportId=" + passportId +
-                ", addressId=" + addressId +
+                ", addressId=" + address +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 '}';
