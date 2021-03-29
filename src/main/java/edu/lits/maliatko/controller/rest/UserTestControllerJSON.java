@@ -16,10 +16,10 @@ public class UserTestControllerJSON {
 
     @RequestMapping("/userTest")
     public User userTest(Model model) {
-        User user=new User();
-//        User user=userRepository.findById(1);
-        String adres=user.getAddressId().getApartment();
-        String name = user.getName();
+//        User user=new User();
+        User user=userRepository.findById(1).get();
+//        String adres=user.getAddressId().getApartment();
+//        String name = user.getName();
 //         model.addAttribute("name",name);
 //         model.addAttribute("apartment",adres);
 //         model.addAttribute("content","userTst");
