@@ -13,18 +13,18 @@ public class UserToKindergarten {//user_to_kindergarten
 
     @ManyToOne()
     @JoinColumn(name = "user_id")
-    private User userId;
+    private User user;
 
     @ManyToOne()
     @JoinColumn(name = "kindergarten_id")
-    private Kindergarten kindergartenId;
+    private Kindergarten kindergarten;
 
     public UserToKindergarten() {
     }
 
-    public UserToKindergarten(User userId, Kindergarten kindergartenId) {
-        this.userId = userId;
-        this.kindergartenId = kindergartenId;
+    public UserToKindergarten(User user, Kindergarten kindergarten) {
+        this.user = user;
+        this.kindergarten = kindergarten;
     }
 
     public Integer getId() {
@@ -35,28 +35,28 @@ public class UserToKindergarten {//user_to_kindergarten
         this.id = id;
     }
 
-    public User getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(User userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public Kindergarten getKindergartenId() {
-        return kindergartenId;
+    public Kindergarten getKindergarten() {
+        return kindergarten;
     }
 
-    public void setKindergartenId(Kindergarten kindergartenId) {
-        this.kindergartenId = kindergartenId;
+    public void setKindergarten(Kindergarten kindergarten) {
+        this.kindergarten = kindergarten;
     }
 
     @Override
     public String toString() {
         return "UserToKindergarten{" +
                 "id=" + id +
-                ", userId=" + userId +
-                ", kindergartenId=" + kindergartenId +
+                ", userId=" + user +
+                ", kindergartenId=" + kindergarten +
                 '}';
     }
 }
