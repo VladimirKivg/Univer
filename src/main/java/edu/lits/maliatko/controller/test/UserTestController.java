@@ -17,7 +17,7 @@ public class UserTestController {
     @RequestMapping("/userTest")
     public String userTest(Model model) {
         User user=userRepository.findById(1).get();
-        String adres=user.getAddressId().getApartment();
+        String adres=user.getAddress().getApartment();
         String name = user.getName();
          model.addAttribute("name",name);
          model.addAttribute("apartment",adres);
