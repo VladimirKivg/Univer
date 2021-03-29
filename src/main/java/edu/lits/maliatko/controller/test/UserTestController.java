@@ -2,9 +2,7 @@ package edu.lits.maliatko.controller.test;
 
 import edu.lits.maliatko.pojo.User;
 import edu.lits.maliatko.repository.UserRepository;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
