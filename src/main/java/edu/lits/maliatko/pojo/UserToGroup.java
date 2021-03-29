@@ -14,17 +14,17 @@ public class UserToGroup {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User userId;
+    private User user;
     @ManyToOne
     @JoinColumn(name = "group_id")
-    private Cluster classId;
+    private Cluster cluster;
 
     public UserToGroup() {
     }
 
-    public UserToGroup(User userId, Cluster classId) {
-        this.userId = userId;
-        this.classId = classId;
+    public UserToGroup(User user, Cluster cluster) {
+        this.user = user;
+        this.cluster = cluster;
     }
 
     public Integer getId() {
@@ -35,28 +35,28 @@ public class UserToGroup {
         this.id = id;
     }
 
-    public User getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(User userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Cluster getGroupId() {
-        return classId;
+        return cluster;
     }
 
     public void setGroupId(Cluster classId) {
-        this.classId = classId;
+        this.cluster = classId;
     }
 
     @Override
     public String toString() {
         return "UserToGroup{" +
                 "id=" + id +
-                ", userId=" + userId +
-                ", groupId=" + classId +
+                ", userId=" + user +
+                ", groupId=" + cluster +
                 '}';
     }
 }
