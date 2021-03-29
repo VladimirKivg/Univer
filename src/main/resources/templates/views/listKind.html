@@ -7,18 +7,29 @@
                     <th>Імя</th>
                     <th>Прізвище</th>
                     <th>По-батькові</th>
+                    <th>Група</th>
+                    <th>Дата реестрації</th>
+                    <th>Статус</th>
 
                 </tr>
 
 
                 <tr th:each="kid : ${attributeKidList}">
+
+
+
                     <td th:text="${kid.name}"></td>
                     <td th:text="${kid.surname}"></td>
                     <td th:text="${kid.fatherName}"></td>
+                    <td th:text="${kid.cluster.name}"></td>
+                    <td th:text="${kid.registerToGardenDate}"></td>
+                    <td th:text="${kid.status}"></td>
 
                 </tr>
 
+
             </table>
+
 
 
 
