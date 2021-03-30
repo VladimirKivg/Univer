@@ -1,6 +1,10 @@
 package edu.lits.maliatko.controller;
 
 import edu.lits.maliatko.model.Group;
+import edu.lits.maliatko.pojo.Cluster;
+import edu.lits.maliatko.pojo.Payment;
+import edu.lits.maliatko.repository.ClusterRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -16,24 +20,13 @@ import java.util.List;
 @Controller
 @RequestMapping("/group")
 public class GroupController {
+    @Autowired
+    private ClusterRepository clusterRepository;
 
-    private static final List<Group> groupList = new ArrayList<>();
-    static {
-        Group group1 = new Group();
-        group1.setId(1);
-        group1.setName("Яслі_1 - Малятко");
-        group1.setNumber(25);
-        groupList.add(group1);
-
-        Group group2 = new Group();
-        group2.setId(2);
-        group2.setName("Яслі_1 - Дзвіночок");
-        group2.setNumber(27);
-        groupList.add(group2);
-    }
 
     @RequestMapping("/list")
     public String list(ModelMap model) {
+        Iterable<Cluster> groupList = clusterRepository.findAll();
         model.addAttribute("groups", groupList);
         model.addAttribute("content", "groupList");
         return "index";
@@ -41,7 +34,7 @@ public class GroupController {
 
     @RequestMapping("/delete/{id}")
     public String delete(@PathVariable("id") Integer id, ModelMap model) {
-        groupList.remove(id - 1);
+        clusterRepository.deleteById(id);
         return "redirect:/group/list";
     }
 
@@ -51,7 +44,7 @@ public class GroupController {
         return "index";
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    /*@RequestMapping(value = "/add", method = RequestMethod.POST)
     public String add(@Valid Group group , BindingResult result, ModelMap model) {
         if (result.hasErrors()) {
             model.addAttribute("content", "createGroup");
@@ -76,6 +69,6 @@ public class GroupController {
         groupList.get(id).setNumber(group.getNumber());
         return "redirect:/group/list";
     }
-
+*/
 
 }

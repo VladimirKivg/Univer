@@ -6,7 +6,6 @@
                 <thead>
                 <tr>
                     <th>Назва</th>
-                    <th>Кількість дітей</th>
                     <th>видалення группи</th>
                     <th> редагування </th>
                 </tr>
@@ -15,7 +14,6 @@
                 <tbody>
                 <tr th:each="group : ${groups}">
                     <td th:text="${group.name}"></td>
-                    <td th:text="${group.number}"></td>
                     <td><a th:href="@{/group/delete/{id}(id=${group.id})}">Видалити Групу</a></td>
                     <td>
                         <a th:href="@{/group/edit/{id}(id=${group.id})}">
