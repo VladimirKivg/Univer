@@ -3,6 +3,7 @@ package edu.lits.maliatko.pojo;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity(name = "queue")
@@ -32,6 +33,8 @@ public class Queue {
         this.kindergarten = kindergarten;
         this.applyDate = applyDate;
     }
+
+
 
     public Integer getId() {
         return id;
