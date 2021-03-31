@@ -45,17 +45,17 @@ public class User {
     public User() {
     }
 
-    public User(String surname, String name, String fatherName, Date birthDate, String phone, String mail, Integer passportId, Address address, String login, String password) {
+    public User(String surname, String name, String fatherName, Date birthDate, String phone, String mail, Address address) {
         this.surname = surname;
         this.name = name;
         this.fatherName = fatherName;
         this.birthDate = birthDate;
         this.phone = phone;
         this.mail = mail;
-        this.passportId = passportId;
+//        this.passportId = passportId;
         this.address = address;
-        this.login = login;
-        this.password = password;
+//        this.login = login;
+//        this.password = password;
     }
 
     public Integer getId() {
