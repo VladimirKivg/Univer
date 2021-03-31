@@ -1,14 +1,21 @@
 package edu.lits.maliatko.controller;
 
+
 import edu.lits.maliatko.model.KidReg;
-import edu.lits.maliatko.pojo.Address;
-import edu.lits.maliatko.pojo.Child;
-import edu.lits.maliatko.repository.AddressRepository;
+import edu.lits.maliatko.pojo.*;
+import edu.lits.maliatko.repository.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.Optional;
+
 
 @Controller
 public class RegistrationToKindergartenController {
@@ -17,6 +24,21 @@ public class RegistrationToKindergartenController {
 
     @Autowired
     private AddressRepository addressRepository;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private ChildRepository childRepository;
+
+    @Autowired
+    private KindergartenRepository kindergartenRepository;
+
+    @Autowired
+    private QueueRepository queueRepository;
+
+    @Autowired
+    private ClusterRepository clusterRepository;
 
     @RequestMapping("/registration")
     public String registration(ModelMap model) {
@@ -29,18 +51,45 @@ public class RegistrationToKindergartenController {
 
         Address kidAddress = new Address(kidReg.getKidRegion(), kidReg.getKidCity(), kidReg.getKidStreet(),
                 kidReg.getKidBuildingNumber(), kidReg.getKidApartment());
-
         addressRepository.save(kidAddress);
 
-        Child child = new Child();
-// вичитати юзера за id =LOGGED_IN_PARENT_ID
-        // помінятти адресу LOGGED_IN_PARENT_ID тобто того юзера якого ми маємо за цією ціфрою - на ту яка прийшла сюди
+        Address userAddress = new Address(kidReg.getParentRegion(), kidReg.getParentCity(), kidReg.getParentStreet(), kidReg.getParentBuildingNumber(), kidReg.getParentApartment());
+        User userParentOne = userRepository.findById(LOGGED_IN_PARENT_ID).get();
+        userParentOne.setAddress(userAddress);
+        addressRepository.save(userAddress);
 
+        User userParentTwo = new User(kidReg.getParentSurname(), kidReg.getParentName(), kidReg.getParentFatherName(), kidReg.getParentBirthDate(), kidReg.getParentPhone(), kidReg.getParentMail(), userAddress);
+        userRepository.save(userParentTwo);
 
-        // створити обєкт поджо чаілд з данними з кід KidReg
+        // + вичитати юзера за id =LOGGED_IN_PARENT_ID
+// + помінятти адресу LOGGED_IN_PARENT_ID тобто того юзера якого ми маємо за цією ци фрою - на ту яка прийшла сюд
+
+        Date date = new Date();
+
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//        date.format(dateTimeFormatter);
+
+    //    long dateMs = date.getTime() - kidReg.getKidBirthDate().getTime();
+
+        Cluster cluster = clusterRepository.findById(1).get();
+        Child child = new Child(kidReg.getKidSurname(), kidReg.getKidName(), kidReg.getKidFatherName(), kidReg.getKidBirthDate(), kidReg.getKidGender(), kidReg.getKidBirthDocument(), kidAddress, userParentOne, kidReg.getKidBenefits(), "в черзі", userParentTwo, 0, date, cluster);
+        childRepository.save(child);
+        // створити обєкт поджо чаілд з данними з  KidReg
         // parentOne заповнити даними з  LOGGED_IN_PARENT_ID
         // child.addressId = kidAddress.id
         // зберегти обєкт child
+
+
+        Kindergarten kindergarten = new Kindergarten();
+        Iterable<Kindergarten> all = kindergartenRepository.findAll();
+        for (Kindergarten kid : all) {
+            if (Integer.parseInt(kidReg.getKindergartenName()) == kid.getNumber()) {
+                kindergarten = kid;
+            }
+        }
+        Queue queue = new Queue(child, kindergarten, date);
+        queueRepository.save(queue);
+
 
         // створити обєкт queue тут
         // kidId = child.id
