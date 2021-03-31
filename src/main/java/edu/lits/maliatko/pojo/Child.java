@@ -62,21 +62,21 @@ public class Child {
     public Child() {
     }
 
-    public Child(String surname, String name, String fatherName, Date birthDate, String gender, String birthDocument, Address addressId, User userParentOne, String benefits, String status, User userParentTwo, Integer medicalDataId, Date registerToGardenDate, Cluster classId) {
+    public Child(String surname, String name, String fatherName, Date birthDate, String gender, String birthDocument, Address address, User userParentOne, String benefits, String status, User userParentTwo, Integer medicalDataId, Date registerToGardenDate, Cluster cluster) {
         this.surname = surname;
         this.name = name;
         this.fatherName = fatherName;
         this.birthDate = birthDate;
         this.gender = gender;
         this.birthDocument = birthDocument;
-        this.address = addressId;
+        this.address = address;
         this.userParentOne = userParentOne;
         this.benefits = benefits;
         this.status = status;
         this.userParentTwo = userParentTwo;
         this.medicalDataId = medicalDataId;
         this.registerToGardenDate = registerToGardenDate;
-//        this.groupId = groupId;
+        this.cluster = cluster;
     }
 
     public Integer getId() {
