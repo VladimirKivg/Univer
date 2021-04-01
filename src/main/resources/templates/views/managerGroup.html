@@ -1,0 +1,52 @@
+<div th:fragment="managerGroup" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div th:switch="${groups}">
+        <h2 th:case="null">No any group.</h2>
+        <div th:case="*">
+
+            <table>
+
+                <tr>
+                    <th>Групи</th>
+
+                </tr>
+
+                <tr th:each="group : ${groups}">
+                    <td th:text="${group.name}"></td>
+
+                </tr>
+
+
+
+            </table>
+
+<br><br>
+Діти
+            <table>
+
+                <tr>
+                    <th>Імя</th>
+                    <th>Фамілія</th>
+                    <th>По батькові</th>
+
+                </tr>
+
+                <tr th:each="child : ${attributeChild}">
+                    <td th:text="${child.name}"></td>
+                    <td th:text="${child.surname}"></td>
+                    <td th:text="${child.fatherName}"></td>
+
+                </tr>
+
+
+
+            </table>
+
+
+
+        </div>
+    </div>
+    <p>
+        <a href="/group/add-group"> Add a new group
+        </a>
+    </p>
+</div>

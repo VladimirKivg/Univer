@@ -1,16 +1,29 @@
 package edu.lits.maliatko.model;
 
+import edu.lits.maliatko.pojo.Cluster;
+
 public class ChildModel {
 
     private String name;
-    private Integer groupId;
-
+private String surname;
+private String fatherName;
     public ChildModel() {
     }
 
-    public ChildModel(String name, Integer groupId) {
-        this.name = name;
-        this.groupId = groupId;
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getFatherName() {
+        return fatherName;
+    }
+
+    public void setFatherName(String fatherName) {
+        this.fatherName = fatherName;
     }
 
     public String getName() {
@@ -20,13 +33,4 @@ public class ChildModel {
     public void setName(String name) {
         this.name = name;
     }
-
-    public Integer getGroupId() {
-        return groupId;
-    }
-
-    public void setGroupId(Integer groupId) {
-        this.groupId = groupId;
-    }
-
 }
