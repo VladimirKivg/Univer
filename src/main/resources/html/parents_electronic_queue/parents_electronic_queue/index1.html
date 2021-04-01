@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" media="all and (max-width: 796px)" href="./css/media.css">
+	<script src="./js/header_date_time.js"></script>
+	<title>Document</title>
+</head>
+
+<body>
+
+<header class="page_header">
+	<div class="page_header_content">
+			<img class="logo header_logo" src="./img/logo.svg" alt="logo">
+			<span id="doc_time"></span>
+			<script type="text/javascript">
+				  clock();
+			</script>
+			<div class="page_header_content_end">
+				<p>Вітаємо батьків</p>
+				<img class="page_header_content_end_parents_logo" src="./img/parents_logo.svg"> 
+			</div>
+	</div>
+</header>
+
+<main>
+<div class="main_content">
+	<div class="sidebar">
+		<div class="sidebar_nav">
+			<a href="#" class="active">РЕЄСТРАЦІЯ В ДНЗ</a>
+			<div class="sidebar_nav_horizont"></div>
+			<a href="#">ЕЛЕКТРОННА ЧЕРГА В ДНЗ</a>
+	  </div>
+	</div>
+	<div class="main_content_inputAndTable">
+	<div class="wraper_input">
+		<div class="first_block">
+			<div class="first_block_input_addres">
+				<div class="first_input">
+					<p class="first_input_dnz">Номер ДНЗ:</p>
+					<div class="input">
+						 <input type="text" placeholder="№20" class="text_input">
+						 <div><img src="./img/rectangel.svg" class="rectangle" alt="Rectangle"></div>
+					</div>
+			  </div>
+			  <div class="first_input_addres">
+					<p>Адреса ДНЗ:</p>
+					<p class="first_input_addres_city">м.Чернівці, вул.Полєтаєва, 18</p>
+			  </div>
+			</div>
+			<div class="first_input_button">
+					<button type="submit">Знайти</button>
+			</div>
+		</div>
+		<div class="lower">
+			<div class="second_block">
+					<div class="list">
+						<p>КІЛЬКІСТЬ ВІЛЬНИХ МІСЦЬ:</p>
+						<p>переддошкільна група:<span style="padding-left: 14px;font-weight: 600;">6</span></p>
+						<p>молодша група:<span style="padding-left: 60px;font-weight: 600;">4</span></p>
+						<p>середня група:<span style="padding-left: 66px;font-weight: 600;">8</span></p>
+						<p class="for_border">старша група:<span style="padding-left: 71px;font-weight: 600;">10</span></p>
+						<p>загальна кількість:<span style="padding-left: 42px; font-weight: 600;">28</span></p>
+					</div>
+					<div class="third_block">
+						<div class="third_block_filter">
+							<div class="third_block_title">
+								<p>ФІЛЬТРУВАТИ СПИСОК:</p>
+							</div>	
+									<div class="third_block_checkbox">
+										<input type="checkbox" class="surname" name="surname">
+										<p>по прізвищу</p>
+									</div>
+									<div class="input_surname">
+										<input type="text" class="text_input">
+									</div>
+						</div>
+					</div>
+					<div class="fourth_block">
+						<div class="group_select">
+								<input type="checkbox" class="group" name="group">
+								<p>по групі</p>
+					</div>
+					<div class="group_select_input">
+						<input type="text" class="text_input" placeholder="переддошкільна">
+						<div>
+							<img src="./img/rectangel.svg" class="rectangle" alt="Rectangle">
+						</div>
+					</div>
+					</div>
+			</div>
+		</div>
+	</div>
+
+	 <div class="wrapper_table">
+		 <div class="header">
+			 <div class="header_number">№</div>
+			 <div class="header_name_group_date">
+				 <div class="header_name">ПІБ</div>
+				 <div class="header_group_date">
+					 <div class="header_date">реєстрація</div>
+				 </div>
+			 </div>
+			 <div class="header_privilege">пільга</div>
+		 </div>
+		 <div class="personal_block">
+			 <div class="number">1</div>
+			 <div class="name_group_date">
+				 <div class="name">Андрієнко Андрій Андрійович</div>
+				 <div class="group_date">
+					 <div class="date">06.10.2020 13:21:41</div>
+				 </div>
+			 </div>
+			 <div class="privilege"><img src="./img/yes.png" alt=""></div>
+		 </div>
+		 <div class="personal_block">
+			 <div class="number">2</div>
+			 <div class="name_group_date">
+				 <div class="name">Іващенко Ірина Степанівна</div>
+				 <div class="group_date">
+					 <div class="date">06.10.2020 13:21:41</div>
+				 </div>
+			 </div>
+			 <div class="privilege"><img src="./img/yes.png" alt=""></div>
+		 </div>
+		 <div class="personal_block">
+			 <div class="number">3</div>
+			 <div class="name_group_date">
+				 <div class="name">Семенюк Олег Ігорович</div>
+				 <div class="group_date">
+					 <div class="date">06.10.2020 13:21:41</div>
+				 </div>
+			 </div>
+			 <div class="privilege"><img src="./img/yes.png" alt=""></div>
+		 </div>
+		 <div class="personal_block">
+			 <div class="number">4</div>
+			 <div class="name_group_date">
+				 <div class="name">Коломієць Василь Микитович</div>
+				 <div class="group_date">
+					 <div class="date">06.10.2020 13:21:41</div>
+				 </div>
+			 </div>
+			 <div class="privilege"><img src="./img/yes.png" alt=""></div>
+		 </div>
+		 <div class="personal_block">
+			 <div class="number">5</div>
+			 <div class="name_group_date">
+				 <div class="name">Андрієнко Андрій Андрійович</div>
+				 <div class="group_date">
+					 <div class="date">06.10.2020 13:21:41</div>
+				 </div>
+			 </div>
+			 <div class="privilege"><img src="./img/yes.png" alt=""></div>
+		 </div>
+		 <div class="personal_block">
+			 <div class="number">6</div>
+			 <div class="name_group_date">
+				 <div class="name">Іващенко Ірина Степанівна</div>
+				 <div class="group_date">
+					 <div class="date">06.10.2020 13:21:41</div>
+				 </div>
+			 </div>
+			 <div class="privilege"><img src="./img/no.png" alt=""></div>
+		 </div>
+		 <div class="personal_block">
+			 <div class="number">7</div>
+			 <div class="name_group_date">
+				 <div class="name">Семенюк Олег Ігорович</div>
+				 <div class="group_date">
+					 <div class="date">06.10.2020 13:21:41</div>
+				 </div>
+			 </div>
+			 <div class="privilege"><img src="./img/no.png" alt=""></div>
+		 </div>
+		 <div class="personal_block">
+			 <div class="number">8</div>
+			 <div class="name_group_date">
+				 <div class="name">Коломієць Василь Микитович</div>
+				 <div class="group_date">
+					 <div class="date">06.10.2020 13:21:41</div>
+				 </div>
+			 </div>
+			 <div class="privilege"><img src="./img/no.png" alt=""></div>
+		 </div>
+		 <div class="personal_block">
+			 <div class="number">9</div>
+			 <div class="name_group_date">
+				 <div class="name">Андрієнко Андрій Андрійович</div>
+				 <div class="group_date">
+					 <div class="date">06.10.2020 13:21:41</div>
+				 </div>
+			 </div>
+			 <div class="privilege"><img src="./img/no.png" alt=""></div>
+		 </div>
+		 <div class="personal_block">
+			 <div class="number">10</div>
+			 <div class="name_group_date">
+				 <div class="name">Іващенко Ірина Степанівна</div>
+				 <div class="group_date">
+					 <div class="date">06.10.2020 13:21:41</div>
+				 </div>
+			 </div>
+			 <div class="privilege"><img src="./img/no.png" alt=""></div>
+		 </div>
+		 <div class="personal_block">
+			 <div class="number">11</div>
+			 <div class="name_group_date">
+				 <div class="name">Семенюк Олег Ігорович</div>
+				 <div class="group_date">
+					 <div class="date">06.10.2020 13:21:41</div>
+				 </div>
+			 </div>
+			 <div class="privilege"><img src="./img/no.png" alt=""></div>
+		 </div>
+		 <div class="personal_block">
+			 <div class="number">12</div>
+			 <div class="name_group_date">
+				 <div class="name">Коломієць Василь Микитович</div>
+				 <div class="group_date">
+					 <div class="date">06.10.2020 13:21:41</div>
+				 </div>
+			 </div>
+			 <div class="privilege"><img src="./img/no.png" alt=""></div>
+		 </div>
+		 <div class="personal_block">
+			 <div class="number">13</div>
+			 <div class="name_group_date">
+				 <div class="name">Андрієнко Андрій Андрійович</div>
+				 <div class="group_date">
+					 <div class="date">06.10.2020 13:21:41</div>
+				 </div>
+			 </div>
+			 <div class="privilege"><img src="./img/no.png" alt=""></div>
+		 </div>
+		 <div class="personal_block">
+			 <div class="number">14</div>
+			 <div class="name_group_date">
+				 <div class="name">Іващенко Ірина Степанівна</div>
+				 <div class="group_date">
+					 <div class="date">06.10.2020 13:21:41</div>
+				 </div>
+			 </div>
+			 <div class="privilege"><img src="./img/no.png" alt=""></div>
+		 </div>
+		 <div class="personal_block">
+			 <div class="number">15</div>
+			 <div class="name_group_date">
+				 <div class="name">Семенюк Олег Ігорович</div>
+				 <div class="group_date">
+					 <div class="date">06.10.2020 13:21:41</div>
+				 </div>
+			 </div>
+			 <div class="privilege"><img src="./img/no.png" alt=""></div>
+		 </div>
+		 <div class="personal_block">
+			 <div class="number">16</div>
+			 <div class="name_group_date">
+				 <div class="name">Коломієць Василь Микитович</div>
+				 <div class="group_date">
+					 <div class="date">06.10.2020 13:21:41</div>
+				 </div>
+			 </div>
+			 <div class="privilege"><img src="./img/no.png" alt=""></div>
+		 </div>
+		 <div class="personal_block">
+			 <div class="number">17</div>
+			 <div class="name_group_date">
+				 <div class="name">Андрієнко Андрій Андрійович</div>
+				 <div class="group_date">
+					 <div class="date">06.10.2020 13:21:41</div>
+				 </div>
+			 </div>
+			 <div class="privilege"><img src="./img/no.png" alt=""></div>
+		 </div>
+		 <div class="personal_block">
+			 <div class="number">18</div>
+			 <div class="name_group_date">
+				 <div class="name">Іващенко Ірина Степанівна</div>
+				 <div class="group_date">
+					 <div class="date">06.10.2020 13:21:41</div>
+				 </div>
+			 </div>
+			 <div class="privilege"><img src="./img/no.png" alt=""></div>
+		 </div>
+		 <div class="personal_block">
+			 <div class="number">19</div>
+			 <div class="name_group_date">
+				 <div class="name">Семенюк Олег Ігорович</div>
+				 <div class="group_date">
+					 <div class="date">06.10.2020 13:21:41</div>
+				 </div>
+			 </div>
+			 <div class="privilege"><img src="./img/no.png" alt=""></div>
+		 </div>
+		 <div class="personal_block">
+			 <div class="number">20</div>
+			 <div class="name_group_date">
+				 <div class="name">Коломієць Василь Микитович</div>
+				 <div class="group_date">
+					 <div class="date">06.10.2020 13:21:41</div>
+				 </div>
+			 </div>
+			 <div class="privilege"><img src="./img/no.png" alt=""></div>
+		 </div>
+	 </div>
+	</div>
+</div>
+</main>
+
+<footer class="page_footer">
+	<div class="page_footer_content">
+		 <img class="logo footer_logo" src="./img/logo.svg" height="100%">
+		 <div class="page_footer_content_wrapper">
+			  <div class="page_footer_content_wrapper_terms"><a href="#">умови користування сайтом</a></div>
+			  <div class="page_footer_content_wrapper_rules"><a href="#">правила публікацій та розсилок</a></div>
+			  <div class="page_footer_content_wrapper_policy"><a href="#">політика конфіденційності</a></div>
+		 </div>
+	</div>
+</footer>
+</body>
+</html>
