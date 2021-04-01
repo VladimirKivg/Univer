@@ -1,0 +1,53 @@
+{
+	"variables": [],
+	"info": {
+		"name": "МАЛЯТКО",
+		"_postman_id": "15a8c008-6e84-816e-6559-d2a8ea3c3023",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LOCAL /queue",
+			"request": {
+				"url": "http://localhost:8080/queue",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "LOCAL REST json/userTest",
+			"request": {
+				"url": "http://localhost:8080/json/userTest",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "LOCAL REST /json/user/create",
+			"request": {
+				"url": "http://localhost:8080/json/user/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": null,\n    \"surname\": \"Адамович11111111111111111111\",\n    \"name\": \"Іван\",\n    \"fatherName\": \"Іванович\",\n    \"birthDate\": \"1990-02-01T21:00:00.000+00:00\",\n    \"phone\": \"803562323\",\n    \"mail\": \"bob@mail.com\",\n    \"passportId\": null,\n    \"login\": null\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
