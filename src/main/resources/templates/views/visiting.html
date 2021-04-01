@@ -1,0 +1,26 @@
+<div th:fragment="visiting" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div>
+        <div th:text="'Вихователь: ' + ${educator.surname} + ' ' + ${educator.name} + ' ' + ${educator.fatherName}"></div>
+    </div>
+    <div>
+        <form action="">
+            <table>
+                <tr>
+                    <th>ім'я</th>
+                    <th>присутній</th>
+                    <th>відсутній</th>
+                    <th>дата та час</th>
+                </tr>
+
+                <tr th:each="child : ${allChildren}">
+                    <td th:text="${child.surname} + ' ' + ${child.name}"></td>
+                    <td><input type="radio" th:id="'present' + ${child.id}" th:name="'presence' + ${child.id}" value="1" th:onclick="'document.getElementById(\'' + 'visiting' + ${child.id} + '\').value = new Intl.DateTimeFormat(\'en-GB\', { dateStyle: \'short\', timeStyle: \'medium\' }).format(Date.now())'"></td>
+                    <td><input type="radio" th:id="'absent' + ${child.id}" th:name="'presence' + ${child.id}" value="0" th:onclick="'document.getElementById(\'' + 'visiting' + ${child.id} + '\').value = null'" checked></td>
+                    <td><input class="datetime" type="text" th:id="'visiting' + ${child.id}" th:name="'visiting_date' + ${child.id}" readonly></td>
+                </tr>
+
+            </table>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
