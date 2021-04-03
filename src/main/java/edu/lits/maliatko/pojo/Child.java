@@ -46,7 +46,7 @@ public class Child {
     private String status;
 
     @ManyToOne()
-    @JoinColumn(name = "parent_two_id")
+    @JoinColumn(name = "parent_two_id",nullable = true)
     private User userParentTwo;
 
     @Column(name = "medical_data_id")
