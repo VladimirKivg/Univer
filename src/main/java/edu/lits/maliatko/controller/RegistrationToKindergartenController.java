@@ -20,7 +20,6 @@ import java.util.Optional;
 @Controller
 public class RegistrationToKindergartenController {
 
-    public final static Integer LOGGED_IN_PARENT_ID = 1;
 
     @Autowired
     private AddressRepository addressRepository;
@@ -54,12 +53,12 @@ public class RegistrationToKindergartenController {
         addressRepository.save(kidAddress);
 
         Address userAddress = new Address(kidReg.getParentRegion(), kidReg.getParentCity(), kidReg.getParentStreet(), kidReg.getParentBuildingNumber(), kidReg.getParentApartment());
-        User userParentOne = userRepository.findById(LOGGED_IN_PARENT_ID).get();
-        userParentOne.setAddress(userAddress);
+
+
         addressRepository.save(userAddress);
 
-        User userParentTwo = new User(kidReg.getParentSurname(), kidReg.getParentName(), kidReg.getParentFatherName(), kidReg.getParentBirthDate(), kidReg.getParentPhone(), kidReg.getParentMail(), userAddress);
-        userRepository.save(userParentTwo);
+        User userParentOne = new User(kidReg.getParentSurname(), kidReg.getParentName(), kidReg.getParentFatherName(), kidReg.getParentBirthDate(), kidReg.getParentPhone(), kidReg.getParentMail(), userAddress);
+        userRepository.save(userParentOne);
 
         // + вичитати юзера за id =LOGGED_IN_PARENT_ID
 // + помінятти адресу LOGGED_IN_PARENT_ID тобто того юзера якого ми маємо за цією ци фрою - на ту яка прийшла сюд
