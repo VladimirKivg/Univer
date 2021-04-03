@@ -28,6 +28,7 @@ public class GroupManagementController {
 
      @RequestMapping("/alibab")
     public String addGroupManagementController(ManagerGroupModel managerGroupModel, Model model){
+
          Iterable<Cluster> all = clusterRepository.findAll();
          for (Cluster cluster:all){
              ClusterModel clusterModel=new ClusterModel();
