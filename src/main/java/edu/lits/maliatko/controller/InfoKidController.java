@@ -1,5 +1,6 @@
 package edu.lits.maliatko.controller;
 //Вова
+
 import edu.lits.maliatko.pojo.Child;
 import edu.lits.maliatko.pojo.Queue;
 import edu.lits.maliatko.repository.QueueRepository;
@@ -21,29 +22,31 @@ public class InfoKidController {
     private ChildRepository kidRepository;
 
     @RequestMapping("/info-kid-id")
-    public String infirmKind1(Model model){
-        model.addAttribute("content","kidInfoId");
-    return "index";}
-
+    public String infirmKind1(Model model) {
+        model.addAttribute("content", "kidInfoId");
+        return "index";
+    }
 
 
     @RequestMapping("/info-kid")
-    public String informKind(@RequestParam(value = "id")String idStr, Model model) {
+    public String informKind(@RequestParam(value = "id") String idStr, Model model) {
 
         try {
-            int id=Integer.parseInt(idStr);
-        Child child = kidRepository.findById(id).get();
+            int id = Integer.parseInt(idStr);
+            Child child = kidRepository.findById(id).get();
 
-        model.addAttribute("child", child);
+            model.addAttribute("child", child);
 
-        model.addAttribute("content","kidInfo");
-//kidIfo
+            model.addAttribute("content", "kidInfo");
+
         } catch (Exception e) {
-            String message="дитини за таким ID не знайдено, поверніться будьласка в попереднє меню і спробуйте ще раз";
+            String message = "дитини за таким ID не знайдено, поверніться будьласка в попереднє меню і спробуйте ще раз";
 
             model.addAttribute("message", message);
-            model.addAttribute("content","kidInfoNot");
-            return "index";}
-        return "index";}
+            model.addAttribute("content", "kidInfoNot");
+            return "index";
+        }
+        return "index";
+    }
 
 }
