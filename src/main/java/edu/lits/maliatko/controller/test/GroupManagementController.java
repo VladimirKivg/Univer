@@ -20,14 +20,9 @@ public class GroupManagementController {
     @Autowired
     UserToRoleRepository userToRoleRepository;
 
-    @Autowired
-    UserRepository userRepository;
-
-    @Autowired
-    RoleRepository roleRepository;
-
    @Autowired
      ClusterRepository clusterRepository;
+
    @Autowired
    ChildRepository childRepository;
 
