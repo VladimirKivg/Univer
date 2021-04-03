@@ -78,7 +78,7 @@ List <UserToRole> userToRoleList=new ArrayList<>();
 
          model.addAttribute("groups",managerGroupModel.groupList);
          model.addAttribute("attributeChild",managerGroupModel.childModelList);
-         model.addAttribute("educator",managerGroupModel.groupList);
+         model.addAttribute("attributeEducator",educatorModelList);
          model.addAttribute("content","managerGroup");
     return "index"; }
 
