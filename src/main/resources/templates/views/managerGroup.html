@@ -37,7 +37,25 @@
 
                 </tr>
 
+            </table>
 
+
+Вихователь
+            <table>
+
+                <tr>
+                    <th>Імя</th>
+                    <th>Фамілія</th>
+                    <th>По батькові</th>
+
+                </tr>
+
+                <tr th:each="educator : ${attributeEducator}">
+                    <td th:text="${educator.name}"></td>
+                    <td th:text="${educator.surname}"></td>
+                    <td th:text="${educator.fatherName}"></td>
+
+                </tr>
 
             </table>
 
