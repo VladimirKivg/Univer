@@ -51,20 +51,14 @@ public class GroupManagementController {
 
 
          List<EducatorModel>educatorModelList=new ArrayList<>();
-List <UserToRole> userToRoleList=new ArrayList<>();
          Iterable<UserToRole> all2 = userToRoleRepository.findAll();
          for (UserToRole userToRol:all2){
              if("ROLE_EDUCATOR".equals(userToRol.getRole().getRole())){
-//                 userToRoleList.add(userToRol);
                  EducatorModel educatorModel = new EducatorModel( userToRol.getUser().getName(), userToRol.getUser().getSurname(), userToRol.getUser().getFatherName());
              educatorModelList.add(educatorModel);
              }
          }
 
-         for (UserToRole userToRole:userToRoleList) {
-             EducatorModel educatorModel = new EducatorModel(userToRole.getUser().getName(), userToRole.getUser().getSurname(), userToRole.getUser().getFatherName());
-//        educatorModelList.add(educatorModel);
-         }
 
 
 
