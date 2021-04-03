@@ -54,7 +54,6 @@ public class RegistrationToKindergartenController {
 
         Address userAddress = new Address(kidReg.getParentRegion(), kidReg.getParentCity(), kidReg.getParentStreet(), kidReg.getParentBuildingNumber(), kidReg.getParentApartment());
 
-
         addressRepository.save(userAddress);
 
         User userParentOne = new User(kidReg.getParentSurname(), kidReg.getParentName(), kidReg.getParentFatherName(), kidReg.getParentBirthDate(), kidReg.getParentPhone(), kidReg.getParentMail(), userAddress);
@@ -68,7 +67,7 @@ public class RegistrationToKindergartenController {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 //        date.format(dateTimeFormatter);
 
-    //    long dateMs = date.getTime() - kidReg.getKidBirthDate().getTime();
+        //    long dateMs = date.getTime() - kidReg.getKidBirthDate().getTime();
 
 
         Child child = new Child(kidReg.getKidSurname(), kidReg.getKidName(), kidReg.getKidFatherName(), kidReg.getKidBirthDate(), kidReg.getKidGender(), kidReg.getKidBirthDocument(), kidAddress, userParentOne, kidReg.getKidBenefits(), "в черзі", null, 0, date, null);
