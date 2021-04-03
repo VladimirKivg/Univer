@@ -59,19 +59,6 @@ public class GroupManagementController {
              }
          }
 
-
-
-
-//         Iterable<User> all2 = userRepository.findAll();
-//         for (User us:all2){
-//             us.g
-//         }
-
-//         Iterable<Role> all2 = roleRepository.findAll();
-//         for (Role role:all2){
-//             role.
-//         }
-
          model.addAttribute("groups",managerGroupModel.groupList);
          model.addAttribute("attributeChild",managerGroupModel.childModelList);
          model.addAttribute("attributeEducator",educatorModelList);
