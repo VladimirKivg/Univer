@@ -7,11 +7,14 @@
 
                 <tr>
                     <th>Групи</th>
+                    <th>видалення группи</th>
 
                 </tr>
 
                 <tr th:each="group : ${groups}">
                     <td th:text="${group.name}"></td>
+                    <td><a th:href="@{/group/delete/{id}(id=${group.id})}">Видалити Групу</a></td>
+                    <td>
 
                 </tr>
 

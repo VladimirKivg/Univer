@@ -15,21 +15,11 @@ public class ManagerGroupModel {
 
     public List<ClusterModel> groupList = new ArrayList<>();
     public List<ChildModel> childModelList = new ArrayList<>();
-    private List<UserEducatorModel> userEducatorModelList = new ArrayList<>();
+    public List<EducatorModel> educatorModelList = new ArrayList<>();
+
+
 
     public ManagerGroupModel() {
     }
 
-
-
-
-
-
-    public List<UserEducatorModel> getUserEducatorModelList() {
-        return userEducatorModelList;
-    }
-
-    public void setUserEducatorModelList(List<UserEducatorModel> userEducatorModelList) {
-        this.userEducatorModelList = userEducatorModelList;
-    }
 }

@@ -2,9 +2,9 @@ package edu.lits.maliatko.model;
 
 public class EducatorModel {
 
-    String name;
-    String surname;
-    String fatherName;
+   private String name;
+    private String surname;
+    private String fatherName;
 
     public EducatorModel() {
     }
