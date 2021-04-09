@@ -37,7 +37,7 @@ public class Child {
 
     @ManyToOne()
     @JoinColumn(name = "parent_one_id")
-    private User userParentOne;//
+    private User userParentOne;
 
     @Column(name = "benefits")
     private String benefits;
@@ -56,7 +56,7 @@ public class Child {
     private Date registerToGardenDate;
 
     @ManyToOne()
-    @JoinColumn(name = "cluster_id")
+    @JoinColumn(name = "cluster_id",nullable = true)
     private Cluster cluster;
 
     public Child() {
