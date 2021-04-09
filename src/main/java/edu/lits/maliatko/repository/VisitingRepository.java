@@ -4,4 +4,5 @@ import edu.lits.maliatko.pojo.Visiting;
 import org.springframework.data.repository.CrudRepository;
 
 public interface VisitingRepository extends CrudRepository <Visiting,Integer>{
+    Iterable<Visiting> findAllByPresence(Integer presence);
 }
