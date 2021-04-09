@@ -1,0 +1,32 @@
+<div th:fragment="checkVisiting" xmlns:th="http://www.w3.org/1999/xhtml">
+
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>Імя</th>
+                <th>Фамілія</th>
+                <th>По батькові</th>
+                <th>Дата</th>
+
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="attribute : ${attributeChildList2}">
+                <td th:text="${attribute.child.name}"></td>
+                <td th:text="${attribute.child.surname}"></td>
+                <td th:text="${attribute.child.fatherName}"></td>
+                <td th:text="${attribute.visitingDate}"></td>
+
+
+
+            </tr>
+            </tbody>
+
+        </table>
+
+
+    </div>
+
+</div>
