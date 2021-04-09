@@ -1,4 +1,4 @@
-package edu.lits.maliatko.controller.test;
+package edu.lits.maliatko.controller;
 
 import edu.lits.maliatko.pojo.Child;
 import edu.lits.maliatko.pojo.Visiting;
