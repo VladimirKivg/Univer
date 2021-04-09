@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@ComponentScan(basePackages = { "edu.lits.maliatko.controller" } )
+@ComponentScan(basePackages = { "edu.lits.maliatko.controller","edu.lits.maliatko.service" } )
 @EnableSwagger2
 public class MalytkoApplication {
 
