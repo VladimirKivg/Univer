@@ -64,7 +64,6 @@ public class RegistrationToKindergartenController {
 
         Child child = new Child(kidReg.getKidSurname(), kidReg.getKidName(), kidReg.getKidFatherName(), kidReg.getKidBirthDate(), kidReg.getKidGender(), kidReg.getKidBirthDocument(), kidAddress, userParentOne, kidReg.getKidBenefits(), "в черзі", null, 0, date, null);
         childRepository.save(child);
-        // створити обєкт поджо чаілд з данними з  KidReg
         // parentOne заповнити даними з  LOGGED_IN_PARENT_ID
         // child.addressId = kidAddress.id
         // зберегти обєкт child
