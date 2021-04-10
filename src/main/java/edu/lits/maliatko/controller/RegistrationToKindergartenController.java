@@ -59,8 +59,6 @@ public class RegistrationToKindergartenController {
         User userParentOne = new User(kidReg.getParentSurname(), kidReg.getParentName(), kidReg.getParentFatherName(), kidReg.getParentBirthDate(), kidReg.getParentPhone(), kidReg.getParentMail(), userAddress);
         userRepository.save(userParentOne);
 
-        // + вичитати юзера за id =LOGGED_IN_PARENT_ID
-// + помінятти адресу LOGGED_IN_PARENT_ID тобто того юзера якого ми маємо за цією ци фрою - на ту яка прийшла сюд
 
         Date date = new Date();
 
