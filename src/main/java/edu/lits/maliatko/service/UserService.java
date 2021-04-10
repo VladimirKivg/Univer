@@ -1,4 +1,4 @@
 package edu.lits.maliatko.service;
 
-public interface UserSevis {
+public interface UserService {
 }
