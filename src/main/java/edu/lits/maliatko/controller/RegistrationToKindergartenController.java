@@ -78,7 +78,7 @@ public class RegistrationToKindergartenController {
 
 
 
-        // kidReg.getKindergartenName();//get.id
+
         // вичитати kindergarten записати його в Queue.kindergarten
         // date = date.now
         // зберегти обєкт Queue
