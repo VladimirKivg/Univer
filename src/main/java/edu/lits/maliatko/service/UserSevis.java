@@ -1,2 +1,4 @@
-package edu.lits.maliatko.service;public interface UserSevis {
+package edu.lits.maliatko.service;
+
+public interface UserSevis {
 }
