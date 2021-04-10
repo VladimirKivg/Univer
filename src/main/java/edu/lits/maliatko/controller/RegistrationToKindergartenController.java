@@ -59,7 +59,6 @@ public class RegistrationToKindergartenController {
         User userParentOne = new User(kidReg.getParentSurname(), kidReg.getParentName(), kidReg.getParentFatherName(), kidReg.getParentBirthDate(), kidReg.getParentPhone(), kidReg.getParentMail(), userAddress);
         userRepository.save(userParentOne);
 
-
         Date date = new Date();
 
         Child child = new Child(kidReg.getKidSurname(), kidReg.getKidName(), kidReg.getKidFatherName(), kidReg.getKidBirthDate(), kidReg.getKidGender(), kidReg.getKidBirthDocument(), kidAddress, userParentOne, kidReg.getKidBenefits(), "в черзі", null, 0, date, null);
@@ -74,14 +73,6 @@ public class RegistrationToKindergartenController {
         }
         Queue queue = new Queue(child, kindergarten, date);
         queueRepository.save(queue);
-
-
-
-
-
-
-        // date = date.now
-        // зберегти обєкт Queue
 
         return "redirect:/queue";
     }
