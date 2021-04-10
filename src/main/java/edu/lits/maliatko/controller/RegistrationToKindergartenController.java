@@ -62,7 +62,7 @@ public class RegistrationToKindergartenController {
 
         Date date = new Date();
 
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 //        date.format(dateTimeFormatter);
 
         //    long dateMs = date.getTime() - kidReg.getKidBirthDate().getTime();
