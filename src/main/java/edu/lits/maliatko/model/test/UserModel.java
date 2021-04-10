@@ -1,2 +1,4 @@
-package edu.lits.maliatko.model.test;public class UserModel {
+package edu.lits.maliatko.model.test;
+
+public class UserModel {
 }
