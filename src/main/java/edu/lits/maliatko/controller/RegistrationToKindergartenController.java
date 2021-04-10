@@ -76,7 +76,7 @@ public class RegistrationToKindergartenController {
         queueRepository.save(queue);
 
 
-        // створити обєкт queue тут
+
         // kidId = child.id
         // kidReg.getKindergartenName();//get.id
         // вичитати kindergarten записати його в Queue.kindergarten
