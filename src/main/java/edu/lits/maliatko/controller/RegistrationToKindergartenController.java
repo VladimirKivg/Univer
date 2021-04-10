@@ -79,7 +79,7 @@ public class RegistrationToKindergartenController {
 
 
 
-        // вичитати kindergarten записати його в Queue.kindergarten
+
         // date = date.now
         // зберегти обєкт Queue
 
