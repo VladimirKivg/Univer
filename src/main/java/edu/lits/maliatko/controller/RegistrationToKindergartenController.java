@@ -77,7 +77,7 @@ public class RegistrationToKindergartenController {
 
 
 
-        // kidId = child.id
+
         // kidReg.getKindergartenName();//get.id
         // вичитати kindergarten записати його в Queue.kindergarten
         // date = date.now
