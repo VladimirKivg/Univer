@@ -62,7 +62,7 @@ public class RegistrationToKindergartenController {
 
         Date date = new Date();
 
-//        //        date.format(dateTimeFormatter);
+//
 
         //    long dateMs = date.getTime() - kidReg.getKidBirthDate().getTime();
 
