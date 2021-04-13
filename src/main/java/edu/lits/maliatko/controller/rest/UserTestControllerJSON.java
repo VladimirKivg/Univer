@@ -3,7 +3,7 @@ package edu.lits.maliatko.controller.rest;
 import edu.lits.maliatko.pojo.User;
 import edu.lits.maliatko.pojo.Visiting;
 import edu.lits.maliatko.repository.UserRepository;
-import edu.lits.maliatko.service.CheckVisitingService;
+import edu.lits.maliatko.service.CheckVisitingImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,13 +40,13 @@ public class UserTestControllerJSON {
 
     return userList;}
 
-
-
-    @RequestMapping("/visitingCheck")//цей не запускається, він через візітінг працює, але нічого не виходить
-    public List<Visiting> visiting(){
-        CheckVisitingService checkVisitingService = new CheckVisitingService();
-
-        return checkVisitingService.visiting(); }
+//
+//
+//    @RequestMapping("/visitingCheck")//цей не запускається, він через візітінг працює, але нічого не виходить
+//    public List<Visiting> visiting(){
+//        CheckVisitingImpl checkVisitingService = new CheckVisitingImpl();
+//
+//        return checkVisitingService.visiting(); }
 
 }
 
