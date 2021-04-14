@@ -5,6 +5,7 @@ import edu.lits.maliatko.pojo.Child;
 import edu.lits.maliatko.pojo.Queue;
 import edu.lits.maliatko.repository.QueueRepository;
 import edu.lits.maliatko.repository.ChildRepository;
+import edu.lits.maliatko.service.InfoKidService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +22,9 @@ public class InfoKidController {
     @Autowired
     private ChildRepository kidRepository;
 
+    @Autowired
+    private InfoKidService infoKidService;
+
     @RequestMapping("/info-kid-id")
     public String infirmKind1(Model model) {
         model.addAttribute("content", "kidInfoId");
@@ -30,8 +34,11 @@ public class InfoKidController {
 
     @RequestMapping("/info-kid")
     public String informKind(@RequestParam(value = "id") String idStr, Model model) {
-
+        infoKidService.findById(1);
         try {
+
+
+
             int id = Integer.parseInt(idStr);
             Child child = kidRepository.findById(id).get();
 
