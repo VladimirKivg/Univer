@@ -1,6 +1,7 @@
 package edu.lits.maliatko.controller;
 //Вова
 
+import edu.lits.maliatko.model.test.InfoKidModel;
 import edu.lits.maliatko.pojo.Child;
 import edu.lits.maliatko.pojo.Queue;
 import edu.lits.maliatko.repository.QueueRepository;
@@ -34,15 +35,15 @@ public class InfoKidController {
 
     @RequestMapping("/info-kid")
     public String informKind(@RequestParam(value = "id") String idStr, Model model) {
-        infoKidService.findById(1);
+
+
         try {
 
-
-
             int id = Integer.parseInt(idStr);
-            Child child = kidRepository.findById(id).get();
+            InfoKidModel infoKidModel = infoKidService.findById(id);
+//            Child child = kidRepository.findById(id).get();
 
-            model.addAttribute("child", child);
+            model.addAttribute("child", infoKidModel);
 
             model.addAttribute("content", "kidInfo");
 
