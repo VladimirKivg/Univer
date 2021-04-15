@@ -1,146 +1,163 @@
-
 <div th:fragment="listKind" xmlns:th="http://www.w3.org/1999/xhtml">
-<!-- цей файл писав Вова-->
+    <!-- цей файл писав Вова-->
     <div class="main_content_inputAndTable">
         <div class="wraper_input">
             <div class="first_block">
-                <div class="first_block_input_addres">
-                    <div class="first_input">
-                        <p class="first_input_dnz">Номер ДНЗ:</p>
-                        <div class="input">
-                            <input type="text" placeholder="№20" class="text_input">
-                            <div><img src="./img/rectangel.svg" class="rectangle" alt="Rectangle"></div>
+                <form action="/queue" method="get">
+
+
+                    <div class="first_block_input_addres">
+                        <div class="first_input">
+                            <p class="first_input_dnz">Номер ДНЗ:</p>
+                            <div class="input">
+                                <input type="text" placeholder="Введіть назву садочка." class="text_input"
+                                       name="kindergartenName">
+                                <div><img src="./img/rectangel.svg" class="rectangle" alt="Rectangle"></div>
+                            </div>
+                        </div>
+                        <div th:switch="${selectedKindergarten}">
+                            <h2 th:case="null">No selected Kindergarten</h2>
+                            <div th:case="*">
+                                <div class="first_input_addres">
+                                    <p>Адреса ДНЗ:</p>
+                                    <p class="first_input_addres_city">м.Чернівці, вул.Полєтаєва, 18</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="first_input_addres">
-                        <p>Адреса ДНЗ:</p>
-                        <p class="first_input_addres_city">м.Чернівці, вул.Полєтаєва, 18</p>
+                    <div class="first_input_button">
+                        <button type="submit">Знайти</button>
                     </div>
-                </div>
-                <div class="first_input_button">
-                    <button type="submit">Знайти</button>
-                </div>
+                </form>
             </div>
         </div>
-        <div class="lower">
-            <div class="second_block">
-                <div class="list">
-                    <p>КІЛЬКІСТЬ ВІЛЬНИХ МІСЦЬ:</p>
-                    <p>переддошкільна група:<span style="padding-left: 14px;font-weight: 600;">6</span></p>
-                    <p>молодша група:<span style="padding-left: 60px;font-weight: 600;">4</span></p>
-                    <p>середня група:<span style="padding-left: 66px;font-weight: 600;">8</span></p>
-                    <p class="for_border">старша група:<span style="padding-left: 71px;font-weight: 600;">10</span></p>
-                    <p>загальна кількість:<span style="padding-left: 42px; font-weight: 600;">28</span></p>
-                </div>
-                <div class="third_block">
-                    <div class="third_block_filter">
-                        <div class="third_block_title">
-                            <p>ФІЛЬТРУВАТИ СПИСОК:</p>
+        <div th:switch="${selectedKindergarten}">
+            <h2 th:case="null">No selected Kindergarten</h2>
+            <div th:case="*">
+                <div class="lower">
+                    <div class="second_block">
+                        <div class="list">
+                            <p>КІЛЬКІСТЬ ВІЛЬНИХ МІСЦЬ:</p>
+                            <p>переддошкільна група:<span style="padding-left: 14px;font-weight: 600;">6</span></p>
+                            <p>молодша група:<span style="padding-left: 60px;font-weight: 600;">4</span></p>
+                            <p>середня група:<span style="padding-left: 66px;font-weight: 600;">8</span></p>
+                            <p class="for_border">старша група:<span
+                                    style="padding-left: 71px;font-weight: 600;">10</span></p>
+                            <p>загальна кількість:<span style="padding-left: 42px; font-weight: 600;">28</span></p>
                         </div>
-                        <div class="third_block_checkbox">
-                            <input type="checkbox" class="surname" name="surname">
-                            <p>по прізвищу</p>
+                        <div class="third_block">
+                            <div class="third_block_filter">
+                                <div class="third_block_title">
+                                    <p>ФІЛЬТРУВАТИ СПИСОК:</p>
+                                </div>
+                                <div class="third_block_checkbox">
+                                    <input type="checkbox" class="surname" name="surname">
+                                    <p>по прізвищу</p>
+                                </div>
+                                <div class="input_surname">
+                                    <input type="text" class="text_input">
+                                </div>
+                            </div>
                         </div>
-                        <div class="input_surname">
-                            <input type="text" class="text_input">
-                        </div>
-                    </div>
-                </div>
-                <div class="fourth_block">
-                    <div class="group_select">
-                        <input type="checkbox" class="group" name="group">
-                        <p>по групі</p>
-                    </div>
-                    <div class="group_select_input">
-                        <input type="text" class="text_input" placeholder="переддошкільна">
-                        <div>
-                            <img src="./img/rectangel.svg" class="rectangle" alt="Rectangle">
+                        <div class="fourth_block">
+                            <div class="group_select">
+                                <input type="checkbox" class="group" name="group">
+                                <p>по групі</p>
+                            </div>
+                            <div class="group_select_input">
+                                <input type="text" class="text_input" placeholder="переддошкільна">
+                                <div>
+                                    <img src="./img/rectangel.svg" class="rectangle" alt="Rectangle">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="wrapper_table">
-        <div class="header">
-            <div class="header_number">№</div>
-            <div class="header_name_group_date">
-                <div class="header_name">ПІБ</div>
-                <div class="header_group_date">
-                    <div class="header_date">реєстрація</div>
+    <div th:switch="${selectedKindergarten}">
+        <h2 th:case="null">No selected Kindergarten</h2>
+        <div th:case="*">
+            <div class="wrapper_table">
+                <div class="header">
+                    <div class="header_number">№</div>
+                    <div class="header_name_group_date">
+                        <div class="header_name">ПІБ</div>
+                        <div class="header_group_date">
+                            <div class="header_date">реєстрація</div>
+                        </div>
+                    </div>
+                    <div class="header_privilege">пільга</div>
                 </div>
-            </div>
-            <div class="header_privilege">пільга</div>
-        </div>
-        <div th:each="kid : ${attributeKidList}">
-        <div class="personal_block">
-            <div class="number">1</div>
-            <div class="name_group_date">
-                <div class="name">
-                    <span th:text="${kid.name}"></span>
-                    <span th:text="${kid.surname}"></span>
-                    <span th:text="${kid.fatherName}"></span>
+                <div th:each="kid : ${attributeKidList}">
+                    <div class="personal_block">
+                        <div class="number">1</div>
+                        <div class="name_group_date">
+                            <div class="name">
+                                <span th:text="${kid.name}"></span>
+                                <span th:text="${kid.surname}"></span>
+                                <span th:text="${kid.fatherName}"></span>
 
+                            </div>
+                            <div class="group_date">
+                                <div class="date"><span th:text="${kid.registerToGardenDate}"> </span></div>
+                            </div>
+                        </div>
+                        <div class="privilege"><span th:text="${kid.status}"> </span></div>
+                    </div>
                 </div>
-                <div class="group_date">
-                    <div class="date"><span th:text="${kid.registerToGardenDate}"> </span></div>
-                </div>
+                <!--        <div class="personal_block">-->
+                <!--            <div class="number">2</div>-->
+                <!--            <div class="name_group_date">-->
+                <!--                <div class="name">Іващенко Ірина Степанівна</div>-->
+                <!--                <div class="group_date">-->
+                <!--                    <div class="date">06.10.2020 13:21:41</div>-->
+                <!--                </div>-->
+                <!--            </div>-->
+                <!--            <div class="privilege"><img src="./img/yes.png" alt=""></div>-->
+                <!--        </div>-->
+                <!--        <div class="personal_block">-->
+                <!--            <div class="number">3</div>-->
+                <!--            <div class="name_group_date">-->
+                <!--                <div class="name">Семенюк Олег Ігорович</div>-->
+                <!--                <div class="group_date">-->
+                <!--                    <div class="date">06.10.2020 13:21:41</div>-->
+                <!--                </div>-->
+                <!--            </div>-->
+                <!--            <div class="privilege"><img src="./img/yes.png" alt=""></div>-->
+                <!--        </div>-->
             </div>
-            <div class="privilege"><span th:text="${kid.status}"> </span></div>
         </div>
-        </div>
-<!--        <div class="personal_block">-->
-<!--            <div class="number">2</div>-->
-<!--            <div class="name_group_date">-->
-<!--                <div class="name">Іващенко Ірина Степанівна</div>-->
-<!--                <div class="group_date">-->
-<!--                    <div class="date">06.10.2020 13:21:41</div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="privilege"><img src="./img/yes.png" alt=""></div>-->
-<!--        </div>-->
-<!--        <div class="personal_block">-->
-<!--            <div class="number">3</div>-->
-<!--            <div class="name_group_date">-->
-<!--                <div class="name">Семенюк Олег Ігорович</div>-->
-<!--                <div class="group_date">-->
-<!--                    <div class="date">06.10.2020 13:21:41</div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="privilege"><img src="./img/yes.png" alt=""></div>-->
-<!--        </div>-->
     </div>
 
     <table>
 
-                <tr>
-                    <th>Імя</th>
-                    <th>Прізвище</th>
-                    <th>По-батькові</th>
-                    <th>Група</th>
-                    <th>Дата реестрації</th>
-                    <th>Статус</th>
+        <tr>
+            <th>Імя</th>
+            <th>Прізвище</th>
+            <th>По-батькові</th>
+            <th>Група</th>
+            <th>Дата реестрації</th>
+            <th>Статус</th>
 
-                </tr>
-
-
-                <tr th:each="kid : ${attributeKidList}">
+        </tr>
 
 
-
-                    <td th:text="${kid.name}"></td>
-                    <td th:text="${kid.surname}"></td>
-                    <td th:text="${kid.fatherName}"></td>
-                    <td th:text="${kid.cluster.name}"></td>
-                    <td th:text="${kid.registerToGardenDate}"></td>
-                    <td th:text="${kid.status}"></td>
-
-                </tr>
+        <tr th:each="kid : ${attributeKidList}">
 
 
-            </table>
+            <td th:text="${kid.name}"></td>
+            <td th:text="${kid.surname}"></td>
+            <td th:text="${kid.fatherName}"></td>
+            <td th:text="${kid.cluster.name}"></td>
+            <td th:text="${kid.registerToGardenDate}"></td>
+            <td th:text="${kid.status}"></td>
+
+        </tr>
 
 
+    </table>
 
 
-    </div>
+</div>
