@@ -1,0 +1,18 @@
+<div th:fragment="creatingGroups" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div>
+        <form action="#"
+              th:action="@{/addNameGroup}" method="post" th:object="${creatingGroups}">
+            <div>
+                <label>Назва групи:</label>
+                <input type="text" th:field="*{nameGroup}">
+            </div>
+            <div>
+                <label> ID Садочка:</label>
+                <input type="text" th:field="*{kindergartenId}">
+            </div>
+            <div>
+                <input type="submit" value="Створити">
+            </div>
+        </form>
+    </div>
+</div>

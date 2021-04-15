@@ -28,7 +28,7 @@ public class GroupManagementController {
    @Autowired
    ChildRepository childRepository;
 
-     @RequestMapping("/managment")
+     @RequestMapping("/management")
     public String addGroupManagementController(ManagerGroupModel managerGroupModel, Model model){
 
          Iterable<Cluster> all = clusterRepository.findAll();
@@ -69,6 +69,6 @@ public class GroupManagementController {
 
         clusterRepository.deleteById(id);
 
-        return "redirect:/managment";
+        return "redirect:/management";
     }
 }

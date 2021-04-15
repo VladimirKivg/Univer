@@ -27,6 +27,7 @@ public class Cluster {
         this.kindergarten = kindergarten;
     }
 
+
     public Integer getId() {
         return id;
     }
