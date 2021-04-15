@@ -13,9 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class UserTestController {
 
-//@Autowired
-//UserRepository userRepository;
-
 @Autowired
     UserService userService;
 
@@ -29,8 +26,9 @@ public class UserTestController {
 //        String name = user.getName();
 
         String name=userModel.getName();
+        String address=userModel.getAddress();
          model.addAttribute("name",name);
-//         model.addAttribute("apartment",adres);
+         model.addAttribute("apartment",address);
          model.addAttribute("content","TESTuser");
 
         return "index";

@@ -15,7 +15,7 @@ public class UserServiceImpl implements UserService{
     public UserModel findUserById(Integer id) {
         User user = userRepository.findById(id).get();
 
-        UserModel userModel= new UserModel(user.getId(), user.getName());
+        UserModel userModel= new UserModel(user.getId(), user.getName(),user.getAddress().getCity());
 
         return userModel;
     }
