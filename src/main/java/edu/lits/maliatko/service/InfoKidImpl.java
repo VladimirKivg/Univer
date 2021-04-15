@@ -14,9 +14,12 @@ public class InfoKidImpl implements InfoKidService{
     @Autowired
 private ChildRepository childRepository;
 
+
+
     @Override
-    public InfoKidModel findById(Integer id) {
+    public  InfoKidModel findById(Integer id)  {
         Child child = childRepository.findById(id).get();
-        return null;
+        InfoKidModel infoKidModel=new InfoKidModel(child.getId(),child.getSurname(),child.getName(),child.getFatherName(),child.getBirthDate(),child.getAddress(),child.getUserParentOne(),child.getBenefits(),child.getStatus(), child.getUserParentTwo(), child.getCluster());
+        return infoKidModel;
     }
 }
