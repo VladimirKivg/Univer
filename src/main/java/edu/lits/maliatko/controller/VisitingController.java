@@ -10,10 +10,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 @Controller
 public class VisitingController {
 
@@ -25,7 +21,7 @@ public class VisitingController {
 
         User educator = visitingService.getEducator(2);
         Iterable<Child> childList = visitingService.getChildList();
-        String currentDate = DateFormat.getDateTimeInstance(3,2, Locale.UK).format(new Date());
+        String currentDate = visitingService.getCurrentTime();
 
         model.addAttribute("educator", educator);
         model.addAttribute("childList", childList);

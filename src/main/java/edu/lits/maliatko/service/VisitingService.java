@@ -11,7 +11,10 @@ import edu.lits.maliatko.repository.VisitingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 @Service
 public class VisitingService {
@@ -41,6 +44,12 @@ public class VisitingService {
             User visitingLogger = userRepository.findById(visitingModel.getLoggerId()).get();
             visitingRepository.save(new Visiting(visitingChild, visitingDate, visitingPresence, visitingLogger));
         }
+    }
+
+    public String getCurrentTime() {
+        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy, HH:mm:ss");
+        formatter.setTimeZone(TimeZone.getTimeZone("EET"));
+        return formatter.format(new Date());
     }
 
 }
