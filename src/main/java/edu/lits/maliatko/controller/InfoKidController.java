@@ -4,6 +4,7 @@ package edu.lits.maliatko.controller;
 import edu.lits.maliatko.model.test.InfoKidModel;
 import edu.lits.maliatko.pojo.Child;
 import edu.lits.maliatko.pojo.Queue;
+import edu.lits.maliatko.pojo.User;
 import edu.lits.maliatko.repository.QueueRepository;
 import edu.lits.maliatko.repository.ChildRepository;
 import edu.lits.maliatko.service.InfoKidService;
@@ -42,10 +43,23 @@ public class InfoKidController {
             int id = Integer.parseInt(idStr);
             InfoKidModel infoKidModel = infoKidService.findById(id);
 //            Child child = kidRepository.findById(id).get();
-
+//            User user = new User();
+            String cluster ="барабуля";
+            if (infoKidModel.getCluster()==null){
+                cluster="ще не визначено";
+            }else {
+                cluster=infoKidModel.getCluster().getName();
+            }
+            if (null==infoKidModel.getUserParentTwo()){
+                model.addAttribute("cluster",cluster);
+                model.addAttribute("child",infoKidModel);
+                model.addAttribute("content", "kidInfoNotParentTwo");
+            }else {
+                model.addAttribute("cluster",cluster);
             model.addAttribute("child", infoKidModel);
 
             model.addAttribute("content", "kidInfo");
+            }
 
         } catch (Exception e) {
             String message = "дитини за таким ID не знайдено, поверніться будьласка в попереднє меню і спробуйте ще раз";
