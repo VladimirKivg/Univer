@@ -48,14 +48,14 @@ public class GroupManagementController {
          }
 
 
-
-         Iterable<UserToRole> all2 = userToRoleRepository.findAll();
-         for (UserToRole userToRol:all2){
-             if("ROLE_EDUCATOR".equals(userToRol.getRole().getRole())){
-                 EducatorModel educatorModel = new EducatorModel( userToRol.getUser().getName(), userToRol.getUser().getSurname(), userToRol.getUser().getFatherName());
-                 managerGroupModel.educatorModelList.add(educatorModel);
-             }
-         }
+// закоментована поки не буде аповнена таблиця з ролями rolle і user_to_role
+//         Iterable<UserToRole> all2 = userToRoleRepository.findAll();
+//         for (UserToRole userToRol:all2){
+//             if("ROLE_EDUCATOR".equals(userToRol.getRole().getRole())){
+//                 EducatorModel educatorModel = new EducatorModel( userToRol.getUser().getName(), userToRol.getUser().getSurname(), userToRol.getUser().getFatherName());
+//                 managerGroupModel.educatorModelList.add(educatorModel);
+//             }
+//         }
 
 
          model.addAttribute("groups",managerGroupModel.groupList);
