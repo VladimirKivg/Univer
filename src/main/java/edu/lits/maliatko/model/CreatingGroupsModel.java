@@ -2,12 +2,12 @@ package edu.lits.maliatko.model;
 
 import edu.lits.maliatko.pojo.Kindergarten;
 
-public class CreatingGroups {
+public class CreatingGroupsModel {
     private Integer id;
     private String nameGroup;
     private Kindergarten kindergartenId;
 
-    public CreatingGroups() {
+    public CreatingGroupsModel() {
     }
 
     public Integer getId() {
