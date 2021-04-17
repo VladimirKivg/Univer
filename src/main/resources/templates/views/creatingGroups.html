@@ -1,7 +1,7 @@
 <div th:fragment="creatingGroups" xmlns:th="http://www.w3.org/1999/xhtml">
     <div>
         <form action="#"
-              th:action="@{/addNameGroup}" method="post" th:object="${creatingGroups}">
+              th:action="@{/addNameGroup}" method="post" th:object="${creatingGroupsModel}">
             <div>
                 <label>Назва групи:</label>
                 <input type="text" th:field="*{nameGroup}">
