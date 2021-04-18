@@ -4,10 +4,18 @@ import edu.lits.maliatko.pojo.Cluster;
 
 public class ChildModel {
 
+    private Integer id;
     private String name;
 private String surname;
 private String fatherName;
     public ChildModel() {
+    }
+
+    public ChildModel( Integer id,String name, String surname, String fatherName) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.fatherName = fatherName;
     }
 
     public String getSurname() {
@@ -32,5 +40,13 @@ private String fatherName;
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }
