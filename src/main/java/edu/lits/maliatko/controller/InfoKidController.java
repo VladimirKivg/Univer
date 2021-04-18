@@ -22,9 +22,6 @@ public class InfoKidController {
 
 
     @Autowired
-    private ChildRepository kidRepository;
-
-    @Autowired
     private InfoKidService infoKidService;
 
     @RequestMapping("/info-kid-id")
@@ -32,8 +29,6 @@ public class InfoKidController {
         model.addAttribute("content", "kidInfoId");
         return "index";
     }
-
-
     @RequestMapping("/info-kid")
     public String informKind(@RequestParam(value = "id") String idStr, Model model) {
 
@@ -42,8 +37,6 @@ public class InfoKidController {
 
             int id = Integer.parseInt(idStr);
             InfoKidModel infoKidModel = infoKidService.findById(id);
-//            Child child = kidRepository.findById(id).get();
-//            User user = new User();
             String cluster ="барабуля";
             if (infoKidModel.getCluster()==null){
                 cluster="ще не визначено";
