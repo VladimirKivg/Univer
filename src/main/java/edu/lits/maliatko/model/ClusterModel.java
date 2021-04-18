@@ -1,11 +1,25 @@
 package edu.lits.maliatko.model;
 
+import edu.lits.maliatko.pojo.Kindergarten;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 public class ClusterModel {
 
- private Integer id;
+    private Integer id;
     private String name;
+    private Kindergarten kindergarten;
 
     public ClusterModel() {
+    }
+
+    public ClusterModel(Integer id, String name, Kindergarten kindergarten) {
+        this.id = id;
+        this.name = name;
+        this.kindergarten = kindergarten;
     }
 
     public Integer getId() {
@@ -22,5 +36,13 @@ public class ClusterModel {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Kindergarten getKindergarten() {
+        return kindergarten;
+    }
+
+    public void setKindergarten(Kindergarten kindergarten) {
+        this.kindergarten = kindergarten;
     }
 }
