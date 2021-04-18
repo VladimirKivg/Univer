@@ -2,6 +2,7 @@ package edu.lits.maliatko.model;
 
 public class EducatorModel {
 
+    private Integer id;
    private String name;
     private String surname;
     private String fatherName;
@@ -9,7 +10,8 @@ public class EducatorModel {
     public EducatorModel() {
     }
 
-    public EducatorModel(String name, String surname, String fatherName) {
+    public EducatorModel(Integer id,String name, String surname, String fatherName) {
+        this.id = id;
         this.name = name;
         this.surname = surname;
         this.fatherName = fatherName;
@@ -37,5 +39,13 @@ public class EducatorModel {
 
     public void setFatherName(String fatherName) {
         this.fatherName = fatherName;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }
