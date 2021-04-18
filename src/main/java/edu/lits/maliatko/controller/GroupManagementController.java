@@ -19,15 +19,7 @@ import java.util.List;
 
 @Controller
 public class GroupManagementController {
-//
-    @Autowired
-    UserToRoleRepository userToRoleRepository;
 
-   @Autowired
-     ClusterRepository clusterRepository;
-
-   @Autowired
-   ChildRepository childRepository;
 
    @Autowired
    private GroupManagementService groupManagementService;
