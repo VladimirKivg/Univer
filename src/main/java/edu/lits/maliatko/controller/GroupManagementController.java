@@ -6,6 +6,7 @@ import edu.lits.maliatko.model.EducatorModel;
 import edu.lits.maliatko.model.ManagerGroupModel;
 import edu.lits.maliatko.pojo.*;
 import edu.lits.maliatko.repository.*;
+import edu.lits.maliatko.service.GroupManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +19,7 @@ import java.util.List;
 
 @Controller
 public class GroupManagementController {
-
+//
     @Autowired
     UserToRoleRepository userToRoleRepository;
 
@@ -28,34 +29,52 @@ public class GroupManagementController {
    @Autowired
    ChildRepository childRepository;
 
+   @Autowired
+   private GroupManagementService groupManagementService;
+
+
      @RequestMapping("/management")
     public String addGroupManagementController(ManagerGroupModel managerGroupModel, Model model){
 
-         Iterable<Cluster> all = clusterRepository.findAll();
-         for (Cluster cluster:all){
-             ClusterModel clusterModel=new ClusterModel();
-             clusterModel.setName(cluster.getName());
-             managerGroupModel.groupList.add(clusterModel);
-         }
+         managerGroupModel.groupList= groupManagementService.findAllCluster();
 
-         Iterable<Child> all1 = childRepository.findAll();
-         for (Child child:all1){
-             ChildModel childModel=new ChildModel();
-             childModel.setName(child.getName());
-             childModel.setSurname(child.getSurname());
-             childModel.setFatherName(child.getFatherName());
-             managerGroupModel.childModelList.add(childModel);
-         }
+//         Iterable<Cluster> all = clusterRepository.findAll();
+//         for (Cluster cluster:all){
+//             ClusterModel clusterModel=new ClusterModel(cluster.getId(),cluster.getName(),cluster.getKindergarten());
+////             clusterModel.setName(cluster.getName());
+//             managerGroupModel.groupList.add(clusterModel);
+//         }
 
 
-// закоментована поки не буде аповнена таблиця з ролями rolle і user_to_role
+
+         managerGroupModel.childModelList= groupManagementService.findAllChild();
+
+//         Iterable<Child> all1 = childRepository.findAll();
+//         for (Child child:all1){
+//             ChildModel childModel=new ChildModel();
+//             childModel.setName(child.getName());
+//             childModel.setSurname(child.getSurname());
+//             childModel.setFatherName(child.getFatherName());
+//             managerGroupModel.childModelList.add(childModel);
+//         }
+
+
+
+
+
+ //закоментована поки не буде аповнена таблиця з ролями rolle і user_to_role
+
+         // groupManagementService.findAllEducator() дає тільки "ROLE_EDUCATOR"
+
+
 //         Iterable<UserToRole> all2 = userToRoleRepository.findAll();
 //         for (UserToRole userToRol:all2){
 //             if("ROLE_EDUCATOR".equals(userToRol.getRole().getRole())){
-//                 EducatorModel educatorModel = new EducatorModel( userToRol.getUser().getName(), userToRol.getUser().getSurname(), userToRol.getUser().getFatherName());
+//                 EducatorModel educatorModel = new EducatorModel( userToRol.getUser().getId(),userToRol.getUser().getName(), userToRol.getUser().getSurname(), userToRol.getUser().getFatherName());
 //                 managerGroupModel.educatorModelList.add(educatorModel);
 //             }
 //         }
+         managerGroupModel.educatorModelList=groupManagementService.findAllEducator();
 
 
          model.addAttribute("groups",managerGroupModel.groupList);
@@ -67,8 +86,9 @@ public class GroupManagementController {
     @RequestMapping("/delete/{id}")
     public String delete(@PathVariable("id") Integer id, ModelMap model) {
 
-        clusterRepository.deleteById(id);
+         groupManagementService.deleteById(id);
 
+//        clusterRepository.deleteById(id);
         return "redirect:/management";
     }
 }
