@@ -30,14 +30,6 @@ public class GroupManagementController {
 
          managerGroupModel.groupList= groupManagementService.findAllCluster();
 
-//         Iterable<Cluster> all = clusterRepository.findAll();
-//         for (Cluster cluster:all){
-//             ClusterModel clusterModel=new ClusterModel(cluster.getId(),cluster.getName(),cluster.getKindergarten());
-////             clusterModel.setName(cluster.getName());
-//             managerGroupModel.groupList.add(clusterModel);
-//         }
-
-
 
          managerGroupModel.childModelList= groupManagementService.findAllChild();
 
