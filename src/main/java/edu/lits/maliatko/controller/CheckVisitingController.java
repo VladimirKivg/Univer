@@ -19,8 +19,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 @Controller
 public class CheckVisitingController {
 
-//    @Autowired
-//VisitingRepository visitingRepository;
 
     @Autowired
     private CheckVisitingService checkVisitingService;
