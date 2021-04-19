@@ -40,37 +40,6 @@ public class GroupController {
         return "redirect:/group/list";
     }
 
-//    @RequestMapping("/add-group")
-//    public String addGroup(Group group, ModelMap model, BindingResult result) {
-//        model.addAttribute("content", "createGroup");
-//        return "index";
-//    }
-
-//    @RequestMapping(value = "/add", method = RequestMethod.POST)
-//    public String add(@Valid Group group , BindingResult result, ModelMap model) {
-//        if (result.hasErrors()) {
-//            model.addAttribute("content", "createGroup");
-//            return "index";
-//        }
-//        groupList.add(group);
-//        return "redirect:/group/list";
-//    }
-
-//    @RequestMapping("/edit/{id}")
-//    public String showUpdateForm(@PathVariable("id") long id, Model model) {
-//        Group group = groupList.get(0); // this logic is not correct, group has to be                        //                                    selected by it’s id.
-//        model.addAttribute("group", group);
-//        model.addAttribute("content", "updateGroup");
-//        return "index";
-//    }
-//    @RequestMapping("/update/{id}")
-//    public String updateGroup(@PathVariable("id") int id, Group group,
-//                              BindingResult result, Model model) {
-//
-//        groupList.get(id).setName(group.getName());
-//        groupList.get(id).setNumber(group.getNumber());
-//        return "redirect:/group/list";
-//    }
 
 
 }
