@@ -10,7 +10,7 @@ public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO,generator = "native")
     @GenericGenerator(name = "native",strategy ="native" )
-    private Integer id;//id
+    private Integer id;
 
     @Column(name = "date")
     private Date date;
