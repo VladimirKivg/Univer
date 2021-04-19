@@ -17,8 +17,6 @@ import java.util.List;
 @RequestMapping("/payment")
 public class PaymentController {
 
-//    @Autowired
-//    private PaymentRepository paymentRepository;
 
     @Autowired
     private PaymentService paymentService;
@@ -27,10 +25,6 @@ public class PaymentController {
     public String list(ModelMap model) {
 
         List<PaymentModel> paymentModelList = paymentService.findAll();
-
-//        Iterable<Payment> payments = paymentRepository.findAll();
-//        List<Payment> result = new ArrayList<>();
-//        payments.forEach(result::add);// одна шз фіормуліровок фор іч, тільки білш сучастний варіант
 
         model.addAttribute("payments", paymentModelList);
         model.addAttribute("content", "paymentList");
@@ -42,7 +36,6 @@ public class PaymentController {
 
         paymentService.deleteById(id);
 
-//        paymentRepository.deleteById(id);
 
         return "redirect:/payment/list";
     }
