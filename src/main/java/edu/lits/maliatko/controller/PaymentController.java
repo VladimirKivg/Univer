@@ -1,7 +1,9 @@
 package edu.lits.maliatko.controller;
 
+import edu.lits.maliatko.model.PaymentModel;
 import edu.lits.maliatko.pojo.Payment;
 import edu.lits.maliatko.repository.PaymentRepository;
+import edu.lits.maliatko.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -14,17 +16,23 @@ import java.util.List;
 @Controller
 @RequestMapping("/payment")
 public class PaymentController {
+
+//    @Autowired
+//    private PaymentRepository paymentRepository;
+
     @Autowired
-    private PaymentRepository paymentRepository;
+    private PaymentService paymentService;
 
     @RequestMapping("/list")
     public String list(ModelMap model) {
 
-        Iterable<Payment> payments = paymentRepository.findAll();
-        List<Payment> result = new ArrayList<>();
-        payments.forEach(result::add);// одна шз фіормуліровок фор іч, тільки білш сучастний варіант
+        List<PaymentModel> paymentModelList = paymentService.findAll();
 
-        model.addAttribute("payments", payments);
+//        Iterable<Payment> payments = paymentRepository.findAll();
+//        List<Payment> result = new ArrayList<>();
+//        payments.forEach(result::add);// одна шз фіормуліровок фор іч, тільки білш сучастний варіант
+
+        model.addAttribute("payments", paymentModelList);
         model.addAttribute("content", "paymentList");
         return "index";
     }
@@ -32,7 +40,9 @@ public class PaymentController {
     @RequestMapping("/delete/{id}")
     public String delete(@PathVariable("id") Integer id, ModelMap model) {
 
-        paymentRepository.deleteById(id);
+        paymentService.deleteById(id);
+
+//        paymentRepository.deleteById(id);
 
         return "redirect:/payment/list";
     }
