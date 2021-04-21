@@ -29,7 +29,7 @@ public class VisitingController {
 
         //Цей код виводить лист відвідування дітей з однієі групи
         List<Child> childList = new ArrayList<>();
-        Iterable<Child> all1 = childRepository.findByClusterId (3);
+        Iterable<Child> all1 = visitingService.getOneGroup();
         for (Child child : all1) {
             childList.add(child);
         }

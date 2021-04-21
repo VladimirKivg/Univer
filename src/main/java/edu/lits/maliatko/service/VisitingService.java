@@ -27,6 +27,7 @@ public class VisitingService {
 
     @Autowired
     private VisitingRepository visitingRepository;
+    public Iterable <Child> getOneGroup () {return childRepository.findByClusterId(1); }
 
     public Iterable<Child> getChildList() {
         return childRepository.findAll();
