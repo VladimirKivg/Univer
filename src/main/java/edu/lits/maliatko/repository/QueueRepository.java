@@ -10,5 +10,5 @@ public interface QueueRepository extends CrudRepository<Queue, Integer> {
 
     Iterable<Queue> findByKindergarten_Name(String kindergartenName);
 
-    Iterable<Queue> findByKindergartenId(Integer kindergarten_id);
+    Iterable<Queue> findByKindergartenId(Integer kindergartenId);
 }

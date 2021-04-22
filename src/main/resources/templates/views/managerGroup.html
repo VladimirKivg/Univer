@@ -1,73 +1,119 @@
 <div th:fragment="managerGroup" xmlns:th="http://www.w3.org/1999/xhtml">
-    <div th:switch="${groups}">
-        <h2 th:case="null">No any group.</h2>
-        <div th:case="*">
+    <div>
+        <form action="/management_cluster_content" id="cluster_form" method="get">
 
-            <table>
+            <div>СПИСОК ГРУП:</div>
+            <ul class="cluster_list" id="cluster_list">
 
-                <tr>
-                    <th>Групи</th>
-                    <th>видалення группи</th>
+                <li th:each="group : ${groups}" th:class="${group.id == selectedCluster} ? 'cluster_list_item selected_item' : 'cluster_list_item'" onclick="submitClusterForm(event.currentTarget.firstElementChild)">
+                    <input type="hidden" th:value="${group.id}" th:text="${group.name}">
+                </li>
 
-                </tr>
+            </ul>
 
-                <tr th:each="group : ${groups}">
-                    <td th:text="${group.name}"></td>
-                    <td><a th:href="@{/delete/{id}(id=${group.id})}">Видалити Групу</a></td>
-                    <td>
+            <div>
+                <button type="button">Створити</button>
+                <button type="submit" id="remove_cluster" disabled>Видалити</button>
+            </div>
+        </form>
 
-                </tr>
+    </div>
 
+    <div>-------------------------------------------------</div>
 
+    <div>
+        <form action="">
 
-            </table>
+            <div>СПИСОК ДІТЕЙ В ГРУПІ:</div>
+            <ul class="children_list">
 
-<br><br>
-Діти
-            <table>
+                <li th:each="child : ${attributeChild}" class="children_list_item"
+                    onclick="selectingItem(event, 'children_list_input', 'children_list_item');
+                    document.getElementById('remove_child').removeAttribute('disabled');
+                    document.getElementById('back_to_queue').removeAttribute('disabled');">
+                    <input class="children_list_input" type="hidden" th:value="${child.id}" th:text="${child.surname} + ' ' + ${child.name} + ' ' + ${child.fatherName}">
+                </li>
 
-                <tr>
-                    <th>Імя</th>
-                    <th>Фамілія</th>
-                    <th>По батькові</th>
+            </ul>
 
-                </tr>
-
-                <tr th:each="child : ${attributeChild}">
-                    <td th:text="${child.name}"></td>
-                    <td th:text="${child.surname}"></td>
-                    <td th:text="${child.fatherName}"></td>
-
-                </tr>
-
-            </table>
-
-            <br><br>
-            Вихователь
-            <table>
-
-                <tr>
-                    <th>Імя</th>
-                    <th>Фамілія</th>
-                    <th>По батькові</th>
-
-                </tr>
-
-                <tr th:each="educator : ${attributeEducator}">
-                    <td th:text="${educator.name}"></td>
-                    <td th:text="${educator.surname}"></td>
-                    <td th:text="${educator.fatherName}"></td>
-
-                </tr>
-
-            </table>
+            <div>
+                <button type="button" id="add_child" disabled>Додати з черги</button>
+                <button type="submit" id="remove_child" disabled>Перевести</button>
+                <button type="submit" id="back_to_queue" disabled>Повернути до черги</button>
+            </div>
+        </form>
+    </div>
 
 
+
+    <div>-------------------------------------------------</div>
+
+    <div>
+        <form action="/management_remove_educator" method="get">
+
+            <div>СПИСОК ВИХОВАТЕЛІВ В ГРУПІ:</div>
+            <ul class="educator_list">
+
+                <li th:each="educator : ${attributeEducator}" class="educator_list_item"
+                    onclick="selectingItem(event, 'educator_list_input', 'educator_list_item'); document.getElementById('remove_educator').removeAttribute('disabled')">
+                    <input class="educator_list_input" type="hidden" th:value="${educator.id}" th:text="${educator.surname} + ' ' + ${educator.name} + ' ' + ${educator.fatherName}">
+                </li>
+
+            </ul>
+
+            <div>
+                <button type="button" disabled>Додати</button>
+                <button type="submit" id="remove_educator" disabled>Видалити</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="myModal" class="modal">
+
+        <div class="modal-content">
+            <form action="">
+                <div>СПИСОК ДІТЕЙ В ЧЕРЗІ:</div>
+                <ul class="queue_list">
+
+                    <li th:each="child : ${childrenInQueue}" class="queue_list_item" onclick="selectingItem(event, 'queue_list_input', 'queue_list_item'); document.getElementById('add_child_from_queue').removeAttribute('disabled')">
+                        <input class="queue_list_input" type="hidden" th:value="${child.id}" th:text="${child.surname} + ' ' + ${child.name} + ' ' + ${child.fatherName}">
+                    </li>
+
+
+                </ul>
+
+                <div>
+                    <button type="submit" id="add_child_from_queue" disabled>Додати</button>
+                    <button type="button" id="cancel_modal_form">Відміна</button>
+                </div>
+            </form>
 
         </div>
+
     </div>
-    <p>
-        <a href="/group/add-group"> Add a new group
-        </a>
-    </p>
+
+    <script>
+        document.getElementById("add_child").onclick = function () {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        document.getElementById("cancel_modal_form").onclick = function () {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        function submitClusterForm(elem) {
+            elem.setAttribute("name", "id");
+            document.forms['cluster_form'].submit();
+        }
+
+        function selectingItem(elem, inputClass, listItemClass) {
+            var elements = document.getElementsByClassName(inputClass);
+            for (var k = elements.length - 1; k >= 0; k--) { elements[k].removeAttribute("name") };
+            elem.currentTarget.firstElementChild.setAttribute("name", "id");
+            var elements = document.getElementsByClassName(listItemClass);
+            for (var k = elements.length - 1; k >= 0; k--) { elements[k].className = listItemClass };
+            elem.currentTarget.className = listItemClass + " selected_item";
+        }
+
+    </script>
 </div>

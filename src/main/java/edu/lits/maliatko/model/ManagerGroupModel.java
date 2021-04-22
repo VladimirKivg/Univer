@@ -22,4 +22,27 @@ public class ManagerGroupModel {
     public ManagerGroupModel() {
     }
 
+    public List<ClusterModel> getGroupList() {
+        return groupList;
+    }
+
+    public void setGroupList(List<ClusterModel> groupList) {
+        this.groupList = groupList;
+    }
+
+    public List<ChildModel> getChildModelList() {
+        return childModelList;
+    }
+
+    public void setChildModelList(List<ChildModel> childModelList) {
+        this.childModelList = childModelList;
+    }
+
+    public List<EducatorModel> getEducatorModelList() {
+        return educatorModelList;
+    }
+
+    public void setEducatorModelList(List<EducatorModel> educatorModelList) {
+        this.educatorModelList = educatorModelList;
+    }
 }

@@ -6,12 +6,13 @@ public class ChildModel {
 
     private Integer id;
     private String name;
-private String surname;
-private String fatherName;
+    private String surname;
+    private String fatherName;
+
     public ChildModel() {
     }
 
-    public ChildModel( Integer id,String name, String surname, String fatherName) {
+    public ChildModel(Integer id, String name, String surname, String fatherName) {
         this.id = id;
         this.name = name;
         this.surname = surname;
