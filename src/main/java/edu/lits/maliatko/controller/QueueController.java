@@ -2,11 +2,16 @@ package edu.lits.maliatko.controller;
 
 // цей клас писав Вова
 
+import edu.lits.maliatko.model.ChildModel;
+import edu.lits.maliatko.model.KindergartenModel;
+import edu.lits.maliatko.model.QueueModel;
+import edu.lits.maliatko.pojo.Address;
 import edu.lits.maliatko.pojo.Child;
 import edu.lits.maliatko.pojo.Kindergarten;
 import edu.lits.maliatko.pojo.Queue;
 import edu.lits.maliatko.repository.KindergartenRepository;
 import edu.lits.maliatko.repository.QueueRepository;
+import edu.lits.maliatko.service.QueueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,12 +25,14 @@ import java.util.List;
 @Controller
 public class QueueController {
 
-
     @Autowired
-    private QueueRepository queueRepository;
+    private QueueService queueService;
 
-    @Autowired
-    private KindergartenRepository kindergartenRepository;
+//    @Autowired
+//    private QueueRepository queueRepository;
+//
+//    @Autowired
+//    private KindergartenRepository kindergartenRepository;
 
     @RequestMapping("/queue")
     public String listKinder(
@@ -34,19 +41,25 @@ public class QueueController {
             Model model) {
 
         List<Child> childList = new ArrayList<>();
+        Address address = new Address();
 
         if (kindergartenName != null) {
-            Iterable<Kindergarten> kindergartenIterable = kindergartenRepository.findByName(kindergartenName);
-            Kindergarten kindergarten = kindergartenIterable.iterator().next();
 
+            List<KindergartenModel> byName = queueService.findByName(kindergartenName);
 
-            Iterable<Queue> all1 = queueRepository.findByKindergarten_Name(kindergartenName);
-            for (Queue queue : all1) {
-                childList.add(queue.getChild());
+//            Iterable<Kindergarten> kindergartenIterable = kindergartenRepository.findByName(kindergartenName);
+            KindergartenModel kindergarten = byName.iterator().next();
+          address=kindergarten.getAddress();
+
+            List<QueueModel> byKindergarten_name = queueService.findByKindergarten_Name(kindergartenName);
+
+//            Iterable<Queue> all1 = queueRepository.findByKindergarten_Name(kindergartenName);
+            for (QueueModel queueModel : byKindergarten_name) {
+                childList.add(queueModel.getChild());
             }
         }
 
-
+        model.addAttribute("attributeAddress", address);
         model.addAttribute("attributeKidList", childList);
         model.addAttribute("selectedKindergarten", kindergartenName);
 
