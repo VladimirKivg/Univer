@@ -20,7 +20,10 @@
                             <div th:case="*">
                                 <div class="first_input_addres">
                                     <p>Адреса ДНЗ:</p>
-                                    <p class="first_input_addres_city">м.Чернівці, вул.Полєтаєва, 18</p>
+                                    <div th:each="address : ${attributeAddress}">
+                                        <span th:text="${address.street}"></span>
+                                        <span th:text="${address.buildingNumber}"></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
