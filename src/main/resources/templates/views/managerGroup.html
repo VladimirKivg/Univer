@@ -12,8 +12,12 @@
             </ul>
 
             <div>
-                <button type="button">Створити</button>
-                <button type="submit" id="remove_cluster" disabled>Видалити</button>
+                <input type="hidden" id="cluster_for_delete" th:value="${selectedCluster}">
+                <button type="button" id="create_new_cluster">Створити</button>
+                <button type="submit" id="remove_cluster" th:disabled="${selectedCluster == null or !attributeChild.isEmpty() or !attributeEducator.isEmpty()}"
+                        formaction="/delete_cluster"
+                onclick="document.getElementById('cluster_for_delete').setAttribute('name', 'id')"
+                >Видалити</button>
             </div>
         </form>
 
@@ -29,17 +33,20 @@
 
                 <li th:each="child : ${attributeChild}" class="children_list_item"
                     onclick="selectingItem(event, 'children_list_input', 'children_list_item');
-                    document.getElementById('remove_child').removeAttribute('disabled');
-                    document.getElementById('back_to_queue').removeAttribute('disabled');">
+                    document.getElementById('change_cluster').removeAttribute('disabled');
+                    document.getElementById('back_to_queue').removeAttribute('disabled');
+                    var childId = event.currentTarget.firstElementChild.getAttribute('value');
+                    document.getElementById('selected_child1').setAttribute('value', childId)
+                    document.getElementById('selected_child2').setAttribute('value', childId)">
                     <input class="children_list_input" type="hidden" th:value="${child.id}" th:text="${child.surname} + ' ' + ${child.name} + ' ' + ${child.fatherName}">
                 </li>
 
             </ul>
 
             <div>
-                <button type="button" id="add_child" disabled>Додати з черги</button>
-                <button type="submit" id="remove_child" disabled>Перевести</button>
-                <button type="submit" id="back_to_queue" disabled>Повернути до черги</button>
+                <button type="button" id="add_child" th:disabled="${selectedCluster == null}" >Додати з черги</button>
+                <button type="button" id="change_cluster" disabled>Перевести</button>
+                <button type="button" id="back_to_queue" disabled>Повернути до черги</button>
             </div>
         </form>
     </div>
@@ -62,16 +69,16 @@
             </ul>
 
             <div>
-                <button type="button" disabled>Додати</button>
+                <button type="button" id="add_educator" th:disabled="${selectedCluster == null}">Додати</button>
                 <button type="submit" id="remove_educator" disabled>Видалити</button>
             </div>
         </form>
     </div>
 
-    <div id="myModal" class="modal">
+    <div id="children_list_modal" class="modal">
 
         <div class="modal-content">
-            <form action="">
+            <form action="/add_child_from_queue" method="get">
                 <div>СПИСОК ДІТЕЙ В ЧЕРЗІ:</div>
                 <ul class="queue_list">
 
@@ -84,7 +91,98 @@
 
                 <div>
                     <button type="submit" id="add_child_from_queue" disabled>Додати</button>
-                    <button type="button" id="cancel_modal_form">Відміна</button>
+                    <button type="button" id="cancel_children_modal">Відміна</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+    <div id="educator_list_modal" class="modal">
+
+        <div class="modal-content">
+            <form action="/management_add_educator" method="get">
+                <div>СПИСОК ВИХОВАТЕЛІВ У САДКУ:</div>
+                <ul class="all_educators_list">
+
+                    <li th:each="educator : ${educatorsInKindergarten}" class="all_educators_list_item" onclick="selectingItem(event, 'all_educators_list_input', 'all_educators_list_item'); document.getElementById('add_educator_from_list').removeAttribute('disabled')">
+                        <input class="all_educators_list_input" type="hidden" th:value="${educator.id}" th:text="${educator.surname} + ' ' + ${educator.name} + ' ' + ${educator.fatherName}">
+                    </li>
+
+
+                </ul>
+
+                <div>
+                    <button type="submit" id="add_educator_from_list" disabled>Додати</button>
+                    <button type="button" id="cancel_educator_modal">Відміна</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+    <div id="cluster_list_modal" class="modal">
+
+        <div class="modal-content">
+            <form action="/change_cluster" method="get">
+                <div>СПИСОК ГРУП У САДКУ:</div>
+                <ul class="available_clusters_list">
+
+                    <li th:each="cluster : ${availableClusters}" class="available_clusters_item" onclick="selectingItem(event, 'available_clusters_input', 'available_clusters_item'); document.getElementById('move_child_to_group').removeAttribute('disabled')">
+                        <input class="available_clusters_input" type="hidden" th:value="${cluster.id}" th:text="${cluster.name}">
+                    </li>
+
+
+                </ul>
+
+                <div>
+                    <input id="selected_child1" name="childId" type="hidden">
+                    <button type="submit" id="move_child_to_group" disabled>Перевести</button>
+                    <button type="button" id="cancel_cluster_modal">Відміна</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+    <div id="create_new_cluster_modal" class="modal">
+
+        <div class="modal-content">
+            <form action="/add_new_cluster" method="get">
+                <div>НАЗВА НОВОЇ ГРУПИ:</div>
+
+                <input type="text" name="newClusterName" id="cluster_name" placeholder="введіть назву" oninput="
+                var inputValue = document.getElementById('cluster_name').value;
+                if (inputValue == '')
+                document.getElementById('add_new_cluster').setAttribute('disabled', 'disabled')
+                else  document.getElementById('add_new_cluster').removeAttribute('disabled')
+                ">
+
+                <div>
+                    <button type="submit" id="add_new_cluster" disabled>Створити</button>
+                    <button type="button" id="cancel_new_cluster_modal">Відміна</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+    <div id="return_to_queue_modal" class="modal">
+
+        <div class="modal-content">
+            <form action="/return_child_to_queue" method="get">
+                <div>ВИБЕРІТЬ ДНЗ:</div>
+
+                <input type="text" name="kindergartenName" value="ДНЗ №1">
+
+                <div>
+                    <input id="selected_child2" name="childId" type="hidden">
+                    <button type="submit">Повернути</button>
+                    <button type="button" id="cancel_return_modal">Відміна</button>
                 </div>
             </form>
 
@@ -94,11 +192,43 @@
 
     <script>
         document.getElementById("add_child").onclick = function () {
-            document.getElementById("myModal").style.display = "block";
+            document.getElementById("children_list_modal").style.display = "block";
         }
 
-        document.getElementById("cancel_modal_form").onclick = function () {
-            document.getElementById("myModal").style.display = "none";
+        document.getElementById("cancel_children_modal").onclick = function () {
+            document.getElementById("children_list_modal").style.display = "none";
+        }
+
+        document.getElementById("add_educator").onclick = function () {
+            document.getElementById("educator_list_modal").style.display = "block";
+        }
+
+        document.getElementById("cancel_educator_modal").onclick = function () {
+            document.getElementById("educator_list_modal").style.display = "none";
+        }
+
+        document.getElementById("change_cluster").onclick = function () {
+            document.getElementById("cluster_list_modal").style.display = "block";
+        }
+
+        document.getElementById("cancel_cluster_modal").onclick = function () {
+            document.getElementById("cluster_list_modal").style.display = "none";
+        }
+
+        document.getElementById("create_new_cluster").onclick = function () {
+            document.getElementById("create_new_cluster_modal").style.display = "block";
+        }
+
+        document.getElementById("cancel_new_cluster_modal").onclick = function () {
+            document.getElementById("create_new_cluster_modal").style.display = "none";
+        }
+
+        document.getElementById("back_to_queue").onclick = function () {
+            document.getElementById("return_to_queue_modal").style.display = "block";
+        }
+
+        document.getElementById("cancel_return_modal").onclick = function () {
+            document.getElementById("return_to_queue_modal").style.display = "none";
         }
 
         function submitClusterForm(elem) {

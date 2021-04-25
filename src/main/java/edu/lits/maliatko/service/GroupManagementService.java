@@ -14,9 +14,29 @@ public interface GroupManagementService {
 
     void deleteById(Integer id);
 
-    ManagerGroupModel getManagerGroupModel(Integer kindergartenId, Integer clusterId);
-
     List<ChildModel> getChildrenInQueue(Integer kindergartenId);
 
     void removeEducatorFromCluster(Integer userId, Integer clusterId);
+
+    List<EducatorModel> getEducatorsInKindergarten(Integer kindergartenId, Integer clusterId);
+
+    void addEducatorToCluster(Integer userId, Integer clusterId);
+
+    List<ClusterModel> getAvailableClusters(List<ClusterModel> groupList, Integer clusterId);
+
+    void moveChildToCluster(Integer clusterId, Integer childId);
+
+    void addChildFromQueue(Integer childInQueueId, Integer clusterId);
+
+    void createNewCluster(Integer kindergartenId, String newClusterName);
+
+    void removeCluster(Integer clusterId);
+
+    List<ClusterModel> getClustersInKindergarten(Integer kindergartenId);
+
+    List<ChildModel> getChildrenInCluster(Integer clusterId);
+
+    List<EducatorModel> getEducatorsInCluster(Integer clusterId);
+
+    void returnChildToQueue(String kindergartenName, Integer childId);
 }
