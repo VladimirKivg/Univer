@@ -1,6 +1,5 @@
 package edu.lits.maliatko.controller;
 
-import edu.lits.maliatko.model.ChildInQueue;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
