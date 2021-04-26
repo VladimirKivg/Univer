@@ -459,7 +459,7 @@ a.active {
             height: 200px;
         }
 
-        .queue_list {
+        .queue_list, .all_educators_list, .available_clusters_list {
             width: 300px;
             height: 445px;
         }
