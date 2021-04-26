@@ -17,7 +17,7 @@
         <tr th:each="child : ${childInAGroupList}">
             <td th:text="${child.name}"></td>
             <td th:text="${child.surname}"></td>
-            <td th:text="${child.dateOfBirdth}"></td>
+            <td th:text="${child.birthDate}"></td>
             <td>
                 <a th:href="@{/childInAGroup/edit/{id}(id=${child.id})}">
                     Редагувати
