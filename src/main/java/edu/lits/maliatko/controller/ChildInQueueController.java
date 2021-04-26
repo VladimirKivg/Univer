@@ -38,7 +38,7 @@ public class  ChildInQueueController {
     @RequestMapping("/list")
     public String list(ModelMap model) {
         model.addAttribute("childInQueueList", childInQueueList);
-        model.addAttribute("content", "childInQueueList");
+        model.addAttribute("content", "");
         return "index";
     }
 
@@ -50,14 +50,14 @@ public class  ChildInQueueController {
 
     @RequestMapping("/add-childInQueue")
     public String addChildInQueue(ChildInQueue child, ModelMap model, BindingResult result) {
-        model.addAttribute("content", "addChildInQueue");
+        model.addAttribute("content", "");
         return "index";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String add(ChildInQueue child, BindingResult result, ModelMap model) {
         if (result.hasErrors()) {
-            model.addAttribute("content", "addChildInQueue");
+            model.addAttribute("content", "");
             return "index";
         }
         childInQueueList.add(child);
