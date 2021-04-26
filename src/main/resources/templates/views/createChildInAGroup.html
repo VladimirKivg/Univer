@@ -1,14 +1,14 @@
 <div th:fragment="createChildInAGroup" xmlns:th="http://www.w3.org/1999/xhtml">
     <form action="#"
           th:action="@{/childInAGroup/add}"
-          th:object="${childInAGroup}"
+          th:object="${child}"
           method="post">
         <label for="name">Імя дитини</label>
         <input type="text" th:field="*{name}" id="name" placeholder="Імя дитини">
         <label for="surname">Фамілія</label>
         <input type="text" th:field="*{surname}" id="surname" placeholder="Фамілія">
         <label for="surname">Дата народження</label>
-        <input type="text" th:field="*{dateOfBirdth}" id="dateOfBirdth" placeholder="Дата народження">
+        <input type="text" th:field="*{birthDate}" id="birthDate" placeholder="Дата народження">
         <input type="submit" value="Створити дитину">
     </form>
 </div>
