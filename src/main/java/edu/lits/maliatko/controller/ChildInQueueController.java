@@ -68,7 +68,7 @@ public class  ChildInQueueController {
     public String showUpdateForm(@PathVariable("id") long id, Model model) {
         ChildInQueue child = childInQueueList.get(0); // this logic is not correct, group has to be                        //                                    selected by it’s id.
         model.addAttribute("child", child);
-        model.addAttribute("content", "updateChildInQueue");
+        model.addAttribute("content", "");
         return "index";
     }
 
