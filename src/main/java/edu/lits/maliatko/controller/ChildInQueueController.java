@@ -15,7 +15,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/childInQueue")
-public class ChildInQueueController {
+public class  ChildInQueueController {
 
 
     private static final List<ChildInQueue> childInQueueList = new ArrayList<>();
