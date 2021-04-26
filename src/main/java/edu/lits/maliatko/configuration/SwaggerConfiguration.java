@@ -21,7 +21,7 @@ public class SwaggerConfiguration extends WebMvcConfigurationSupport {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("edu.lits.maliatko.controller"))
-                .paths(PathSelectors.regex("/**"))
+                .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo());
     }
