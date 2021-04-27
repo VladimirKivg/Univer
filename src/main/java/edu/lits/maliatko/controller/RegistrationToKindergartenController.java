@@ -62,18 +62,6 @@ private RegistrationToKindergartenService service;
        service.saveChild(kidReg);
 
 
-//        Kindergarten kindergarten = new Kindergarten();
-//        Iterable<Kindergarten> all = kindergartenRepository.findAll();
-//
-//        service.findAllKindergarten();
-//
-//        for (Kindergarten kid : all) {
-//            if (Integer.parseInt(kidReg.getKindergartenName()) == kid.getNumber()) {
-//                kindergarten = kid;
-//            }
-//        }
-//        Queue queue = new Queue(child, kindergarten, date);
-//        queueRepository.save(queue);
 
         service.saveQueue(kidReg);
 
