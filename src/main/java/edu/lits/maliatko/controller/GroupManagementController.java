@@ -42,18 +42,6 @@ public class GroupManagementController {
 //             managerGroupModel.childModelList.add(childModel);
 //         }
 
-        //закоментована поки не буде аповнена таблиця з ролями rolle і user_to_role
-
-        // groupManagementService.findAllEducator() дає тільки "ROLE_EDUCATOR"
-
-//         Iterable<UserToRole> all2 = userToRoleRepository.findAll();
-//         for (UserToRole userToRol:all2){
-//             if("ROLE_EDUCATOR".equals(userToRol.getRole().getRole())){
-//                 EducatorModel educatorModel = new EducatorModel( userToRol.getUser().getId(),userToRol.getUser().getName(), userToRol.getUser().getSurname(), userToRol.getUser().getFatherName());
-//                 managerGroupModel.educatorModelList.add(educatorModel);
-//             }
-//         }
-
 
         List<ClusterModel> clustersInKindergarten = groupManagementService.getClustersInKindergarten(1);
         model.addAttribute("groups", clustersInKindergarten);
