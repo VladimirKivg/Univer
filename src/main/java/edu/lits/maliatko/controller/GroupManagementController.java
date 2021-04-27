@@ -33,14 +33,6 @@ public class GroupManagementController {
     @RequestMapping(value = "/management", method = RequestMethod.GET)
     public String showClusters(Model model) {
 
-//         Iterable<Child> all1 = childRepository.findAll();
-//         for (Child child:all1){
-//             ChildModel childModel=new ChildModel();
-//             childModel.setName(child.getName());
-//             childModel.setSurname(child.getSurname());
-//             childModel.setFatherName(child.getFatherName());
-//             managerGroupModel.childModelList.add(childModel);
-//         }
 
 
         List<ClusterModel> clustersInKindergarten = groupManagementService.getClustersInKindergarten(1);
