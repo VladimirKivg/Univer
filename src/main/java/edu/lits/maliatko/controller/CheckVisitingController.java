@@ -27,9 +27,7 @@ public class CheckVisitingController {
     public String visiting(Model model){
         List<CheckVisitingModel> allByPresence1 = checkVisitingService.findAllByPresence(null);
 
-//        Iterable<Visiting> allByPresence = visitingRepository.findAllByPresence(null);
-//List<Visiting>visitingList2=new ArrayList<>();
-//allByPresence.forEach(visitingList2::add);
+
 
         model.addAttribute("attributeChildList2",allByPresence1);
 
