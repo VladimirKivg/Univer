@@ -42,7 +42,6 @@ public class QueueController {
 
             List<KindergartenModel> byName = queueService.findByName(kindergartenName);
 
-//            Iterable<Kindergarten> kindergartenIterable = kindergartenRepository.findByName(kindergartenName);
             KindergartenModel kindergarten = byName.iterator().next();
           address=kindergarten.getAddress();
 
