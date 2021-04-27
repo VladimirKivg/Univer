@@ -44,8 +44,6 @@ all.forEach(childList::add);
     }
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String add(Child child) {
-//        child.setId((getChildInAGroup.size())+1);
-//        getChildInAGroup.add(child);
         childRepository.save(child);
         return "redirect:/childInAGroup/list";
     }
