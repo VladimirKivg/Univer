@@ -38,9 +38,6 @@ private RegistrationToKindergartenService service;
         service.saveKidAddress(kidReg);
 
 
-//        Address userAddress = new Address(kidReg.getParentRegion(), kidReg.getParentCity(), kidReg.getParentStreet(), kidReg.getParentBuildingNumber(), kidReg.getParentApartment());
-//        addressRepository.save(userAddress);
-
         service.saveUserAddress(kidReg);
 
 
