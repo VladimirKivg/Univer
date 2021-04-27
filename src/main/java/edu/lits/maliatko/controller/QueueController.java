@@ -28,11 +28,6 @@ public class QueueController {
     @Autowired
     private QueueService queueService;
 
-//    @Autowired
-//    private QueueRepository queueRepository;
-//
-//    @Autowired
-//    private KindergartenRepository kindergartenRepository;
 
     @RequestMapping("/queue")
     public String listKinder(
