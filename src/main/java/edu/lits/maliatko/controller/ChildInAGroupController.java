@@ -20,16 +20,7 @@ import java.util.Optional;
 @RequestMapping("/childInAGroup")
 public class ChildInAGroupController {
 
-//    private static List<ChildInAGroup> getChildInAGroup = new ArrayList<>();
-//    static {
-//        ChildInAGroup child = new ChildInAGroup();
-//        child.setName("Маленький");
-//        child.setSurname("Малюк");
-//        child.setDateOfBirdth("24.13.2022");
-//        child.setId(1);
-//        getChildInAGroup.add(child);
-//        // add other groups
-//    }
+
 
     @Autowired
     private ChildRepository childRepository;
