@@ -34,7 +34,6 @@ public class VisitingController {
             childList.add(child);
         }
 
-        //Iterable<Child> childList = visitingService.getChildList();
 
         String currentDate = visitingService.getCurrentTime();
 
