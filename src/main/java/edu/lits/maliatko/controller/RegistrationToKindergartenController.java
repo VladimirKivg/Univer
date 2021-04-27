@@ -24,23 +24,7 @@ public class RegistrationToKindergartenController {
     @Autowired
 private RegistrationToKindergartenService service;
 
-//    @Autowired
-//    private AddressRepository addressRepository;
-//
-//    @Autowired
-//    private UserRepository userRepository;
-//
-//    @Autowired
-//    private ChildRepository childRepository;
-//
-//    @Autowired
-//    private KindergartenRepository kindergartenRepository;
-//
-//    @Autowired
-//    private QueueRepository queueRepository;
-//
-//    @Autowired
-//    private ClusterRepository clusterRepository;
+
 
     @RequestMapping("/registration")
     public String registration(ModelMap model) {
