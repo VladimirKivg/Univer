@@ -35,10 +35,6 @@ private RegistrationToKindergartenService service;
     @RequestMapping(value = "/addKidToList", method = RequestMethod.POST)
     public String addKidToList(KidReg kidReg) {
 
-//        Address kidAddress = new Address(kidReg.getKidRegion(), kidReg.getKidCity(), kidReg.getKidStreet(),
-//                kidReg.getKidBuildingNumber(), kidReg.getKidApartment());
-//        addressRepository.save(kidAddress);
-
         service.saveKidAddress(kidReg);
 
 
