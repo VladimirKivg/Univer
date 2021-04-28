@@ -24,14 +24,13 @@ public class CheckVisitingController {
     private CheckVisitingService checkVisitingService;
 
     @RequestMapping("/visitingCheck")
-    public String visiting(Model model){
+    public String visiting(Model model) {
         List<CheckVisitingModel> allByPresence1 = checkVisitingService.findAllByPresence(null);
 
+        model.addAttribute("attributeChildList2", allByPresence1);
 
-
-        model.addAttribute("attributeChildList2",allByPresence1);
-
-        model.addAttribute("content","checkVisiting");
-    return "index";}
+        model.addAttribute("content", "checkVisiting");
+        return "index";
+    }
 
 }
