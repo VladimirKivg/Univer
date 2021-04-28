@@ -22,7 +22,6 @@ public class CreatingGroupsController {
         return "index";
     }
 
-
     @RequestMapping(value = "/addNameGroup", method = RequestMethod.POST)
     public String addNameGroups(CreatingGroupsModel creatingGroups) {
 
