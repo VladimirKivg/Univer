@@ -31,7 +31,6 @@ public class InfoKidController {
     @RequestMapping("/info-kid")
     public String informKind(@RequestParam(value = "id") String idStr, Model model) {
 
-
         try {
 
             int id = Integer.parseInt(idStr);
