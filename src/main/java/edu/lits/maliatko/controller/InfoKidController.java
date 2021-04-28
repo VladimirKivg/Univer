@@ -20,7 +20,6 @@ import java.util.Optional;
 @Controller
 public class InfoKidController {
 
-
     @Autowired
     private InfoKidService infoKidService;
 
