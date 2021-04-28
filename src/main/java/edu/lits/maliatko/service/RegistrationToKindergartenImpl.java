@@ -47,6 +47,10 @@ public class RegistrationToKindergartenImpl implements RegistrationToKindergarte
     @Override
     public void saveUserAddress(KidReg kidReg) {
         userAddress = new Address(kidReg.getParentRegion(), kidReg.getParentCity(), kidReg.getParentStreet(), kidReg.getParentBuildingNumber(), kidReg.getParentApartment());
+        if (userAddress.equals(kidAddress)) {
+            userAddress = kidAddress;
+            return;
+        }
         addressRepository.save(userAddress);
     }
 
@@ -72,14 +76,12 @@ public class RegistrationToKindergartenImpl implements RegistrationToKindergarte
     @Override
     public void saveQueue(KidReg kidReg) {
         Kindergarten kindergarten = new Kindergarten();
-        Iterable<Kindergarten> all = kindergartenRepository.findAll();
-
+        Iterable<Kindergarten> all = kindergartenRepository.findByName(kidReg.getKindergartenName());
 
         for (Kindergarten kid : all) {
-            if (Integer.parseInt(kidReg.getKindergartenName()) == kid.getNumber()) {
                 kindergarten = kid;
-            }
         }
+
         Queue queue = new Queue(child, kindergarten, date);
         queueRepository.save(queue);
     }

@@ -3,6 +3,7 @@ package edu.lits.maliatko.pojo;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity(name = "address")
 public class Address {
@@ -96,5 +97,18 @@ public class Address {
                 ", buildingNumber=" + buildingNumber +
                 ", apartment=" + apartment +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Address address = (Address) o;
+        return Objects.equals(region, address.region) && Objects.equals(city, address.city) && Objects.equals(street, address.street) && Objects.equals(buildingNumber, address.buildingNumber) && Objects.equals(apartment, address.apartment);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(region, city, street, buildingNumber, apartment);
     }
 }
