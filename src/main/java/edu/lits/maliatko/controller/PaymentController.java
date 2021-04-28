@@ -17,7 +17,6 @@ import java.util.List;
 @RequestMapping("/payment")
 public class PaymentController {
 
-
     @Autowired
     private PaymentService paymentService;
 
@@ -35,7 +34,6 @@ public class PaymentController {
     public String delete(@PathVariable("id") Integer id, ModelMap model) {
 
         paymentService.deleteById(id);
-
 
         return "redirect:/payment/list";
     }
