@@ -47,7 +47,7 @@ public class QueueController {
 
             List<QueueModel> byKindergarten_name = queueService.findByKindergarten_Name(kindergartenName);
 
-//            Iterable<Queue> all1 = queueRepository.findByKindergarten_Name(kindergartenName);
+
             for (QueueModel queueModel : byKindergarten_name) {
                 childList.add(queueModel.getChild());
             }
