@@ -56,8 +56,7 @@ all.forEach(childList::add);
 
     @RequestMapping("/edit/{id}")
     public String showUpdateForm(@PathVariable("id") int id, Model model) {
-//       ChildInAGroup  child = getChildInAGroup.get(0); // this logic is not correct, group has to be
-// selected by it’s id.
+
 
         Child child = childRepository.findById(id).get();
         model.addAttribute("child", child);
