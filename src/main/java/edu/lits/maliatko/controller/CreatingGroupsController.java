@@ -26,7 +26,6 @@ public class CreatingGroupsController {
     @RequestMapping(value = "/addNameGroup", method = RequestMethod.POST)
     public String addNameGroups(CreatingGroupsModel creatingGroups) {
 
-        //цей метод в CreatingGroupImpl з creatingGroups заповнюється Cluster і встановлює в б.д
         creatingGroupsService.save(creatingGroups);
 
         return "redirect:/management";
