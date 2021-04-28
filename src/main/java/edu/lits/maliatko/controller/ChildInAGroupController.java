@@ -48,8 +48,6 @@ all.forEach(childList::add);
     }
     @RequestMapping("/delete/{id}")
     public String delete(@PathVariable("id") Integer id, ModelMap model) {
-//        getChildInAGroup.remove(id-1);// this logic is not correct, id doesn’t depend on index
-//        workId();
         childRepository.deleteById(id);
         return "redirect:/childInAGroup/list";
     }
