@@ -48,9 +48,6 @@ private RegistrationToKindergartenService service;
 
 
 //        Date date = new Date();
-//
-//        Child child = new Child(kidReg.getKidSurname(), kidReg.getKidName(), kidReg.getKidFatherName(), kidReg.getKidBirthDate(), kidReg.getKidGender(), kidReg.getKidBirthDocument(), kidAddress, userParentOne, kidReg.getKidBenefits(), "в черзі", null, 0, date, null);
-//        childRepository.save(child);
 
        service.saveChild(kidReg);
 
