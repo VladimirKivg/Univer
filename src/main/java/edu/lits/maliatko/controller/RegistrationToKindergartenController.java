@@ -41,7 +41,7 @@ private RegistrationToKindergartenService service;
         service.saveUserAddress(kidReg);
 
 
-//        User userParentOne = new User(kidReg.getParentSurname(), kidReg.getParentName(), kidReg.getParentFatherName(), kidReg.getParentBirthDate(), kidReg.getParentPhone(), kidReg.getParentMail(), userAddress);
+
 //        userRepository.save(userParentOne);
 
         service.saveUserParentOne(kidReg);
