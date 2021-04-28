@@ -27,7 +27,6 @@ public class ChildInAGroupController {
 
     @RequestMapping("/list")
     public String list(ModelMap model) {
-//        List<ChildInAGroup> childInAGroup = getChildInAGroup;
         Iterable<Child> all = childRepository.findAll();
 List<Child>childList=new ArrayList<>();
 all.forEach(childList::add);
