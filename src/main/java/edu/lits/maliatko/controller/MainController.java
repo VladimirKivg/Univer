@@ -34,6 +34,4 @@ public class MainController {
         model.addAttribute("name", value);
         return "greeting";
     }
-
-
 }
