@@ -18,42 +18,40 @@ public class EducatorInGroupController {
 
     @RequestMapping("/list")
     public String list(ModelMap model) {
-        model.addAttribute("educatorInGroupList", educatorInGroup);
+        model.addAttribute("educatorInGroupList");
         model.addAttribute("content", "");
         return "index";
     }
 
     @RequestMapping("/delete/{id}")
     public String delete(@PathVariable("id") Integer id, ModelMap model) {
-        educatorInGroup.remove(id-1);// this logic is not correct, id doesn’t depend on index
+        // this logic is not correct, id doesn’t depend on index
         return "redirect:/educator-in-group/list";
     }
 
     @RequestMapping("/add-educator-in-group")
-    public String addEducatorInGroup(EducatorInGroup educator, ModelMap model, BindingResult result) {
+    public String addEducatorInGroup( ModelMap model, BindingResult result) {
         model.addAttribute("content", "");
         return "index";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String add(EducatorInGroup educator) {
-        educatorInGroup.add(educator);
+    public String add() {
+
         return "redirect:/educator-in-group/list";
     }
 
     @RequestMapping("/edit/{id}")
     public String showUpdateForm(@PathVariable("id") int id, Model model) {
-        EducatorInGroup educator = educatorInGroup.get(id-1); // this logic is not correct, group has to be                        //                                    selected by it’s id.
-        model.addAttribute("educatorInGroup", educator);
+        ; // this logic is not correct, group has to be                        //                                    selected by it’s id.
+        model.addAttribute("educatorInGroup");
         model.addAttribute("content", "");
         return "index";
     }
 
     @RequestMapping("/update/{id}")
-    public String updateGroup(@PathVariable("id") int id, EducatorInGroup educator, BindingResult result, Model model) {
-        educatorInGroup.get(id-1).setName(educator.getName());
-        educatorInGroup.get(id-1).setSurname(educator.getSurname());
-        educatorInGroup.get(id-1).setCategory(educator.getCategory());
+    public String updateGroup(@PathVariable("id") int id,  BindingResult result, Model model) {
+
         return "redirect:/educator-in-group/list";
     }
 }
