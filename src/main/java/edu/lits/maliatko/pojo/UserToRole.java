@@ -12,11 +12,11 @@ public class UserToRole {
     @GenericGenerator(name = "native", strategy = "native")
     private Integer id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role;
 

@@ -13,7 +13,7 @@ public class Visiting {
     @GenericGenerator(name = "native", strategy = "native")
     private Integer id;
 
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = "kid_id")
     private Child child;
 
@@ -23,7 +23,7 @@ public class Visiting {
     @Column(name = "presence")
     private Integer presence;
 
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = "user_logger_id")
     private User userLogger;
 

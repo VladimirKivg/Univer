@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/json")
+@RequestMapping("/rest")
 public class RegChildRestController {
 
     @Autowired

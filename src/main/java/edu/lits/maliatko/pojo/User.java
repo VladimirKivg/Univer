@@ -32,7 +32,7 @@ public class User {
     @Column(name = "passport_id")
     private Integer passportId;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "address_id")
     private Address address;
 
