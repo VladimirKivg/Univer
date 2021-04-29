@@ -42,8 +42,6 @@ private RegistrationToKindergartenService service;
 
 
 
-//        userRepository.save(userParentOne);
-
         service.saveUserParentOne(kidReg);
 
 
