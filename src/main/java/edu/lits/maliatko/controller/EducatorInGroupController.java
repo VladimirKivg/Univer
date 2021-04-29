@@ -56,7 +56,7 @@ public class EducatorInGroupController {
 
     @RequestMapping("/add-educator-in-group")
     public String addEducatorInGroup(EducatorInGroup educator, ModelMap model, BindingResult result) {
-        model.addAttribute("content", "addEducator");
+        model.addAttribute("content", "");
         return "index";
     }
 
