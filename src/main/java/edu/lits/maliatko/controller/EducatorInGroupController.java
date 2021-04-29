@@ -18,28 +18,9 @@ import java.util.List;
 @RequestMapping("/educator-in-group")
 public class EducatorInGroupController {
     public static List<EducatorInGroup> educatorInGroup = new ArrayList<>();
-    static {
-        EducatorInGroup educatorInGroup1 = new EducatorInGroup();
-        educatorInGroup1.setId(1);
-        educatorInGroup1.setName("sdfsd");
-        educatorInGroup1.setSurname("gfhfg");
-        educatorInGroup1.setCategory("gfhgh");
-        educatorInGroup.add(educatorInGroup1);
 
-        EducatorInGroup educatorInGroup2 = new EducatorInGroup();
-        educatorInGroup2.setId(2);
-        educatorInGroup2.setName("ewrwer");
-        educatorInGroup2.setSurname("nvdvddf");
-        educatorInGroup2.setCategory("rtyrt");
-        educatorInGroup.add(educatorInGroup2);
 
-        EducatorInGroup educatorInGroup3 = new EducatorInGroup();
-        educatorInGroup3.setId(3);
-        educatorInGroup3.setName("ukuki");
-        educatorInGroup3.setSurname("bfgbg");
-        educatorInGroup3.setCategory("ertert");
-        educatorInGroup.add(educatorInGroup3);
-    }
+
 
     @RequestMapping("/list")
     public String list(ModelMap model) {
