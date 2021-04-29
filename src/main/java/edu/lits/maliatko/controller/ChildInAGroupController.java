@@ -64,8 +64,6 @@ all.forEach(childList::add);
     @RequestMapping("/update/{id}")
     public String updateChildInAGroup(@PathVariable("id") int id, Child child,
                               BindingResult result, Model model) {
-//        getChildInAGroup.get(id).setName(child.getName());
-//        getChildInAGroup.get(id).setSurname(child.getSurname());
 //        getChildInAGroup.get(id).setDateOfBirdth(child.getDateOfBirdth());
         childRepository.save(child);
         return "redirect:/childInAGroup/list";
