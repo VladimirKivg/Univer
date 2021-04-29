@@ -22,8 +22,7 @@ import java.util.Optional;
 public class RegistrationToKindergartenController {
 
     @Autowired
-private RegistrationToKindergartenService service;
-
+    private RegistrationToKindergartenService service;
 
 
     @RequestMapping("/registration")
@@ -36,21 +35,9 @@ private RegistrationToKindergartenService service;
     public String addKidToList(KidReg kidReg) {
 
         service.saveKidAddress(kidReg);
-
-
         service.saveUserAddress(kidReg);
-
-
-
         service.saveUserParentOne(kidReg);
-
-
-//        Date date = new Date();
-
-       service.saveChild(kidReg);
-
-
-
+        service.saveChild(kidReg);
         service.saveQueue(kidReg);
 
         return "redirect:/queue";
