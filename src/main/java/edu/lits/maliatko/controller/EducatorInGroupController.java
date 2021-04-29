@@ -44,7 +44,7 @@ public class EducatorInGroupController {
     @RequestMapping("/list")
     public String list(ModelMap model) {
         model.addAttribute("educatorInGroupList", educatorInGroup);
-        model.addAttribute("content", "educatorInGroup");
+        model.addAttribute("content", "");
         return "index";
     }
 
@@ -70,7 +70,7 @@ public class EducatorInGroupController {
     public String showUpdateForm(@PathVariable("id") int id, Model model) {
         EducatorInGroup educator = educatorInGroup.get(id-1); // this logic is not correct, group has to be                        //                                    selected by it’s id.
         model.addAttribute("educatorInGroup", educator);
-        model.addAttribute("content", "updateEducatorInGroup");
+        model.addAttribute("content", "");
         return "index";
     }
 
