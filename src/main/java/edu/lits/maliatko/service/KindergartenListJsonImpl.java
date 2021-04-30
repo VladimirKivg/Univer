@@ -1,4 +1,12 @@
 package edu.lits.maliatko.service;
 
-public class KindergartenListJsonImpl {
+import edu.lits.maliatko.model.KindergartenModel;
+
+import java.util.List;
+
+public class KindergartenListJsonImpl implements KindergartenListJsonService{
+    @Override
+    public List<KindergartenModel> findAll() {
+        return null;
+    }
 }
