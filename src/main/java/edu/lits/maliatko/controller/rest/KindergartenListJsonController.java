@@ -22,12 +22,12 @@ public class KindergartenListJsonController {
     private KindergartenRepository kindergartenRepository;
 
     @RequestMapping("/kindergartenList")
-   public List<Kindergarten> kindergartenList(){
+   public List<KindergartenModel> kindergartenList(){
         List<KindergartenModel> all1 = kindergartenListJsonService.findAll();
-        Iterable<Kindergarten> all = kindergartenRepository.findAll();
-        List<Kindergarten>kindergartenList=new ArrayList<>();
-        all.forEach(kindergartenList::add);
+//        Iterable<Kindergarten> all = kindergartenRepository.findAll();
+//        List<Kindergarten>kindergartenList=new ArrayList<>();
+//        all.forEach(kindergartenList::add);
 
-        return kindergartenList;
+        return all1;
    }
 }
