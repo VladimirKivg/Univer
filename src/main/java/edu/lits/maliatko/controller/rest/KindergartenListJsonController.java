@@ -18,9 +18,6 @@ public class KindergartenListJsonController {
     @Autowired
    private KindergartenListJsonService kindergartenListJsonService;
 
-    @Autowired
-    private KindergartenRepository kindergartenRepository;
-
     @RequestMapping("/kindergartenList")
    public List<KindergartenModel> kindergartenList(){
         List<KindergartenModel> all1 = kindergartenListJsonService.findAll();
