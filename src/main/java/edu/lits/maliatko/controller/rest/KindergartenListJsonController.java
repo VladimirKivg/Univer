@@ -1,5 +1,6 @@
 package edu.lits.maliatko.controller.rest;
 
+import edu.lits.maliatko.model.KindergartenModel;
 import edu.lits.maliatko.pojo.Kindergarten;
 import edu.lits.maliatko.repository.KindergartenRepository;
 import edu.lits.maliatko.service.KindergartenListJsonService;
@@ -22,7 +23,7 @@ public class KindergartenListJsonController {
 
     @RequestMapping("/kindergartenList")
    public List<Kindergarten> kindergartenList(){
-        kindergartenListJsonService.findAll();
+        List<KindergartenModel> all1 = kindergartenListJsonService.findAll();
         Iterable<Kindergarten> all = kindergartenRepository.findAll();
         List<Kindergarten>kindergartenList=new ArrayList<>();
         all.forEach(kindergartenList::add);
