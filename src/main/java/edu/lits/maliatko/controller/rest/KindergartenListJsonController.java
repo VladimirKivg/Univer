@@ -2,6 +2,7 @@ package edu.lits.maliatko.controller.rest;
 
 import edu.lits.maliatko.pojo.Kindergarten;
 import edu.lits.maliatko.repository.KindergartenRepository;
+import edu.lits.maliatko.service.KindergartenListJsonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,10 +15,14 @@ import java.util.List;
 public class KindergartenListJsonController {
 
     @Autowired
+   private KindergartenListJsonService kindergartenListJsonService;
+
+    @Autowired
     private KindergartenRepository kindergartenRepository;
 
     @RequestMapping("/kindergartenList")
    public List<Kindergarten> kindergartenList(){
+        kindergartenListJsonService.findAll();
         Iterable<Kindergarten> all = kindergartenRepository.findAll();
         List<Kindergarten>kindergartenList=new ArrayList<>();
         all.forEach(kindergartenList::add);
