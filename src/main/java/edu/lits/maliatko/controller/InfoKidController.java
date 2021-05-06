@@ -2,11 +2,6 @@ package edu.lits.maliatko.controller;
 //Вова
 
 import edu.lits.maliatko.model.test.InfoKidModel;
-import edu.lits.maliatko.pojo.Child;
-import edu.lits.maliatko.pojo.Queue;
-import edu.lits.maliatko.pojo.User;
-import edu.lits.maliatko.repository.QueueRepository;
-import edu.lits.maliatko.repository.ChildRepository;
 import edu.lits.maliatko.service.InfoKidService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
