@@ -1,8 +1,6 @@
 package edu.lits.maliatko.controller;
 
-
 import edu.lits.maliatko.model.CreatingGroupsModel;
-
 import edu.lits.maliatko.service.CreatingGroupsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
