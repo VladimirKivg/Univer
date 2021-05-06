@@ -21,10 +21,6 @@ public class UserTestController {
         UserModel userModel = userService.findUserById(1);
 
 
-//       User user=userRepository.findById(1).get();
-//        String adres=user.getAddress().getApartment();
-//        String name = user.getName();
-
         String name=userModel.getName();
         String address=userModel.getAddress();
          model.addAttribute("name",name);
