@@ -68,18 +68,6 @@ all.forEach(childList::add);
         childRepository.save(child);
         return "redirect:/childInAGroup/list";
     }
-//private void workId(){
-//        ArrayList <ChildInAGroup>childId =new ArrayList();
-//    for (int i = 0; i<getChildInAGroup.size() ; i++) {
-//       ChildInAGroup child2 =new ChildInAGroup();
-//       child2.setId(i+1);
-//       child2.setName(getChildInAGroup.get(i).getName());
-//       child2.setSurname(getChildInAGroup.get(i).getSurname());
-//       child2.setDateOfBirdth(getChildInAGroup.get(i).getDateOfBirdth());
-//        childId.add(child2);
-//    }
-//    getChildInAGroup=childId;
-//}
-//
+
 
 }
