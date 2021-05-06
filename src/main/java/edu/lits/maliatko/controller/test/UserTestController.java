@@ -1,9 +1,6 @@
 package edu.lits.maliatko.controller.test;
 
 import edu.lits.maliatko.model.test.UserModel;
-import edu.lits.maliatko.pojo.User;
-import edu.lits.maliatko.repository.UserRepository;
-
 import edu.lits.maliatko.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
