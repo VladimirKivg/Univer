@@ -1,10 +1,6 @@
 package edu.lits.maliatko.controller;
 
 import edu.lits.maliatko.model.test.CheckVisitingModel;
-import edu.lits.maliatko.pojo.Child;
-import edu.lits.maliatko.pojo.Visiting;
-import edu.lits.maliatko.repository.ChildRepository;
-import edu.lits.maliatko.repository.VisitingRepository;
 import edu.lits.maliatko.service.CheckVisitingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
