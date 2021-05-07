@@ -1,8 +1,5 @@
 package edu.lits.maliatko.model;
 
-import org.hibernate.annotations.GenericGenerator;
-
-
 import java.util.Date;
 
 public class PaymentModel {
