@@ -2,9 +2,6 @@ package edu.lits.maliatko.model;
 
 import edu.lits.maliatko.pojo.Child;
 import edu.lits.maliatko.pojo.Kindergarten;
-import org.hibernate.annotations.GenericGenerator;
-
-import javax.persistence.*;
 import java.util.Date;
 
 public class QueueModel {
