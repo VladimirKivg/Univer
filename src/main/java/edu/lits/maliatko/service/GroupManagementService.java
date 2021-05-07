@@ -3,7 +3,6 @@ package edu.lits.maliatko.service;
 import edu.lits.maliatko.model.ChildModel;
 import edu.lits.maliatko.model.ClusterModel;
 import edu.lits.maliatko.model.EducatorModel;
-import edu.lits.maliatko.model.ManagerGroupModel;
 
 import java.util.List;
 
