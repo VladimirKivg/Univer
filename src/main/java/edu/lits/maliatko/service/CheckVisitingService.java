@@ -1,7 +1,6 @@
 package edu.lits.maliatko.service;
 
 import edu.lits.maliatko.model.test.CheckVisitingModel;
-import edu.lits.maliatko.pojo.Visiting;
 
 import java.util.List;
 
