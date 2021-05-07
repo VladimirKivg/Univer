@@ -1,11 +1,6 @@
 package edu.lits.maliatko.model;
 
 import edu.lits.maliatko.pojo.Kindergarten;
-import org.hibernate.annotations.GenericGenerator;
-
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 public class ClusterModel {
 
