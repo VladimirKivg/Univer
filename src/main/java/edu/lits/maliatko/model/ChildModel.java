@@ -1,7 +1,5 @@
 package edu.lits.maliatko.model;
 
-import edu.lits.maliatko.pojo.Cluster;
-
 public class ChildModel {
 
     private Integer id;
