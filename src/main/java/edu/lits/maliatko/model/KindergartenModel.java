@@ -1,9 +1,6 @@
 package edu.lits.maliatko.model;
 
 import edu.lits.maliatko.pojo.Address;
-import org.hibernate.annotations.GenericGenerator;
-
-import javax.persistence.*;
 
 public class KindergartenModel {
 
