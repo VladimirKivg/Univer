@@ -2,7 +2,6 @@ package edu.lits.maliatko.controller;
 
 // цей клас писав Вова
 
-import edu.lits.maliatko.model.ChildModel;
 import edu.lits.maliatko.model.KindergartenModel;
 import edu.lits.maliatko.model.QueueModel;
 import edu.lits.maliatko.pojo.Address;
