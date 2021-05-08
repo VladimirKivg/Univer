@@ -1,7 +1,6 @@
 package edu.lits.maliatko.service;
 
 import edu.lits.maliatko.model.ClusterModel;
-import edu.lits.maliatko.pojo.Cluster;
 
 import java.util.List;
 
