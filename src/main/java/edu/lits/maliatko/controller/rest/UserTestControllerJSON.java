@@ -3,7 +3,6 @@ package edu.lits.maliatko.controller.rest;
 import edu.lits.maliatko.pojo.User;
 import edu.lits.maliatko.pojo.Visiting;
 import edu.lits.maliatko.repository.UserRepository;
-import edu.lits.maliatko.service.CheckVisitingImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
