@@ -21,8 +21,4 @@ public class CreatingGroupsImpl implements CreatingGroupsService{
         clusterRepository.save(cluster);
     }
 
-//    @Override
-//    public void save(Cluster cluster) {
-//        clusterRepository.save(cluster);
-//    }
 }
