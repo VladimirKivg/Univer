@@ -1,6 +1,6 @@
 package edu.lits.maliatko.controller.rest;
 
-import edu.lits.maliatko.pojo.Child;
+
 import edu.lits.maliatko.pojo.Queue;
 import edu.lits.maliatko.repository.QueueRepository;
 import io.swagger.annotations.ApiImplicitParam;
