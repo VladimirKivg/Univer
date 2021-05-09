@@ -1,8 +1,6 @@
 package edu.lits.maliatko.controller.rest;
 
 import edu.lits.maliatko.model.KindergartenModel;
-import edu.lits.maliatko.pojo.Kindergarten;
-import edu.lits.maliatko.repository.KindergartenRepository;
 import edu.lits.maliatko.service.KindergartenListJsonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
