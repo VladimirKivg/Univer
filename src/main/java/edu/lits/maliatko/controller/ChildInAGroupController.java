@@ -1,7 +1,7 @@
 package edu.lits.maliatko.controller;
-//зупин презент 7
 
-import edu.lits.maliatko.model.ChildInAGroup;
+
+
 import edu.lits.maliatko.pojo.Child;
 import edu.lits.maliatko.repository.ChildRepository;
 import org.springframework.beans.factory.annotation.Autowired;
