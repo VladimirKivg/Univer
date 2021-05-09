@@ -1,5 +1,4 @@
 package edu.lits.maliatko.controller;
-//Вова
 
 import edu.lits.maliatko.model.test.InfoKidModel;
 import edu.lits.maliatko.service.InfoKidService;
