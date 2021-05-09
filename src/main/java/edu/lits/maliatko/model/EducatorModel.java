@@ -3,14 +3,14 @@ package edu.lits.maliatko.model;
 public class EducatorModel {
 
     private Integer id;
-   private String name;
+    private String name;
     private String surname;
     private String fatherName;
 
     public EducatorModel() {
     }
 
-    public EducatorModel(Integer id,String name, String surname, String fatherName) {
+    public EducatorModel(Integer id, String name, String surname, String fatherName) {
         this.id = id;
         this.name = name;
         this.surname = surname;
