@@ -1,7 +1,6 @@
 package edu.lits.maliatko.controller.rest;
 
 import edu.lits.maliatko.pojo.User;
-import edu.lits.maliatko.pojo.Visiting;
 import edu.lits.maliatko.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
