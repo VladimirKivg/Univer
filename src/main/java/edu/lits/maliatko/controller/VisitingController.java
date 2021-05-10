@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +26,7 @@ public class VisitingController {
 
         User educator = visitingService.getEducator(2);
 
-        //Цей код виводить лист відвідування дітей з однієі групи
+        //Цей код виводить лiст відвідування дітей з однієі групи
         List<Child> childList = new ArrayList<>();
         Iterable<Child> all1 = visitingService.getOneGroup();
         for (Child child : all1) {
