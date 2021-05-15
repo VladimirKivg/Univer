@@ -19,8 +19,6 @@ public class CheckVisitingRestController {
     public List<CheckVisitingModel> visiting() {
         List<CheckVisitingModel> allByPresence1 = checkVisitingService.findAllByPresence(null);
 //
-//        model.addAttribute("attributeChildList2", allByPresence1);
-//
 //        model.addAttribute("content", "checkVisiting");
         return allByPresence1;
     }
