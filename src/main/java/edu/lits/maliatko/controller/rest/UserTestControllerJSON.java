@@ -30,7 +30,7 @@ public class UserTestControllerJSON {
     public List< User> userTestTest(){
         Iterable<User> allById = userRepository.findAllBySurname("Бойчук");
         List<User>userList=new ArrayList<>();
-        allById.forEach(userList::add);// один із for()
+        allById.forEach(userList::add);
 
     return userList;}
 
