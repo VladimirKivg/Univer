@@ -19,7 +19,7 @@ public class UserTestControllerJSON {
 
     @RequestMapping("/userTest")
     public User userTest(Model model) {
-//        User user=new User();
+
         User user=userRepository.findById(1).get();
 
 
