@@ -18,8 +18,6 @@ public class CheckVisitingRestController {
     @RequestMapping("/visitingCheck")
     public List<CheckVisitingModel> visiting() {
         List<CheckVisitingModel> allByPresence1 = checkVisitingService.findAllByPresence(null);
-//
-//        model.addAttribute("content", "checkVisiting");
         return allByPresence1;
     }
 
