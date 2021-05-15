@@ -21,11 +21,7 @@ public class UserTestControllerJSON {
     public User userTest(Model model) {
 //        User user=new User();
         User user=userRepository.findById(1).get();
-//        String adres=user.getAddressId().getApartment();
-//        String name = user.getName();
-//         model.addAttribute("name",name);
-//         model.addAttribute("apartment",adres);
-//         model.addAttribute("content","userTst");
+
 
         return user;
     }
@@ -38,13 +34,7 @@ public class UserTestControllerJSON {
 
     return userList;}
 
-//
-//
-//    @RequestMapping("/visitingCheck")//цей не запускається, він через візітінг працює, але нічого не виходить
-//    public List<Visiting> visiting(){
-//        CheckVisitingImpl checkVisitingService = new CheckVisitingImpl();
-//
-//        return checkVisitingService.visiting(); }
+
 
 }
 
