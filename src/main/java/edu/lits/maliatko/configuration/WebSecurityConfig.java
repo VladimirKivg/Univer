@@ -71,7 +71,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/css/*",
                         "/js/*",
                         "/img/*",
+
                         "/registration",
+                "/addKidToList",
+                "/management**",
+                "/add_child_from_queue**",
+                "/creating_groups",
+                "/payment/list",
+                        "/queue",
+                        "/info-kid-id",
+                        "/visiting",
+                        "/visitingCheck",
+
                         "/swagger-ui.html/*",
                         "/rest/*",
                         "/v2/api-docs",
