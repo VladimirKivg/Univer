@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 @Controller
+@RequestMapping("/management")
 public class GroupManagementController {
 
     private Integer selectedCluster;
@@ -26,19 +27,15 @@ public class GroupManagementController {
     @Autowired
     private GroupManagementService groupManagementService;
 
-
-    @RequestMapping(value = "/management", method = RequestMethod.GET)
+    @RequestMapping(value = "/cluster_list", method = RequestMethod.GET)
     public String showClusters(Model model) {
-
-
-
         List<ClusterModel> clustersInKindergarten = groupManagementService.getClustersInKindergarten(1);
         model.addAttribute("groups", clustersInKindergarten);
         model.addAttribute("content", "managerGroup");
         return "index";
     }
 
-    @RequestMapping(value = "/management_cluster_content", method = RequestMethod.GET)
+    @RequestMapping(value = "/cluster_content", method = RequestMethod.GET)
     public String showClusterContent(Integer id, Model model) {
 
         selectedCluster = id;
@@ -61,7 +58,7 @@ public class GroupManagementController {
         return "index";
     }
 
-    @RequestMapping(value = "/management_remove_educator", method = RequestMethod.GET)
+    @RequestMapping(value = "/remove_educator", method = RequestMethod.GET)
     public String removeEducator(Integer id, Model model) {
 
         groupManagementService.removeEducatorFromCluster(id, selectedCluster);
@@ -80,7 +77,7 @@ public class GroupManagementController {
         return "index";
     }
 
-    @RequestMapping(value = "/management_add_educator", method = RequestMethod.GET)
+    @RequestMapping(value = "/add_educator", method = RequestMethod.GET)
     public String addEducator(Integer id, Model model) {
 
         groupManagementService.addEducatorToCluster(id, selectedCluster);

@@ -71,18 +71,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/css/*",
                         "/js/*",
                         "/img/*",
-
                         "/registration",
-                "/addKidToList",
-                "/management**",
-                "/add_child_from_queue**",
-                "/creating_groups",
-                "/payment/list",
+                        "/addKidToList",
+
+                        "/management/*",
+
+                        "/creating_groups",
+                        "/payment/list",
                         "/queue",
                         "/info-kid-id",
                         "/visiting",
                         "/visitingCheck",
-
                         "/swagger-ui.html/*",
                         "/rest/*",
                         "/v2/api-docs",
@@ -97,8 +96,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .anyRequest().authenticated().and()
                 .exceptionHandling()
-                .defaultAuthenticationEntryPointFor(jwtAuthenticationEntryPoint,
-						new CustomRequestMatcher(AUTH_LIST))
+                .defaultAuthenticationEntryPointFor(jwtAuthenticationEntryPoint, new CustomRequestMatcher(AUTH_LIST))
                 .and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         httpSecurity.cors();

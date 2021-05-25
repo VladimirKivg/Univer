@@ -1,6 +1,6 @@
 <div th:fragment="managerGroup" xmlns:th="http://www.w3.org/1999/xhtml">
     <div>
-        <form action="/management_cluster_content" id="cluster_form" method="get">
+        <form action="/management/cluster_content" id="cluster_form" method="get">
 
             <div>СПИСОК ГРУП:</div>
             <ul class="cluster_list" id="cluster_list">
@@ -15,7 +15,7 @@
                 <input type="hidden" id="cluster_for_delete" th:value="${selectedCluster}">
                 <button type="button" id="create_new_cluster">Створити</button>
                 <button type="submit" id="remove_cluster" th:disabled="${selectedCluster == null or !attributeChild.isEmpty() or !attributeEducator.isEmpty()}"
-                        formaction="/delete_cluster"
+                        formaction="/management/delete_cluster"
                 onclick="document.getElementById('cluster_for_delete').setAttribute('name', 'id')"
                 >Видалити</button>
             </div>
@@ -56,7 +56,7 @@
     <div>-------------------------------------------------</div>
 
     <div>
-        <form action="/management_remove_educator" method="get">
+        <form action="/management/remove_educator" method="get">
 
             <div>СПИСОК ВИХОВАТЕЛІВ В ГРУПІ:</div>
             <ul class="educator_list">
@@ -78,7 +78,7 @@
     <div id="children_list_modal" class="modal">
 
         <div class="modal-content">
-            <form action="/add_child_from_queue" method="get">
+            <form action="/management/add_child_from_queue" method="get">
                 <div>СПИСОК ДІТЕЙ В ЧЕРЗІ:</div>
                 <ul class="queue_list">
 
@@ -102,7 +102,7 @@
     <div id="educator_list_modal" class="modal">
 
         <div class="modal-content">
-            <form action="/management_add_educator" method="get">
+            <form action="/management/add_educator" method="get">
                 <div>СПИСОК ВИХОВАТЕЛІВ У САДКУ:</div>
                 <ul class="all_educators_list">
 
@@ -126,7 +126,7 @@
     <div id="cluster_list_modal" class="modal">
 
         <div class="modal-content">
-            <form action="/change_cluster" method="get">
+            <form action="/management/change_cluster" method="get">
                 <div>СПИСОК ГРУП У САДКУ:</div>
                 <ul class="available_clusters_list">
 
@@ -151,7 +151,7 @@
     <div id="create_new_cluster_modal" class="modal">
 
         <div class="modal-content">
-            <form action="/add_new_cluster" method="get">
+            <form action="/management/add_new_cluster" method="get">
                 <div>НАЗВА НОВОЇ ГРУПИ:</div>
 
                 <input type="text" name="newClusterName" id="cluster_name" placeholder="введіть назву" oninput="
@@ -174,7 +174,7 @@
     <div id="return_to_queue_modal" class="modal">
 
         <div class="modal-content">
-            <form action="/return_child_to_queue" method="get">
+            <form action="/management/return_child_to_queue" method="get">
                 <div>ВИБЕРІТЬ ДНЗ:</div>
 
                 <input type="text" name="kindergartenName" value="ДНЗ №1">
