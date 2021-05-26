@@ -1,9 +1,9 @@
 package edu.lits.maliatko.controller;
 
+import edu.lits.maliatko.model.ChildModel;
+import edu.lits.maliatko.model.ClusterModel;
 import edu.lits.maliatko.model.VisitingList;
-import edu.lits.maliatko.pojo.Child;
 import edu.lits.maliatko.pojo.User;
-import edu.lits.maliatko.repository.ChildRepository;
 import edu.lits.maliatko.service.VisitingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,40 +14,72 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@RequestMapping("/visiting")
 public class VisitingController {
-    @Autowired
-    ChildRepository childRepository;
+
+    private User educator;
+    private List<ClusterModel> clusterList;
+    private List<ChildModel> childList;
+    private String currentDate;
+    private Integer selectedCluster;
 
     @Autowired
     VisitingService visitingService;
 
-    @RequestMapping(value = "/visiting", method = RequestMethod.GET)
-    public String visiting(ModelMap model) {
+    @RequestMapping(value = "/child_list", method = RequestMethod.GET)
+    public String visitingCheck(ModelMap model) {
 
-        User educator = visitingService.getEducator(2);
+        educator = visitingService.getEducator(2);
 
-        //Цей код виводить лiст відвідування дітей з однієі групи
-        List<Child> childList = new ArrayList<>();
-        Iterable<Child> all1 = visitingService.getOneGroup();
-        for (Child child : all1) {
-            childList.add(child);
+        clusterList = visitingService.getClusterList(2);
+
+        if (!clusterList.isEmpty()) {
+            selectedCluster = clusterList.get(0).getId();
+            childList = visitingService.getChildList(selectedCluster);
+        } else {
+            childList = new ArrayList<>();
         }
 
-
-        String currentDate = visitingService.getCurrentTime();
+        currentDate = visitingService.getCurrentTime();
 
         model.addAttribute("educator", educator);
+        model.addAttribute("clusterList", clusterList);
         model.addAttribute("childList", childList);
         model.addAttribute("content", "visiting");
         model.addAttribute("currentDate", currentDate);
+        model.addAttribute("selectedCluster", selectedCluster);
         return "index";
     }
 
-    @RequestMapping(value = "/visiting", method = RequestMethod.POST)
-    public String visitingUpdate(VisitingList visitingList) {
+    @RequestMapping(value = "/change_cluster", method = RequestMethod.GET)
+    public String visitingChangeCluster(Integer currentCluster, ModelMap model) {
 
-        visitingService.addVisiting(visitingList);
+        selectedCluster = currentCluster;
 
-        return "redirect:/visiting";
+        childList = visitingService.getChildList(selectedCluster);
+
+        model.addAttribute("educator", educator);
+        model.addAttribute("clusterList", clusterList);
+        model.addAttribute("childList", childList);
+        model.addAttribute("content", "visiting");
+        model.addAttribute("currentDate", currentDate);
+        model.addAttribute("selectedCluster", selectedCluster);
+        return "index";
+    }
+
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    public String visitingUpdate(VisitingList visitingList, ModelMap model) {
+
+        if (visitingList.getVisitingList() != null) {
+            visitingService.addVisiting(visitingList);
+        }
+
+        model.addAttribute("educator", educator);
+        model.addAttribute("clusterList", clusterList);
+        model.addAttribute("childList", childList);
+        model.addAttribute("content", "visiting");
+        model.addAttribute("currentDate", currentDate);
+        model.addAttribute("selectedCluster", selectedCluster);
+        return "index";
     }
 }

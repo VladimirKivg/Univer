@@ -75,6 +75,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/addKidToList",
 
                         "/management/*",
+                        "/visiting/*",
 
                         "/creating_groups",
                         "/payment/list",
