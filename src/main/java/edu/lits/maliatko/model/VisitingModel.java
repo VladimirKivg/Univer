@@ -1,22 +1,19 @@
 package edu.lits.maliatko.model;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.util.Date;
-
 public class VisitingModel {
     private Integer id;
+    private Integer childId;
     private String name;
     private Integer presence;
-    @DateTimeFormat(pattern="dd/MM/yyyy, HH:mm:ss")
-    private Date visitingDate;
+    private String visitingDate;
     private Integer loggerId;
 
     public VisitingModel() {
     }
 
-    public VisitingModel(Integer id, String name, Integer presence, Date visitingDate, Integer loggerId) {
+    public VisitingModel(Integer id, Integer childId, String name, Integer presence, String visitingDate, Integer loggerId) {
         this.id = id;
+        this.childId = childId;
         this.name = name;
         this.presence = presence;
         this.visitingDate = visitingDate;
@@ -29,6 +26,14 @@ public class VisitingModel {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getChildId() {
+        return childId;
+    }
+
+    public void setChildId(Integer childId) {
+        this.childId = childId;
     }
 
     public String getName() {
@@ -47,11 +52,11 @@ public class VisitingModel {
         this.presence = presence;
     }
 
-    public Date getVisitingDate() {
+    public String getVisitingDate() {
         return visitingDate;
     }
 
-    public void setVisitingDate(Date visitingDate) {
+    public void setVisitingDate(String visitingDate) {
         this.visitingDate = visitingDate;
     }
 
