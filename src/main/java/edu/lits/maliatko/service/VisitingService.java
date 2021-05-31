@@ -14,10 +14,7 @@ import org.springframework.stereotype.Service;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.TimeZone;
+import java.util.*;
 
 @Service
 public class VisitingService {
@@ -118,15 +115,8 @@ public class VisitingService {
     }
 
     public Date getCurrentDateTime() {
-        DateFormat df = new SimpleDateFormat();
-        df.setTimeZone(TimeZone.getTimeZone("EET"));
-        Date date = null;
-        try {
-            date = df.parse(df.format(new Date()));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return date;
+        Calendar cal = new GregorianCalendar(TimeZone.getTimeZone("EET"));
+        return cal.getTime();
     }
 
 
