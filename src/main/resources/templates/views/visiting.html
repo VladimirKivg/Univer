@@ -5,19 +5,18 @@
     </div>
 
     <div>
-        <form action="/visiting/change_cluster" id="cluster_list_form" method="get">
-            <label for="selected_cluster">Група:</label>
-            <select id="selected_cluster" name="currentCluster">
-                <option th:each="cluster : ${clusterList}" th:value="${cluster.id}" th:text="${cluster.name}" onclick="document.forms['cluster_list_form'].submit()" th:selected="${cluster.id == selectedCluster}"></option>
-            </select>
-        </form>
-    </div>
-
-    <div>
-        <form action="/visiting/change_date" method="get">
-            <label for="visiting_date">Дата відмічання:</label>
-            <input type="text" id="visiting_date" name="newVisitingDate" th:value="${visitingDate}">
-            <button type="submit">Перейти</button>
+        <form action="/visiting/change_cluster_date" method="get">
+            <div>
+                <label for="selected_cluster">Група:</label>
+                <select id="selected_cluster" name="currentCluster">
+                    <option th:each="cluster : ${clusterList}" th:value="${cluster.id}" th:text="${cluster.name}" th:selected="${cluster.id == selectedCluster}"></option>
+                </select>
+            </div>
+            <div>
+                <label for="visiting_date">Дата відмічання:</label>
+                <input type="text" id="visiting_date" name="newVisitingDate" th:value="${visitingDate}">
+                <div><button type="submit">Перейти</button></div>
+            </div>
         </form>
     </div>
 

@@ -54,29 +54,10 @@ public class VisitingController {
         return "index";
     }
 
-    @RequestMapping(value = "/change_date", method = RequestMethod.GET)
-    public String visitingChangeDate(@DateTimeFormat(pattern = "dd/MM/yyyy") Date newVisitingDate, ModelMap model) {
+    @RequestMapping(value = "/change_cluster_date", method = RequestMethod.GET)
+    public String visitingChangeDate(@DateTimeFormat(pattern = "dd/MM/yyyy") Date newVisitingDate, Integer currentCluster, ModelMap model) {
 
         visitingDate = newVisitingDate;
-
-        if (!clusterList.isEmpty()) {
-            visitingList = visitingService.getVisitingList(selectedCluster, visitingDate);
-        } else {
-            visitingList = new ArrayList<>();
-        }
-
-        model.addAttribute("educator", educator);
-        model.addAttribute("clusterList", clusterList);
-        model.addAttribute("content", "visiting");
-        model.addAttribute("selectedCluster", selectedCluster);
-        model.addAttribute("visitingList", visitingList);
-        model.addAttribute("visitingDate", visitingService.convertDateToString(visitingDate));
-        return "index";
-    }
-
-    @RequestMapping(value = "/change_cluster", method = RequestMethod.GET)
-    public String visitingChangeCluster(Integer currentCluster, ModelMap model) {
-
         selectedCluster = currentCluster;
 
         if (!clusterList.isEmpty()) {
@@ -84,6 +65,7 @@ public class VisitingController {
         } else {
             visitingList = new ArrayList<>();
         }
+
         model.addAttribute("educator", educator);
         model.addAttribute("clusterList", clusterList);
         model.addAttribute("content", "visiting");
