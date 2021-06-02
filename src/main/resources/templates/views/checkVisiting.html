@@ -9,6 +9,11 @@
                 <th>По батькові</th>
                 <th>Дата</th>
 
+                <th>група</th>
+                <th>Вихователь</th>
+
+
+
             </tr>
             </thead>
 
@@ -18,6 +23,11 @@
                 <td th:text="${attribute.child.surname}"></td>
                 <td th:text="${attribute.child.fatherName}"></td>
                 <td th:text="${attribute.visitingDate}"></td>
+
+                <td th:text="${attribute.child.cluster.name}"></td>
+                <td th:text="${attribute.userLogger.name}"></td>
+                <td th:text="${attribute.userLogger.fatherName}"></td>
+
 
 
 
