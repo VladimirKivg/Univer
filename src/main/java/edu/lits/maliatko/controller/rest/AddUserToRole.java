@@ -18,8 +18,8 @@ public class AddUserToRole {
     UserToRoleRepository userToRoleRepository;
 
     @RequestMapping("lookUser")
-public void lookUser(String mail){
-    User byMail = userRepository.findByMail(mail);
-}
+public User lookUser(String mail){
+    User byMailUser = userRepository.findByMail(mail);
+ return byMailUser;}
 
 }
