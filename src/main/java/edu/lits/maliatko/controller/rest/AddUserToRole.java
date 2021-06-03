@@ -17,7 +17,7 @@ public class AddUserToRole {
     @Autowired
     UserToRoleRepository userToRoleRepository;
 
-    @RequestMapping("lookUser")
+    @RequestMapping("/lookUser")
 public User lookUser(String mail){
     User byMailUser = userRepository.findByMail(mail);
  return byMailUser;}
