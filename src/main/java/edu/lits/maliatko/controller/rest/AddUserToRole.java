@@ -23,7 +23,7 @@ public User lookUser(String mail){
     User byMailUser = userRepository.findByMail(mail);
  return byMailUser;}
 
-
+@RequestMapping("sevUserToRole")
  public void sevUserToRole(){
 
  }
