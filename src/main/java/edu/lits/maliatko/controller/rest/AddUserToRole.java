@@ -25,7 +25,7 @@ public User lookUser(String mail){
 
 @RequestMapping("sevUserToRole")
  public void sevUserToRole(User user){
-
+    userToRoleRepository.sevUserToRole(user);
  }
 
 }
