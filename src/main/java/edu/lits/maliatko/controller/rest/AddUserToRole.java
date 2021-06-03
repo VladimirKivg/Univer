@@ -23,4 +23,10 @@ public User lookUser(String mail){
     User byMailUser = userRepository.findByMail(mail);
  return byMailUser;}
 
+
+ public void sevUserToRole(){
+
+ }
+
 }
+
