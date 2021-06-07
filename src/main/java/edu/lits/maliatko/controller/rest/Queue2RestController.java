@@ -7,7 +7,6 @@ import edu.lits.maliatko.pojo.Child;
 import edu.lits.maliatko.repository.QueueRepository;
 import edu.lits.maliatko.service.QueueService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
