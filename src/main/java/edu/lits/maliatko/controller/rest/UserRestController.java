@@ -3,8 +3,10 @@ package edu.lits.maliatko.controller.rest;
 import edu.lits.maliatko.configuration.JwtTokenUtil;
 import edu.lits.maliatko.model.LoginRequest;
 import edu.lits.maliatko.model.LoginResponse;
-import edu.lits.maliatko.model.User;
+import edu.lits.maliatko.pojo.User;
+import edu.lits.maliatko.pojo.UserToRole;
 import edu.lits.maliatko.repository.UserRepository;
+import edu.lits.maliatko.repository.UserToRoleRepository;
 import edu.lits.maliatko.service.SecurityService;
 import edu.lits.maliatko.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @RestController
 public class UserRestController {
@@ -29,6 +34,8 @@ public class UserRestController {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    UserToRoleRepository userToRoleRepository;
     @Autowired
     private UserDetailsServiceImpl userDetailsService;
 
@@ -42,17 +49,39 @@ public class UserRestController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    @PostMapping("/registration")
-    public ResponseEntity<LoginResponse> registration(HttpServletRequest request, User user) {
+    @RequestMapping(value = "/registration", method = RequestMethod.POST)
+    public ResponseEntity<LoginResponse> registration(@RequestBody LoginRequest authenticationRequest) {
 
         edu.lits.maliatko.pojo.User userPojo = new edu.lits.maliatko.pojo.User();
-        userPojo.setMail(user.getEmail());
-        userPojo.setPassword(user.getPassword());
-        userPojo.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        userPojo.setMail(authenticationRequest.getUsername());
+        userPojo.setPassword(bCryptPasswordEncoder.encode(authenticationRequest.getPassword()));
         userRepository.save(userPojo);
 
-        return ResponseEntity.ok(new LoginResponse("ok", user.getEmail()));
+        return ResponseEntity.ok(new LoginResponse("ok", authenticationRequest.getUsername()));
 
+    }
+
+ @RequestMapping(value = "/main-menu", method = RequestMethod.POST)
+    public List <String> getMenu (String token){
+        String userMail=jwtTokenUtil.getUsernameFromToken(token);
+        User loggedUser= userRepository.findByMail(userMail);
+
+       UserToRole role=userToRoleRepository.findByUserId(loggedUser.getId());
+       List<String> menuItems=null;
+       switch(role.getRole().getRole()) {
+           case "ROLE_MANAGER":
+               menuItems= Arrays.asList("url1","url2");
+               break;
+           case "ROLE_EDUCATOR":
+               menuItems= Arrays.asList("url3","url4");
+               break;
+           case "ROLE_PARENTS":
+               menuItems=Arrays.asList("url5","url6");
+               break;
+           case "ROLE_ACCOUNTANT":
+               menuItems=Arrays.asList("url7","url8");
+       }
+    return menuItems;
     }
 
 
