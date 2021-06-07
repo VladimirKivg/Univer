@@ -1,7 +1,7 @@
 package edu.lits.maliatko.repository;
 
 
-import edu.lits.maliatko.pojo.User;
+
 import edu.lits.maliatko.pojo.UserToRole;
 import org.springframework.data.repository.CrudRepository;
 
