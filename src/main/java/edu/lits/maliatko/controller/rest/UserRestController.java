@@ -42,16 +42,15 @@ public class UserRestController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    @PostMapping("/registration")
-    public ResponseEntity<LoginResponse> registration(HttpServletRequest request, User user) {
+    @RequestMapping(value = "/registration", method = RequestMethod.POST)
+    public ResponseEntity<LoginResponse> registration(@RequestBody LoginRequest authenticationRequest) {
 
         edu.lits.maliatko.pojo.User userPojo = new edu.lits.maliatko.pojo.User();
-        userPojo.setMail(user.getEmail());
-        userPojo.setPassword(user.getPassword());
-        userPojo.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        userPojo.setMail(authenticationRequest.getUsername());
+        userPojo.setPassword(bCryptPasswordEncoder.encode(authenticationRequest.getPassword()));
         userRepository.save(userPojo);
 
-        return ResponseEntity.ok(new LoginResponse("ok", user.getEmail()));
+        return ResponseEntity.ok(new LoginResponse("ok", authenticationRequest.getUsername()));
 
     }
 
