@@ -19,8 +19,6 @@ import java.util.List;
 public class Queue2RestController {
 
     @Autowired
-    private QueueRepository queueRepository;
-    @Autowired
     private QueueService queueService;
 
     @RequestMapping("/queue2")
