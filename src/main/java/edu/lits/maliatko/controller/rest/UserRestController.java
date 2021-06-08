@@ -3,6 +3,7 @@ package edu.lits.maliatko.controller.rest;
 import edu.lits.maliatko.configuration.JwtTokenUtil;
 import edu.lits.maliatko.model.LoginRequest;
 import edu.lits.maliatko.model.LoginResponse;
+import edu.lits.maliatko.model.TokenModel;
 import edu.lits.maliatko.pojo.User;
 import edu.lits.maliatko.pojo.UserToRole;
 import edu.lits.maliatko.repository.UserRepository;
@@ -61,9 +62,9 @@ public class UserRestController {
 
     }
 
- @RequestMapping(value = "/main-menu", method = RequestMethod.POST)
-    public List <String> getMenu (String token){
-        String userMail=jwtTokenUtil.getUsernameFromToken(token);
+    @RequestMapping(value = "/main-menu", method = RequestMethod.POST)
+    public List <String> getMenu (@RequestBody TokenModel tokenModel){
+        String userMail=jwtTokenUtil.getUsernameFromToken(tokenModel.getToken());
         User loggedUser= userRepository.findByMail(userMail);
 
        UserToRole role=userToRoleRepository.findByUserId(loggedUser.getId());
