@@ -87,7 +87,7 @@ public class VisitingService {
 
         for (UserToGroup u :
                 userToGroup) {
-            clusterModelList.add(new ClusterModel(u.getGroupId().getId(), u.getGroupId().getName(), u.getGroupId().getKindergarten()));
+            clusterModelList.add(new ClusterModel(u.getGroupId().getId(), u.getGroupId().getName(), null));
         }
 
         return clusterModelList;
