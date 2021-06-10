@@ -33,16 +33,13 @@ import java.util.List;
 public class UserRestController {
 
     @Autowired
-    UserRepository userRepository;
-
+    private UserRepository userRepository;
     @Autowired
-    UserToRoleRepository userToRoleRepository;
+    private UserToRoleRepository userToRoleRepository;
     @Autowired
     private UserDetailsServiceImpl userDetailsService;
-
     @Autowired
     private SecurityService securityService;
-
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
     @Autowired

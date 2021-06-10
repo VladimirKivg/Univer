@@ -27,7 +27,7 @@ public class VisitingController {
     private Date visitingDate;
 
     @Autowired
-    VisitingService visitingService;
+    private VisitingService visitingService;
 
     @RequestMapping(value = "/child_list", method = RequestMethod.GET)
     public String visitingCheck(ModelMap model) {
